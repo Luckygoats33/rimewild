@@ -73,8 +73,8 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .nav.scrolled{background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 0;border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
-.nav-logo img{height:55px;width:auto;transition:height .4s}
-.nav.scrolled .nav-logo img{height:40px}
+.nav-logo img{height:70px;width:auto;transition:height .4s}
+.nav.scrolled .nav-logo img{height:52px}
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0}
 .nav-links a{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,239,231,.5);transition:color .3s}
 .nav-links a:hover{color:var(--text)}
@@ -339,6 +339,18 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;padding:.75rem 20px calc(.75rem + env(safe-area-inset-bottom,0px));background:rgba(10,14,12,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:100;gap:.75rem}
 @media(max-width:768px){.mobile-bar{display:flex}body{padding-bottom:5rem}}
 .mobile-bar .btn{flex:1;text-align:center;justify-content:center;padding:.85rem 1rem;font-size:.65rem}
+@media(max-width:480px){
+  .hero-title{font-size:clamp(2.5rem,12vw,4rem)}
+  .big-title{font-size:clamp(2.2rem,8vw,3.5rem)}
+  .rivers-grid{grid-template-columns:1fr}
+  .species-grid{grid-template-columns:1fr}
+  .nav-logo img{height:50px!important}
+}
+@media(max-width:360px){
+  .hero-title{font-size:2.2rem}
+  .stat-num{font-size:2rem}
+  .nav-logo img{height:44px!important}
+}
 
 /* ===== PLAN GRID ===== */
 .plan-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0}
@@ -434,6 +446,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   radial-gradient(ellipse 100% 60% at 80% 70%, rgba(30,40,25,.35) 0%, transparent 45%),
   radial-gradient(ellipse 80% 100% at 50% 50%, rgba(59,74,52,.2) 0%, transparent 60%),
   var(--bg-elevated)}
+.camo-nav-border{border-bottom:3px solid transparent;border-image:repeating-linear-gradient(90deg,var(--camo-1) 0 8px,var(--camo-2) 8px 18px,var(--camo-3) 18px 28px,var(--camo-4) 28px 38px,var(--camo-5) 38px 50px) 1}
+.camo-glow{box-shadow:0 0 40px rgba(45,51,40,.3),0 0 80px rgba(59,74,52,.15)}
+.camo-tag{display:inline-block;background:linear-gradient(135deg,var(--camo-2),var(--camo-4));color:var(--text);font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .8rem;margin-bottom:.75rem}
   </style>
 </head>
 <body>
@@ -588,7 +603,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <h3>Fish the Rivers</h3>
         <p>Salmon, steelhead, cutthroat on the Siletz, Alsea &amp; Siuslaw</p>
       </a>
-      <a class="adventure-tile" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" href="hunting.html">
+      <a class="adventure-tile camo-card" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" href="hunting.html">
         <div class="eyebrow" style="color:rgba(255,255,255,.5)">Hunting</div>
         <h3>Hunt the Coast Range</h3>
         <p>Elk, deer, bear, cougar, turkey, waterfowl &amp; more in coastal timber</p>
@@ -689,7 +704,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- RIMEWILD DIFFERENCE -->
-<section class="sec">
+<section class="sec camo-section">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">The Rimewild Difference</div>
@@ -747,7 +762,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </div>
 
 <!-- MEET YOUR GUIDE -->
-<section class="sec" id="guide">
+<section class="sec camo-section" id="guide">
   <div class="wrap">
     <div class="guide-section">
       <div class="guide-photo reveal" style="background-image:url('assets/images/forest-trail.jpg')">
@@ -990,27 +1005,27 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">4&ndash;5 Hours &bull; 1&ndash;2 Anglers &bull; Seasonal</div><h3>Half-Day Fishing</h3><p>Morning or afternoon session. Focused experience for anglers short on time.</p><div class="price-tag">$275 <small>/ angler</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Roosevelt Elk Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Roosevelt Elk Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/elk-forest.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">Multi-Day &bull; 1&ndash;2 Hunters &bull; Nov</div><h3>Roosevelt Elk</h3><p>Coast Range Roosevelt elk in dense coastal timber. By request and application only.</p><div class="price-tag">$2,800 <small>/ hunter</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Blacktail Deer Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Blacktail Deer Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/deer-forest.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">1&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Oct&ndash;Nov</div><h3>Blacktail Deer</h3><p>Columbian blacktail in western Oregon timber. Spot-and-stalk in challenging terrain.</p><div class="price-tag">$1,800 <small>/ hunter</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Black Bear Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Black Bear Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">2&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Aug&ndash;Dec</div><h3>Black Bear</h3><p>Spot-and-stalk bear hunting in the Coast Range. Fall berry patches and salmon corridors.</p><div class="price-tag">$2,200 <small>/ hunter</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Spring Turkey Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Spring Turkey Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;3 Hunters &bull; Apr&ndash;May</div><h3>Spring Turkey</h3><p>Gobbler season in Coast Range timber. Calling, decoys, and patience for a morning strut.</p><div class="price-tag">$350 <small>/ hunter</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Predator Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Predator Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;2 Hunters &bull; Year-Round</div><h3>Predator &amp; Varmint</h3><p>Coyote and bobcat hunting with e-callers in clearcuts and meadows. Great off-season action.</p><div class="price-tag">$275 <small>/ hunter</small></div></div>
       </div>
-      <div class="river-card" onclick="openBooking('Waterfowl Hunt')">
+      <div class="river-card camo-card" onclick="openBooking('Waterfowl Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">Morning Hunt &bull; 1&ndash;4 Hunters &bull; Oct&ndash;Jan</div><h3>Waterfowl</h3><p>Ducks and geese in coastal estuaries and river bottoms. Pacific Flyway migration hunting.</p><div class="price-tag">$325 <small>/ hunter</small></div></div>
       </div>
@@ -1041,17 +1056,17 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2 class="big-title reveal">Before<br>You Go</h2>
     </div>
     <div class="plan-grid reveal">
-      <div class="plan-card"><h4>What to Bring</h4><ul><li>Layered clothing (rain is likely)</li><li>Quality rain jacket and pants</li><li>Warm hat and gloves (winter)</li><li>Polarized sunglasses</li><li>Lunch, snacks, and water</li><li>Camera</li><li>Valid Oregon fishing/hunting license</li></ul></div>
-      <div class="plan-card"><h4>Oregon Licenses</h4><p>An Oregon fishing or hunting license is required. Daily, annual, and non-resident licenses are available through ODFW. Licenses can be purchased at local sporting goods stores in Lincoln City and Newport.</p></div>
-      <div class="plan-card"><h4>Where to Stay</h4><p>Lincoln City, Newport, Waldport, and Florence all offer lodging. We're happy to recommend places that work well for early-morning departures to the river.</p></div>
-      <div class="plan-card"><h4>FAQ</h4><p><strong style="color:var(--text)">What if the weather is bad?</strong><br>We fish in rain. Trips only cancelled for dangerous conditions.</p><p><strong style="color:var(--text)">Catch-and-release?</strong><br>Wild steelhead released. Hatchery fish may be retained per ODFW regs.</p><p style="margin:0"><strong style="color:var(--text)">Cancellation?</strong><br>Full refund with 72+ hours notice.</p></div>
+      <div class="plan-card camo-card"><h4>What to Bring</h4><ul><li>Layered clothing (rain is likely)</li><li>Quality rain jacket and pants</li><li>Warm hat and gloves (winter)</li><li>Polarized sunglasses</li><li>Lunch, snacks, and water</li><li>Camera</li><li>Valid Oregon fishing/hunting license</li></ul></div>
+      <div class="plan-card camo-card"><h4>Oregon Licenses</h4><p>An Oregon fishing or hunting license is required. Daily, annual, and non-resident licenses are available through ODFW. Licenses can be purchased at local sporting goods stores in Lincoln City and Newport.</p></div>
+      <div class="plan-card camo-card"><h4>Where to Stay</h4><p>Lincoln City, Newport, Waldport, and Florence all offer lodging. We're happy to recommend places that work well for early-morning departures to the river.</p></div>
+      <div class="plan-card camo-card"><h4>FAQ</h4><p><strong style="color:var(--text)">What if the weather is bad?</strong><br>We fish in rain. Trips only cancelled for dangerous conditions.</p><p><strong style="color:var(--text)">Catch-and-release?</strong><br>Wild steelhead released. Hatchery fish may be retained per ODFW regs.</p><p style="margin:0"><strong style="color:var(--text)">Cancellation?</strong><br>Full refund with 72+ hours notice.</p></div>
     </div>
     <div style="text-align:center;margin-top:4rem"><button class="btn btn-gold" onclick="openBooking()" style="font-size:.8rem;padding:1.25rem 3.5rem">Book a Trip</button></div>
   </div>
 </section>
 
 <!-- FOOTER -->
-<footer class="footer">
+<footer class="footer camo-stripe">
   <div class="wrap">
     <div class="footer-top">
       <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
@@ -1064,14 +1079,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </footer>
 
 <!-- MOBILE BAR -->
-<div class="mobile-bar">
+<div class="mobile-bar camo-stripe">
   <a href="#booking-section" class="btn btn-ghost" style="font-size:.65rem" onclick="openBooking()">Contact Us</a>
   <button class="btn btn-gold" onclick="openBooking()" style="font-size:.65rem">Check Availability</button>
 </div>
 
 <!-- BOOKING MODAL -->
 <div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
-  <div class="booking-modal">
+  <div class="booking-modal camo-stripe">
     <button class="booking-close" onclick="closeBooking()" aria-label="Close">&times;</button>
     <div id="bookingForm">
       <h2>Book Your Rimewild<br>Experience</h2>
@@ -1094,7 +1109,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
 <script>
 const nav=document.getElementById('nav');
-window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+window.addEventListener('scroll',()=>{const s=window.scrollY>60;nav.classList.toggle('scrolled',s);nav.classList.toggle('camo-nav-border',s)},{passive:true});
 document.getElementById('navToggle').addEventListener('click',()=>{const n=document.getElementById('navLinks');n.classList.toggle('open');document.getElementById('navToggle').innerHTML=n.classList.contains('open')?'&#10005;':'&#9776;'});
 function scrollTo(s){const e=document.querySelector(s);if(e)e.scrollIntoView({behavior:'smooth'})}
 
