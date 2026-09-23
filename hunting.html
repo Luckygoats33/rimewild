@@ -221,31 +221,40 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
   </style>
+  <link rel="stylesheet" href="assets/polish.css">
 </head>
 <body>
 
-<!-- NAV -->
-<nav class="nav" id="nav">
+<!-- RIMEWILD:HEADER start -->
+<nav class="nav site-header" id="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Rimewild" width="1024" height="1024"></a>
     <ul class="nav-links" id="navLinks">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="fishing.html">Fishing</a></li>
-      <li><a href="hunting.html" class="active">Hunting</a></li>
-      <li><a href="reports.html">Reports</a></li>
-      <li class="nav-cta"><a href="#" class="btn btn-gold" onclick="openBooking()">Book Now</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fishing.html">Fishing</a></li>
+        <li><a href="hunting.html" class="active" aria-current="page">Hunting</a></li>
+        <li><a href="rivers.html">Rivers</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li class="nav-cta"><a href="index.html#booking-section" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
     </ul>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">&#9776;</button>
   </div>
 </nav>
+<!-- RIMEWILD:HEADER end -->
 
 <main>
 <!-- HERO -->
-<section class="page-hero" style="background-image:url('assets/images/elk-forest.jpg')">
-  <div class="page-hero-content">
-    <div class="eyebrow">Rimewild Hunting</div>
-    <h1>Hunt the<br>Coast Range<span>Elk &bull; Deer &bull; Bear &bull; Cougar &bull; Turkey &bull; Waterfowl</span></h1>
-    <p class="page-hero-sub">Dense coastal timber. Steep ravines. Old-growth stands. Eight huntable species guided by someone who's walked this ground his entire life.</p>
+<section class="site-hero" id="hero">
+  <div class="site-hero-media" style="background-image:url('assets/images/elk-forest.jpg')" role="img" aria-label="Coast Range forest"></div>
+  <div class="site-hero-overlay"></div>
+  <div class="site-hero-content">
+    <p class="eyebrow">Rimewild Hunting</p>
+    <h1 class="site-hero-title">Hunt the<br>Coast Range<span>Elk, Deer, Bear &amp; More</span></h1>
+    <p class="site-hero-sub">Dense coastal timber. Steep ravines. Old-growth stands. Eight huntable species guided by someone who's walked this ground his entire life.</p>
+    <div class="site-hero-ctas">
+      <a href="index.html#booking-section" class="btn btn-gold" onclick="openBooking();return false">Book Now</a>
+      <a href="reports.html" class="btn btn-ghost">Reports</a>
+    </div>
   </div>
 </section>
 
@@ -882,24 +891,41 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 </main>
-<!-- FOOTER -->
+<!-- RIMEWILD:FOOTER start -->
 <footer class="footer camo-stripe">
   <div class="wrap">
     <div class="footer-top">
-      <div><a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Rimewild" width="1024" height="1024" style="height:60px;width:auto;margin-bottom:1rem"></a><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
-      <div><h5>Big Game</h5><ul class="footer-links"><li><a href="#elk">Roosevelt Elk</a></li><li><a href="#blacktail">Blacktail Deer</a></li><li><a href="#bear">Black Bear</a></li><li><a href="#cougar">Cougar</a></li></ul></div>
-      <div><h5>Birds &amp; Predator</h5><ul class="footer-links"><li><a href="#turkey">Wild Turkey</a></li><li><a href="#upland">Upland Birds</a></li><li><a href="#waterfowl">Waterfowl</a></li><li><a href="#predator">Coyote &amp; Bobcat</a></li></ul></div>
-      <div><h5>Explore</h5><ul class="footer-links"><li><a href="fishing.html">Fishing</a></li><li><a href="rivers.html">The Rivers</a></li><li><a href="reports.html">Reports</a></li></ul></div>
+      <div class="footer-brand-block">
+        <a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Rimewild" width="1024" height="1024"></a>
+        <p class="footer-tagline">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p>
+        <p class="footer-contact"><a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a><br><span>Guide phone not listed yet</span></p>
+      </div>
+      <nav class="footer-site-nav" aria-label="Footer">
+        <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="fishing.html">Fishing</a></li>
+        <li><a href="hunting.html" class="active" aria-current="page">Hunting</a></li>
+        <li><a href="rivers.html">Rivers</a></li>
+        <li><a href="reports.html">Reports</a></li>
+        <li class="nav-cta"><a href="index.html#booking-section" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
+        </ul>
+      </nav>
     </div>
-    <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Rimewild. Oregon's Central Coast.</span>
+      <nav class="footer-legal" aria-label="Legal">
+        <a href="mailto:will@supportwellnessglobal.com">Contact</a>
+        <a href="index.html#faq">Cancellation Policy</a>
+      </nav>
+      <span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span>
+    </div>
   </div>
 </footer>
-
-<!-- MOBILE BAR -->
-<div class="mobile-bar camo-stripe">
-  <a href="#booking-section" onclick="openBooking()" class="btn btn-ghost" style="font-size:.65rem">Contact Us</a>
-  <button class="btn btn-gold" onclick="openBooking()" style="font-size:.65rem">Book a Hunt</button>
-</div>
+<nav class="mobile-bar camo-stripe" aria-label="Email or book">
+  <a class="btn btn-ghost" href="mailto:will@supportwellnessglobal.com?subject=Rimewild%20inquiry" aria-label="Email will@supportwellnessglobal.com. Guide phone is not listed yet.">Call<small>No phone yet</small></a>
+  <button class="btn btn-gold" type="button" onclick="openBooking()">Book Now</button>
+</nav>
+<!-- RIMEWILD:FOOTER end -->
 
 <!-- BOOKING MODAL -->
 <div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
@@ -907,19 +933,23 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <button class="booking-close" onclick="closeBooking()" aria-label="Close">&times;</button>
     <div id="bookingForm">
       <h2>Book Your Hunt</h2>
-      <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your hunt within 48 hours.</p>
-      <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Cougar Hunt">Cougar Hunt &mdash; Contact for Pricing</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $350/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $325/hunter</option><option value="Predator Hunt">Predator/Varmint Hunt &mdash; $275/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
-        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option><option value="3">3 hunters</option><option value="4">4 hunters</option></select></div></div>
-        <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
-        <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
-        <div class="form-group"><label class="form-label" for="bTag">Do you have your tag?</label><select class="form-input" id="bTag"><option value="yes">Yes &mdash; tag in hand</option><option value="drawn">Applied / awaiting draw</option><option value="no">No &mdash; need guidance</option><option value="otc">Will purchase OTC tag</option></select></div>
-        <div class="form-group"><label class="form-label" for="bNotes">Experience &amp; Notes</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Hunting experience, fitness level, species interest, any questions..."></textarea></div>
-        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Request This Hunt</button>
+      <p class="booking-lead">This form opens your email app with a message to <a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a>. Send it to request the date — nothing is booked until that message goes out. Guide phone is not listed yet.</p>
+      <form class="booking-request" action="mailto:will@supportwellnessglobal.com" method="POST" enctype="text/plain" onsubmit="return submitBooking(event)">
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" name="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Cougar Hunt">Cougar Hunt &mdash; Contact for Pricing</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $350/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $325/hunter</option><option value="Predator Hunt">Predator/Varmint Hunt &mdash; $275/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" name="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" name="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option><option value="3">3 hunters</option><option value="4">4 hunters</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" name="bName" autocomplete="name" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" name="bEmail" autocomplete="email" placeholder="you@example.com" required></div></div>
+        <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" name="bPhone" autocomplete="tel" placeholder="Your number (optional)"></div>
+        <div class="form-group"><label class="form-label" for="bTag">Do you have your tag?</label><select class="form-input" id="bTag" name="bTag"><option value="yes">Yes &mdash; tag in hand</option><option value="drawn">Applied / awaiting draw</option><option value="no">No &mdash; need guidance</option><option value="otc">Will purchase OTC tag</option></select></div>
+        <div class="form-group"><label class="form-label" for="bNotes">Experience &amp; Notes</label><textarea class="form-input" id="bNotes" name="bNotes" rows="3" placeholder="Hunting experience, fitness level, species interest, any questions..."></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Email This Request</button>
       </form>
     </div>
     <div id="bookingSuccess" hidden>
-      <div class="form-success"><h3>Request Received</h3><p style="color:var(--text-dim)">We'll confirm your Rimewild hunt within 48 hours.</p><button class="btn btn-ghost" onclick="closeBooking()" style="margin-top:1.5rem">Close</button></div>
+      <div class="form-success">
+        <h3>Your email app should open</h3>
+        <p style="color:var(--text-dim)">Nothing is booked until you send the message addressed to <a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a>.</p>
+        <button class="btn btn-ghost" type="button" onclick="closeBooking()">Close</button>
+      </div>
     </div>
   </div>
 </div>
@@ -943,5 +973,6 @@ if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
   document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
 }
 </script>
+  <script src="assets/site.js"></script>
 </body>
 </html>
