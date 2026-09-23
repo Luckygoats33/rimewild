@@ -23,6 +23,13 @@
   --gold-dim: rgba(196,169,77,.12);
   --green: #3d6b4f;
   --green-bright: #5ba373;
+  --camo-1: #2d3328;
+  --camo-2: #3b4a34;
+  --camo-3: #1e2819;
+  --camo-4: #4a5340;
+  --camo-5: #5c6b4f;
+  --camo-tan: #8b7d5e;
+  --camo-brown: #5e4a2f;
   --border: rgba(255,255,255,.06);
   --border-hover: rgba(255,255,255,.12);
   --shadow: 0 20px 60px rgba(0,0,0,.4);
@@ -63,8 +70,8 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .btn-text:hover::after{transform:translateX(4px)}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s}
-.nav.scrolled{background:rgba(10,14,12,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 0;border-bottom:1px solid var(--border)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav.scrolled{background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 0;border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:55px;width:auto;transition:height .4s}
 .nav.scrolled .nav-logo img{height:40px}
@@ -406,6 +413,27 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .weather-temp{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--gold);line-height:1}
 .weather-range{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
 .weather-desc{font-size:.82rem;color:var(--text-dim);margin-top:.75rem;line-height:1.5}
+
+/* ===== CAMO PATTERNS ===== */
+.camo-bg{background:
+  radial-gradient(ellipse 80% 60% at 20% 30%, var(--camo-2) 0%, transparent 50%),
+  radial-gradient(ellipse 60% 80% at 70% 60%, var(--camo-3) 0%, transparent 45%),
+  radial-gradient(ellipse 90% 40% at 50% 80%, var(--camo-1) 0%, transparent 55%),
+  radial-gradient(ellipse 50% 70% at 85% 20%, var(--camo-4) 0%, transparent 40%),
+  var(--bg)}
+.camo-stripe{position:relative}
+.camo-stripe::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--camo-1) 0,var(--camo-1) 20%,var(--camo-2) 20%,var(--camo-2) 40%,var(--camo-3) 40%,var(--camo-3) 55%,var(--camo-4) 55%,var(--camo-4) 75%,var(--camo-5) 75%,var(--camo-5) 100%)}
+.camo-stripe-bottom::after{content:'';position:absolute;bottom:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--camo-5) 0,var(--camo-5) 18%,var(--camo-4) 18%,var(--camo-4) 35%,var(--camo-3) 35%,var(--camo-3) 52%,var(--camo-2) 52%,var(--camo-2) 70%,var(--camo-1) 70%,var(--camo-1) 100%)}
+.camo-border{border-left:4px solid var(--camo-2)!important;border-right:4px solid var(--camo-4)!important}
+.camo-accent{background:linear-gradient(135deg,var(--camo-1) 0%,var(--camo-2) 25%,var(--camo-3) 50%,var(--camo-4) 75%,var(--camo-5) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.camo-divider{width:100%;height:3px;background:repeating-linear-gradient(90deg,var(--camo-1) 0 8px,var(--camo-2) 8px 18px,var(--camo-3) 18px 28px,var(--camo-4) 28px 38px,var(--camo-5) 38px 50px);margin:0 auto;opacity:.6}
+.camo-card{border:1px solid var(--camo-2);background:linear-gradient(145deg,rgba(45,51,40,.15) 0%,rgba(30,40,25,.1) 50%,rgba(59,74,52,.12) 100%)}
+.camo-card:hover{border-color:var(--camo-5);background:linear-gradient(145deg,rgba(45,51,40,.25) 0%,rgba(30,40,25,.18) 50%,rgba(59,74,52,.22) 100%)}
+.camo-section{background:
+  radial-gradient(ellipse 120% 80% at 10% 20%, rgba(45,51,40,.4) 0%, transparent 50%),
+  radial-gradient(ellipse 100% 60% at 80% 70%, rgba(30,40,25,.35) 0%, transparent 45%),
+  radial-gradient(ellipse 80% 100% at 50% 50%, rgba(59,74,52,.2) 0%, transparent 60%),
+  var(--bg-elevated)}
   </style>
 </head>
 <body>
@@ -446,12 +474,12 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- STAT BANNER -->
-<div class="stat-banner">
+<div class="stat-banner camo-stripe camo-stripe-bottom">
   <div class="wrap">
     <div class="stat-grid">
       <div class="reveal"><div class="stat-num">4</div><div class="stat-label">River Systems</div></div>
       <div class="reveal reveal-delay-1"><div class="stat-num">30+</div><div class="stat-label">Years on the Water</div></div>
-      <div class="reveal reveal-delay-2"><div class="stat-num">7</div><div class="stat-label">Species Targeted</div></div>
+      <div class="reveal reveal-delay-2"><div class="stat-num">13</div><div class="stat-label">Species Targeted</div></div>
       <div class="reveal reveal-delay-3"><div class="stat-num">365</div><div class="stat-label">Days a Year</div></div>
     </div>
   </div>
@@ -502,19 +530,38 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- SPECIES GUIDE -->
-<section class="sec sec-alt" id="species">
+<section class="sec camo-section camo-stripe" id="species">
   <div class="wrap">
     <div class="eyebrow">Species Guide</div>
     <h2 class="big-title reveal">What You're<br>After</h2>
-    <p class="subtitle reveal" style="margin-bottom:3rem">Seven species across four river systems. Here's what runs on Oregon's Central Coast.</p>
+    <p class="subtitle reveal" style="margin-bottom:1.5rem">Five fish species and eight game animals across four river systems and the Coast Range. Oregon's Central Coast is one of the most species-rich hunting and fishing regions in the Pacific Northwest.</p>
+    <div class="camo-divider" style="margin-bottom:3rem"></div>
+
+    <div class="eyebrow" style="margin-top:2rem">Fish Species</div>
     <div class="species-grid reveal">
-      <div class="species-card"><h4>Winter Steelhead</h4><div class="species-season">December &ndash; April</div><p>The flagship species. Wild winter steelhead in coastal rivers are aggressive, powerful, and chrome-bright. The Siletz and Alsea produce some of the best winter steelhead fishing in Oregon.</p><div class="species-weight">8&ndash;15 <small>lbs avg</small></div></div>
-      <div class="species-card"><h4>Fall Chinook</h4><div class="species-season">August &ndash; November</div><p>The king of Pacific salmon. Fall chinook push into coastal rivers with power and size that nothing else matches. They're the reason people book trips months in advance.</p><div class="species-weight">15&ndash;40 <small>lbs avg</small></div></div>
-      <div class="species-card"><h4>Summer Steelhead</h4><div class="species-season">April &ndash; October</div><p>Acrobatic, hard-fighting fish in warmer water. Summer steelhead on the Siletz are aggressive hitters that put on aerial displays.</p><div class="species-weight">6&ndash;12 <small>lbs avg</small></div></div>
-      <div class="species-card"><h4>Coho Salmon</h4><div class="species-season">September &ndash; November</div><p>Aggressive and willing biters. Coho hit plugs and spinners hard. They're excellent table fare and a perfect species for newer anglers.</p><div class="species-weight">8&ndash;12 <small>lbs avg</small></div></div>
-      <div class="species-card"><h4>Coastal Cutthroat</h4><div class="species-season">May &ndash; September</div><p>Native trout species. Light tackle, beautiful upper river water, and fish that hit dry flies and small spinners. The best summer fishery on the coast.</p><div class="species-weight">1&ndash;4 <small>lbs avg</small></div></div>
-      <div class="species-card"><h4>Roosevelt Elk</h4><div class="species-season">November (Rifle)</div><p>The largest elk subspecies in North America. Coast Range Roosevelt elk live in dense timber and require patience, conditioning, and local knowledge to hunt successfully.</p><div class="species-weight">700&ndash;1,100 <small>lbs (bulls)</small></div></div>
-      <div class="species-card"><h4>Blacktail Deer</h4><div class="species-season">October &ndash; November</div><p>Columbian blacktail are a subspecies of mule deer adapted to dense coastal forest. They're challenging spot-and-stalk quarry in steep, thick terrain.</p><div class="species-weight">130&ndash;200 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Winter Steelhead</h4><div class="species-season">December &ndash; April</div><p>The flagship species. Wild winter steelhead in coastal rivers are aggressive, powerful, and chrome-bright. The Siletz and Alsea produce some of the best winter steelhead fishing in Oregon.</p><div class="species-weight">8&ndash;15 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Fall Chinook</h4><div class="species-season">August &ndash; November</div><p>The king of Pacific salmon. Fall chinook push into coastal rivers with power and size that nothing else matches. They're the reason people book trips months in advance.</p><div class="species-weight">15&ndash;40 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Summer Steelhead</h4><div class="species-season">April &ndash; October</div><p>Acrobatic, hard-fighting fish in warmer water. Summer steelhead on the Siletz are aggressive hitters that put on aerial displays.</p><div class="species-weight">6&ndash;12 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Coho Salmon</h4><div class="species-season">September &ndash; November</div><p>Aggressive and willing biters. Coho hit plugs and spinners hard. They're excellent table fare and a perfect species for newer anglers.</p><div class="species-weight">8&ndash;12 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Coastal Cutthroat</h4><div class="species-season">May &ndash; September</div><p>Native trout species. Light tackle, beautiful upper river water, and fish that hit dry flies and small spinners. The best summer fishery on the coast.</p><div class="species-weight">1&ndash;4 <small>lbs avg</small></div></div>
+    </div>
+
+    <div class="camo-divider" style="margin:3rem auto"></div>
+    <div class="eyebrow">Big Game</div>
+    <div class="species-grid reveal">
+      <div class="species-card camo-card"><h4>Roosevelt Elk</h4><div class="species-season">November (Rifle) &bull; September (Archery)</div><p>The largest elk subspecies in North America. Coast Range Roosevelt elk live in dense timber and require patience, conditioning, and local knowledge to hunt successfully.</p><div class="species-weight">700&ndash;1,100 <small>lbs (bulls)</small></div></div>
+      <div class="species-card camo-card"><h4>Blacktail Deer</h4><div class="species-season">October &ndash; November</div><p>Columbian blacktail are a subspecies of mule deer adapted to dense coastal forest. They're challenging spot-and-stalk quarry in steep, thick terrain.</p><div class="species-weight">130&ndash;200 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Black Bear</h4><div class="species-season">August &ndash; December (Fall) &bull; April &ndash; May (Spring)</div><p>Oregon's Central Coast has a healthy black bear population in the Coast Range. Bears feed heavily on berries and salmon runs, making them predictable near waterways in fall. Spot-and-stalk hunting in thick timber with hounds prohibited in Oregon.</p><div class="species-weight">200&ndash;400 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Cougar / Mountain Lion</h4><div class="species-season">Year-round (with tag)</div><p>Oregon has one of the largest cougar populations in the West. Coast Range cats are elusive and rarely seen. Hunting requires patience, sharp glassing skills, and deep knowledge of terrain. Hound hunting prohibited&mdash;spot and stalk only.</p><div class="species-weight">120&ndash;180 <small>lbs avg</small></div></div>
+    </div>
+
+    <div class="camo-divider" style="margin:3rem auto"></div>
+    <div class="eyebrow">Upland &amp; Waterfowl</div>
+    <div class="species-grid reveal">
+      <div class="species-card camo-card"><h4>Wild Turkey</h4><div class="species-season">April &ndash; May (Spring) &bull; November (Fall)</div><p>Rio Grande and Merriam's turkeys have established populations on the Central Coast. Spring gobbler season is the prime draw&mdash;calling in a strutting tom through dense Oregon timber is world-class.</p><div class="species-weight">15&ndash;25 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Upland Birds</h4><div class="species-season">September &ndash; January</div><p>Mountain quail, California quail, ruffed grouse, and band-tailed pigeon in the Coast Range. Walk-up hunting through old growth and second-growth timber with a good dog. Band-tails are a unique coastal specialty.</p><div class="species-weight">0.5&ndash;1 <small>lb avg</small></div></div>
+      <div class="species-card camo-card"><h4>Waterfowl</h4><div class="species-season">October &ndash; January</div><p>Pacific Flyway migration brings mallards, pintails, wigeon, teal, and Canada geese through coastal estuaries and river bottoms. The Siletz Bay and Alsea estuary are prime jump-shooting and layout spots.</p><div class="species-weight">2&ndash;12 <small>lbs avg</small></div></div>
+      <div class="species-card camo-card"><h4>Coyote &amp; Bobcat</h4><div class="species-season">Year-round (no bag limit for coyote)</div><p>Predator hunting on the Central Coast. Coyotes respond well to electronic callers in clearcuts and meadows. Bobcats are trapped and called in the Coast Range. Excellent off-season hunting when big game is closed.</p><div class="species-weight">20&ndash;45 <small>lbs avg</small></div></div>
     </div>
   </div>
 </section>
@@ -538,7 +585,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <a class="adventure-tile" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" href="hunting.html">
         <div class="eyebrow" style="color:rgba(255,255,255,.5)">Hunting</div>
         <h3>Hunt the Coast Range</h3>
-        <p>Roosevelt elk &amp; Columbian blacktail in coastal timber</p>
+        <p>Elk, deer, bear, cougar, turkey, waterfowl &amp; more in coastal timber</p>
       </a>
     </div>
     <div class="type-chips">
@@ -610,7 +657,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- FEATURED TRIP -->
-<section id="featured-trip">
+<section id="featured-trip" class="camo-stripe">
   <div class="featured">
     <div class="featured-visual" style="background-image:url('assets/images/hero-river.jpg')">
       <div class="featured-visual-text">
@@ -674,7 +721,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- THE PROMISE -->
-<section class="sec">
+<section class="sec camo-bg">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">The Rimewild Promise</div>
@@ -782,7 +829,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- CONSERVATION -->
-<section class="sec" id="conservation">
+<section class="sec camo-section" id="conservation">
   <div class="wrap">
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:center">
       <div class="reveal">
@@ -804,7 +851,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </div>
 
 <!-- TECHNIQUES -->
-<section class="sec sec-alt" id="techniques">
+<section class="sec sec-alt camo-stripe" id="techniques">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Techniques</div>
@@ -860,7 +907,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- GEAR -->
-<section class="sec sec-alt">
+<section class="sec sec-alt camo-stripe camo-stripe-bottom">
   <div class="wrap">
     <div class="eyebrow">Equipment</div>
     <h2 class="med-title reveal">We Bring the Right Tools</h2>
@@ -905,7 +952,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- PRICING -->
-<section class="sec sec-alt" id="pricing">
+<section class="sec sec-alt camo-stripe" id="pricing">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Experiences &amp; Pricing</div>
@@ -944,6 +991,22 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="river-card" onclick="openBooking('Blacktail Deer Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/deer-forest.jpg')"></div></div>
         <div class="river-card-body"><div class="river-card-species">1&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Oct&ndash;Nov</div><h3>Blacktail Deer</h3><p>Columbian blacktail in western Oregon timber. Spot-and-stalk in challenging terrain.</p><div class="price-tag">$1,800 <small>/ hunter</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Black Bear Hunt')">
+        <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div>
+        <div class="river-card-body"><div class="river-card-species">2&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Aug&ndash;Dec</div><h3>Black Bear</h3><p>Spot-and-stalk bear hunting in the Coast Range. Fall berry patches and salmon corridors.</p><div class="price-tag">$2,200 <small>/ hunter</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Spring Turkey Hunt')">
+        <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
+        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;3 Hunters &bull; Apr&ndash;May</div><h3>Spring Turkey</h3><p>Gobbler season in Coast Range timber. Calling, decoys, and patience for a morning strut.</p><div class="price-tag">$350 <small>/ hunter</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Predator Hunt')">
+        <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div>
+        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;2 Hunters &bull; Year-Round</div><h3>Predator &amp; Varmint</h3><p>Coyote and bobcat hunting with e-callers in clearcuts and meadows. Great off-season action.</p><div class="price-tag">$275 <small>/ hunter</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Waterfowl Hunt')">
+        <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div></div>
+        <div class="river-card-body"><div class="river-card-species">Morning Hunt &bull; 1&ndash;4 Hunters &bull; Oct&ndash;Jan</div><h3>Waterfowl</h3><p>Ducks and geese in coastal estuaries and river bottoms. Pacific Flyway migration hunting.</p><div class="price-tag">$325 <small>/ hunter</small></div></div>
       </div>
     </div>
   </div>

@@ -15,6 +15,7 @@
   --text:#f0efe7;--text-dim:#9fa39b;--text-muted:#5a5e57;
   --gold:#c4a94d;--gold-bright:#dfc462;--gold-dim:rgba(196,169,77,.12);
   --green:#3d6b4f;--green-bright:#5ba373;
+  --camo-1:#2d3328;--camo-2:#3b4a34;--camo-3:#1e2819;--camo-4:#4a5340;--camo-5:#5c6b4f;
   --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
   --shadow:0 20px 60px rgba(0,0,0,.4);
   --font-display:'Playfair Display',Georgia,serif;
@@ -46,7 +47,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(10,14,12,.6);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .nav.scrolled{padding:.75rem 0;border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:45px;width:auto;transition:height .4s}
@@ -214,6 +215,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   .reveal.vis{opacity:1;transform:translateY(0)}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+.camo-stripe{position:relative}
+.camo-stripe::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--camo-1) 0,var(--camo-1) 20%,var(--camo-2) 20%,var(--camo-2) 40%,var(--camo-3) 40%,var(--camo-3) 55%,var(--camo-4) 55%,var(--camo-4) 75%,var(--camo-5) 75%,var(--camo-5) 100%)}
+.camo-divider{width:100%;height:3px;background:repeating-linear-gradient(90deg,var(--camo-1) 0 8px,var(--camo-2) 8px 18px,var(--camo-3) 18px 28px,var(--camo-4) 28px 38px,var(--camo-5) 38px 50px);margin:0 auto;opacity:.6}
   </style>
 </head>
 <body>
@@ -409,7 +413,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </div>
 
 <!-- SPECIES GUIDE -->
-<section class="sec sec-alt" id="species">
+<section class="sec sec-alt camo-stripe" id="species">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Species Guide</div>
@@ -449,7 +453,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- TECHNIQUES -->
-<section class="sec">
+<section class="sec camo-stripe">
   <div class="wrap">
     <div class="eyebrow">Techniques</div>
     <h2 class="big-title reveal">How We<br>Fish</h2>
