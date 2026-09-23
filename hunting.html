@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>Hunting — Rimewild | Elk & Blacktail Deer on Oregon's Coast Range</title>
-  <meta name="description" content="Guided Roosevelt elk and Columbian blacktail deer hunting on Oregon's Central Coast Range. Dense coastal timber, spot-and-stalk, with a guide born on this land.">
+  <title>Hunting — Rimewild | Elk, Bear, Cougar, Turkey & More on Oregon's Coast Range</title>
+  <meta name="description" content="Guided hunting on Oregon's Central Coast Range — Roosevelt elk, blacktail deer, black bear, cougar, wild turkey, upland birds, waterfowl, and predator hunting with a lifelong local guide.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -15,6 +15,8 @@
   --text:#f0efe7;--text-dim:#9fa39b;--text-muted:#5a5e57;
   --gold:#c4a94d;--gold-bright:#dfc462;--gold-dim:rgba(196,169,77,.12);
   --green:#3d6b4f;--green-bright:#5ba373;
+  --camo-1:#2d3328;--camo-2:#3b4a34;--camo-3:#1e2819;--camo-4:#4a5340;--camo-5:#5c6b4f;
+  --camo-tan:#8b7d5e;--camo-brown:#5e4a2f;
   --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
   --shadow:0 20px 60px rgba(0,0,0,.4);
   --font-display:'Playfair Display',Georgia,serif;
@@ -48,8 +50,8 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
 /* NAV */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(10,14,12,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
-.nav.scrolled{padding:.75rem 0;border-bottom:1px solid var(--border)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav.scrolled{background:rgba(0,0,0,.97);padding:.75rem 0;border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:45px;width:auto;transition:height .4s}
 .nav.scrolled .nav-logo img{height:36px}
@@ -119,10 +121,27 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .faq-item.open .faq-toggle{transform:rotate(45deg)}
 
 /* STAT */
-.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:3rem 0}
-@media(max-width:600px){.stat-row{grid-template-columns:1fr}}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;text-align:center;padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:3rem 0}
+@media(max-width:600px){.stat-row{grid-template-columns:repeat(2,1fr)}}
 .stat-num{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:var(--gold);line-height:1}
 .stat-label{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-top:.5rem}
+
+/* SPECIES NAV */
+.species-nav{display:flex;flex-wrap:wrap;gap:.75rem;margin:3rem 0}
+.species-nav a{background:transparent;border:1px solid var(--border);padding:.9rem 1.8rem;font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);transition:all .3s;display:inline-block}
+.species-nav a:hover{border-color:var(--gold);color:var(--gold);background:var(--gold-dim)}
+
+/* CAMO */
+.camo-stripe{position:relative}
+.camo-stripe::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:repeating-linear-gradient(90deg,var(--camo-1) 0,var(--camo-1) 20%,var(--camo-2) 20%,var(--camo-2) 40%,var(--camo-3) 40%,var(--camo-3) 55%,var(--camo-4) 55%,var(--camo-4) 75%,var(--camo-5) 75%,var(--camo-5) 100%)}
+.camo-divider{width:100%;height:3px;background:repeating-linear-gradient(90deg,var(--camo-1) 0 8px,var(--camo-2) 8px 18px,var(--camo-3) 18px 28px,var(--camo-4) 28px 38px,var(--camo-5) 38px 50px);margin:0 auto;opacity:.6}
+.camo-card{border:1px solid var(--camo-2)!important;background:linear-gradient(145deg,rgba(45,51,40,.15) 0%,rgba(30,40,25,.1) 50%,rgba(59,74,52,.12) 100%)}
+.camo-card:hover{border-color:var(--camo-5)!important;background:linear-gradient(145deg,rgba(45,51,40,.25) 0%,rgba(30,40,25,.18) 50%,rgba(59,74,52,.22) 100%)}
+.camo-section{background:
+  radial-gradient(ellipse 120% 80% at 10% 20%,rgba(45,51,40,.4) 0%,transparent 50%),
+  radial-gradient(ellipse 100% 60% at 80% 70%,rgba(30,40,25,.35) 0%,transparent 45%),
+  radial-gradient(ellipse 80% 100% at 50% 50%,rgba(59,74,52,.2) 0%,transparent 60%),
+  var(--bg-elevated)}
 
 /* FOOTER */
 .footer{border-top:1px solid var(--border);padding:clamp(4rem,8vh,6rem) 0 2rem}
@@ -192,13 +211,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <section class="page-hero" style="background-image:url('assets/images/elk-forest.jpg')">
   <div class="page-hero-content">
     <div class="eyebrow">Rimewild Hunting</div>
-    <h1>Hunt the<br>Coast Range<span>Roosevelt Elk &amp; Columbian Blacktail Deer</span></h1>
-    <p class="page-hero-sub">Dense coastal timber. Steep ravines. Old-growth stands. This is hunting at its most raw &mdash; guided by someone who's walked this ground his entire life.</p>
+    <h1>Hunt the<br>Coast Range<span>Elk &bull; Deer &bull; Bear &bull; Cougar &bull; Turkey &bull; Waterfowl</span></h1>
+    <p class="page-hero-sub">Dense coastal timber. Steep ravines. Old-growth stands. Eight huntable species guided by someone who's walked this ground his entire life.</p>
   </div>
 </section>
 
 <!-- INTRO -->
-<section class="sec">
+<section class="sec camo-stripe">
   <div class="wrap">
     <div style="max-width:800px">
       <div class="eyebrow">Coast Range Hunting</div>
@@ -209,9 +228,21 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     </div>
 
     <div class="stat-row reveal">
-      <div><div class="stat-num">2</div><div class="stat-label">Species Hunted</div></div>
+      <div><div class="stat-num">8</div><div class="stat-label">Species Hunted</div></div>
       <div><div class="stat-num">30+</div><div class="stat-label">Years in This Timber</div></div>
       <div><div class="stat-num">100%</div><div class="stat-label">Private & Public Access</div></div>
+      <div><div class="stat-num">12</div><div class="stat-label">Months of Hunting</div></div>
+    </div>
+
+    <div class="species-nav reveal">
+      <a href="#elk">Roosevelt Elk</a>
+      <a href="#blacktail">Blacktail Deer</a>
+      <a href="#bear">Black Bear</a>
+      <a href="#cougar">Cougar</a>
+      <a href="#turkey">Wild Turkey</a>
+      <a href="#upland">Upland Birds</a>
+      <a href="#waterfowl">Waterfowl</a>
+      <a href="#predator">Predator</a>
     </div>
   </div>
 </section>
@@ -220,6 +251,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <div class="img-break" style="background-image:url('assets/images/foggy-forest.jpg')">
   <div class="img-break-text"><h2>Into the Timber</h2></div>
 </div>
+
+<!-- ============================================ -->
+<!-- BIG GAME -->
+<!-- ============================================ -->
 
 <!-- ROOSEVELT ELK -->
 <section class="sec" id="elk">
@@ -322,8 +357,304 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </section>
 
+<div class="camo-divider"></div>
+
+<!-- BLACK BEAR -->
+<section class="sec camo-section" id="bear">
+  <div class="wrap">
+    <div class="species-section">
+      <div class="species-img reveal" style="background-image:url('assets/images/foggy-forest.jpg')"></div>
+      <div class="species-content reveal">
+        <div class="eyebrow">Big Game</div>
+        <h2>Black Bear</h2>
+        <p>Oregon's Central Coast Range holds a healthy and growing black bear population. These bears live in some of the thickest timber on the continent &mdash; second-growth Douglas fir and alder thickets where visibility is measured in feet. They're adapted to the dense, wet landscape and are masters of disappearing into cover.</p>
+        <p>Fall bear hunting coincides with berry season and salmon runs. Bears feed heavily along creek corridors and in clear-cut regrowth where huckleberries and blackberries concentrate. This creates predictable patterns &mdash; glassing berry patches at dawn and dusk, and working salmon-bearing streams where bears come to feed.</p>
+        <p>Oregon prohibits the use of hounds and bait for bear hunting. All bear hunting is spot-and-stalk &mdash; which makes it honest, challenging, and deeply rewarding. Spring season targets bears emerging from dens on south-facing slopes; fall season is the higher-percentage window.</p>
+
+        <div class="species-price">$2,200 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>2&ndash;3 Days</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;2 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>Aug&ndash;Dec (Fall) &bull; Apr&ndash;May (Spring)</div>
+          <div class="species-meta-item"><span>Terrain</span>Creek Corridors &amp; Berry Patches</div>
+          <div class="species-meta-item"><span>Method</span>Spot &amp; Stalk (No Hounds/Bait)</div>
+          <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Black Bear Hunt')">Book Bear Hunt</button>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(4rem,8vh,6rem)">
+      <div class="eyebrow">What to Expect</div>
+      <h3 class="med-title reveal">Bear Hunt Breakdown</h3>
+      <div class="info-grid reveal" style="margin-top:2rem">
+        <div class="info-card camo-card">
+          <h4>Fall Season (Aug&ndash;Dec)</h4>
+          <p>The primary bear hunting window. Bears are in hyperphagia &mdash; eating 20,000+ calories per day to prepare for denning. Berry patches in clear-cuts and salmon runs on coastal streams create concentrated feeding zones. Glassing at dawn and dusk, then moving in for the stalk.</p>
+          <p style="margin-top:.75rem"><strong style="color:var(--text)">Best months:</strong> September and October, when berries peak and salmon push upstream.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Spring Season (Apr&ndash;May)</h4>
+          <p>Bears emerge from dens lean and hungry, gravitating to south-facing slopes where green-up starts first. Spring bears are more predictable in their travel patterns, working from den sites to early food sources. Shorter window, lower success rate, but a unique and rewarding hunt.</p>
+          <p style="margin-top:.75rem"><strong style="color:var(--text)">Physical demands:</strong> Moderate. Less vertical than elk, but expect 3&ndash;6 miles of hiking.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Regulations</h4>
+          <p>Oregon black bear tags are available over the counter (OTC) for both spring and fall seasons. One bear per calendar year. No hounds, no bait, no trapping. Hunters must have a valid hunting license and bear tag.</p>
+          <p style="margin-top:.75rem"><strong style="color:var(--text)">Firearm:</strong> .270 Win or larger recommended. 6.5 Creedmoor and .30-06 are ideal choices for Coast Range distances.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break" style="background-image:url('assets/images/misty-mountains.jpg')">
+  <div class="img-break-text"><h2>Apex Predator</h2></div>
+</div>
+
+<!-- COUGAR -->
+<section class="sec" id="cougar">
+  <div class="wrap">
+    <div class="species-section" style="direction:rtl">
+      <div style="direction:ltr">
+        <div class="species-img reveal" style="background-image:url('assets/images/forest-trail.jpg')"></div>
+      </div>
+      <div class="species-content reveal" style="direction:ltr">
+        <div class="eyebrow">Apex Predator</div>
+        <h2>Cougar</h2>
+        <p>Oregon has one of the largest cougar populations in the western United States, with an estimated 6,000+ animals statewide. The Coast Range is prime cougar habitat &mdash; dense timber, healthy deer and elk herds as prey, and steep terrain that cougars use to their advantage.</p>
+        <p>Cougar hunting in Oregon is strictly spot-and-stalk. Hound hunting was banned by ballot measure in 1994. That makes cougar hunting one of the most challenging pursuits in North American big game. You're hunting an animal that is perfectly camouflaged, moves mostly at night, and has evolved to avoid detection.</p>
+        <p>Success requires patience, detailed knowledge of cougar travel routes, and the ability to identify fresh sign &mdash; scrapes, kills, and tracks. Corey knows the corridors where cats move through his hunting areas, and snow or fresh mud on logging roads can reveal activity overnight. This is hunting at its most demanding and rewarding.</p>
+
+        <div class="species-price" style="font-size:clamp(1.5rem,3vw,2rem)">Contact for Pricing</div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>By Arrangement</div>
+          <div class="species-meta-item"><span>Group Size</span>1 Hunter</div>
+          <div class="species-meta-item"><span>Season</span>Year-Round (with tag)</div>
+          <div class="species-meta-item"><span>Terrain</span>Steep Timber &amp; Ridge Lines</div>
+          <div class="species-meta-item"><span>Method</span>Spot &amp; Stalk (No Hounds)</div>
+          <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Cougar Hunt')">Inquire About Cougar Hunt</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="camo-divider"></div>
+
+<!-- ============================================ -->
+<!-- TURKEY & BIRDS -->
+<!-- ============================================ -->
+
+<!-- WILD TURKEY -->
+<section class="sec camo-stripe" id="turkey">
+  <div class="wrap">
+    <div class="species-section">
+      <div class="species-img reveal" style="background-image:url('assets/images/foggy-forest.jpg')"></div>
+      <div class="species-content reveal">
+        <div class="eyebrow">Upland &amp; Waterfowl</div>
+        <h2>Wild Turkey</h2>
+        <p>Rio Grande and Merriam's turkeys have established growing populations across Oregon's Central Coast. These birds thrive in the mixed habitat of the Coast Range &mdash; oak woodlands, open meadows, and timber edges that provide roosting, nesting, and feeding zones.</p>
+        <p>Spring gobbler season is the primary draw. There's nothing like hearing a tom thunder off the roost at first light, then working him in with calls until he's strutting at 20 yards. Oregon Coast timber makes this especially intense &mdash; limited visibility means you'll hear the bird before you see it, and the close encounters are electric.</p>
+        <p>Corey uses box calls, slate calls, and mouth diaphragms to work birds. He knows the roosting trees, strut zones, and travel routes that turkeys use consistently across seasons. Spring turkey hunting is accessible to all fitness levels and is an excellent introduction to hunting.</p>
+
+        <div class="species-price">$350 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>Full Day (Half-Day Available)</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;3 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>Apr&ndash;May (Spring) &bull; Nov (Fall)</div>
+          <div class="species-meta-item"><span>Terrain</span>Oak Woodland &amp; Timber Edges</div>
+          <div class="species-meta-item"><span>Method</span>Calling &amp; Decoys</div>
+          <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Spring Turkey Hunt')">Book Turkey Hunt</button>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(4rem,8vh,6rem)">
+      <div class="eyebrow">What to Expect</div>
+      <h3 class="med-title reveal">Turkey Hunt Breakdown</h3>
+      <div class="info-grid reveal" style="margin-top:2rem">
+        <div class="info-card camo-card">
+          <h4>Spring Gobbler (Apr&ndash;May)</h4>
+          <p>The marquee season. Toms are vocal and responsive to calling. Set up before dawn near known roost trees. When the first gobble echoes through the timber, the game is on. Calling sequences bring birds in close &mdash; most shots are under 40 yards with a shotgun.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Fall Season (November)</h4>
+          <p>Less vocal, more challenging. Fall turkeys flock up and feed heavily on acorns and insects. Hunting involves scouting feeding areas, breaking flocks, and using kee-kee calls to reassemble scattered birds. A different game than spring, but equally rewarding.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Gear &amp; Regulations</h4>
+          <p>Shotgun with turkey choke (12 or 20 gauge) and #4&ndash;#6 shot. Full camo recommended. Oregon turkey tags are OTC with no draw. Spring limit: two bearded turkeys. Fall limit varies by unit. ODFW hunter education required.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPLAND BIRDS -->
+<section class="sec sec-alt" id="upland">
+  <div class="wrap">
+    <div class="species-section" style="direction:rtl">
+      <div style="direction:ltr">
+        <div class="species-img reveal" style="background-image:url('assets/images/forest-trail.jpg')"></div>
+      </div>
+      <div class="species-content reveal" style="direction:ltr">
+        <div class="eyebrow">Wing Shooting</div>
+        <h2>Upland Birds</h2>
+        <p>Oregon's Central Coast offers diverse upland bird hunting that most people don't know about. Mountain quail in the high Coast Range, California quail in lower elevation brush, ruffed grouse in the deep timber, and band-tailed pigeons &mdash; a unique coastal specialty that migrates through the region in fall.</p>
+        <p>Upland hunting here is walk-up work through mixed terrain &mdash; clear-cuts, timber edges, brushy draws, and old logging roads. A good bird dog transforms the experience. Ruffed grouse in old-growth timber are as challenging as any bird in North America &mdash; explosive flushes in tight cover where you've got a fraction of a second to mount and shoot.</p>
+        <p>Band-tailed pigeons are Oregon's only native migratory game bird, and the coastal corridor is one of the best flyways on the West Coast. Pass-shooting bandtails as they fly through river canyons is a unique experience you won't find inland.</p>
+
+        <div class="species-price">$295 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>Full Day</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;3 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>September&ndash;January</div>
+          <div class="species-meta-item"><span>Terrain</span>Timber Edges &amp; Clear-Cuts</div>
+          <div class="species-meta-item"><span>Method</span>Walk-Up with Dogs</div>
+          <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Upland Bird Hunt')">Book Upland Hunt</button>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(4rem,8vh,6rem)">
+      <div class="eyebrow">Species Breakdown</div>
+      <h3 class="med-title reveal">What You'll Find</h3>
+      <div class="info-grid reveal" style="margin-top:2rem">
+        <div class="info-card camo-card">
+          <h4>Mountain Quail</h4>
+          <p>The largest quail species in North America. Found in brushy, steep terrain above 1,000 feet. These birds run more than they fly, making a dog essential. When they do flush, they go downhill fast. A true trophy upland bird.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Ruffed Grouse</h4>
+          <p>The king of the timber. Ruffed grouse live in dense second-growth and alder bottoms. Flushes are explosive and close &mdash; 10 to 15 yards in thick cover. An open-choked 20-gauge is the weapon of choice. Expect a workout and a few missed shots.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>Band-Tailed Pigeon</h4>
+          <p>Oregon's only native migratory game bird. Band-tails fly through coastal river corridors in September and October, feeding on elderberries and cascara. Pass-shooting from ridge points is the method. Limit is two per day, with a special HIP registration required.</p>
+        </div>
+        <div class="info-card camo-card">
+          <h4>California Quail</h4>
+          <p>Found in brushy lowlands, field edges, and blackberry thickets. Covey flushes of 15&ndash;30 birds are common. Fun, fast shooting with a 20-gauge or .410. Excellent for newer hunters and a great way to work young bird dogs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break" style="background-image:url('assets/images/river-canyon.jpg')">
+  <div class="img-break-text"><h2>Pacific Flyway</h2></div>
+</div>
+
+<!-- WATERFOWL -->
+<section class="sec" id="waterfowl">
+  <div class="wrap">
+    <div class="species-section">
+      <div class="species-img reveal" style="background-image:url('assets/images/river-canyon.jpg')"></div>
+      <div class="species-content reveal">
+        <div class="eyebrow">Waterfowl</div>
+        <h2>Ducks &amp; Geese</h2>
+        <p>Oregon's Central Coast sits directly on the Pacific Flyway &mdash; one of North America's four major migratory waterfowl corridors. From October through January, millions of ducks and geese funnel through coastal estuaries, river bottoms, and flooded agricultural fields.</p>
+        <p>The Siletz Bay, Alsea estuary, and Yaquina Bay are prime hunting locations. Mallards, pintails, American wigeon, green-winged teal, and Canada geese are the primary species. Hunting methods include jump-shooting river sloughs, layout hunting in estuaries, and decoy spreads on flooded fields.</p>
+        <p>Waterfowl hunting is the most social hunt Rimewild offers. Groups of up to four can hunt together, and the action can be fast and sustained when birds are moving. Early morning hunts are the standard &mdash; you'll be set up before dawn and hunting through mid-morning.</p>
+
+        <div class="species-price">$325 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>Morning Hunt (4&ndash;5 hrs)</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;4 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>October&ndash;January</div>
+          <div class="species-meta-item"><span>Terrain</span>Estuaries &amp; River Bottoms</div>
+          <div class="species-meta-item"><span>Method</span>Decoys, Jump Shooting, Layout</div>
+          <div class="species-meta-item"><span>Tag</span>Federal Duck Stamp + State License</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Waterfowl Hunt')">Book Waterfowl Hunt</button>
+      </div>
+    </div>
+
+    <div style="margin-top:clamp(4rem,8vh,6rem)">
+      <div class="eyebrow">What to Expect</div>
+      <h3 class="med-title reveal">Waterfowl Hunt Day</h3>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-time">4:30a</div>
+          <div class="timeline-desc"><h4>Meet &amp; Launch</h4><p>Meet at the boat launch or field access point. Load decoys, waders, guns, and gear. Move into position in the dark.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">5:15a</div>
+          <div class="timeline-desc"><h4>Set Decoys</h4><p>Deploy the spread &mdash; typically 2&ndash;4 dozen decoys tailored to the location and target species. Build the blind or layout position.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">6:00a</div>
+          <div class="timeline-desc"><h4>Legal Shooting</h4><p>First light. The first 90 minutes is often the most productive. Calling, reading the wind, and working incoming flights.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">10:00a</div>
+          <div class="timeline-desc"><h4>Wrap Up</h4><p>Pick up decoys, count the bag, and head out. Clean birds and debrief over coffee.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="camo-divider"></div>
+
+<!-- ============================================ -->
+<!-- PREDATOR -->
+<!-- ============================================ -->
+
+<!-- COYOTE & BOBCAT -->
+<section class="sec camo-section" id="predator">
+  <div class="wrap">
+    <div class="species-section" style="direction:rtl">
+      <div style="direction:ltr">
+        <div class="species-img reveal" style="background-image:url('assets/images/misty-mountains.jpg')"></div>
+      </div>
+      <div class="species-content reveal" style="direction:ltr">
+        <div class="eyebrow">Predator Hunting</div>
+        <h2>Coyote &amp; Bobcat</h2>
+        <p>Predator hunting is the year-round option. When big game seasons close and the rivers are blown out, the Coast Range is still full of coyotes and bobcats that respond to electronic callers, hand calls, and decoys.</p>
+        <p>Coyotes are found throughout the Coast Range &mdash; in clear-cuts, meadow edges, and agricultural lowlands. They respond well to rabbit distress calls, pup distress, and coyote vocalizations. Electronic callers with remote speakers allow for hands-free calling and precise sound placement. Expect to set up at multiple stands per day, calling for 20&ndash;30 minutes at each before moving.</p>
+        <p>Bobcats are more elusive and require patience. They respond to rabbit and bird distress calls but come in slower and more cautiously than coyotes. Bobcat hunting is a long-game pursuit &mdash; fewer opportunities, but deeply satisfying when a cat commits to the call.</p>
+        <p>Oregon has no closed season and no bag limit on coyotes. Bobcat hunting requires a furbearer license. This is excellent off-season action and a great way to sharpen shooting skills.</p>
+
+        <div class="species-price">$275 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>Full Day</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;2 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>Year-Round (Coyote) &bull; Dec&ndash;Feb (Bobcat)</div>
+          <div class="species-meta-item"><span>Terrain</span>Clear-Cuts &amp; Meadows</div>
+          <div class="species-meta-item"><span>Method</span>E-Callers &amp; Decoys</div>
+          <div class="species-meta-item"><span>Tag</span>No Tag (Coyote) &bull; Furbearer License (Bobcat)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Predator Hunt')">Book Predator Hunt</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================ -->
+<!-- LOGISTICS & SHARED SECTIONS -->
+<!-- ============================================ -->
+
 <!-- WHAT'S INCLUDED -->
-<section class="sec sec-alt" id="included">
+<section class="sec sec-alt camo-stripe" id="included">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Logistics</div>
@@ -336,16 +667,17 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <li>Guided days in the field with Corey</li>
           <li>Access to private timber company land</li>
           <li>Scouting and pre-hunt reconnaissance</li>
-          <li>Field dressing and quartering assistance</li>
+          <li>Field dressing and quartering assistance (big game)</li>
           <li>Transport of game from field to vehicle</li>
           <li>Game bags and basic field processing gear</li>
+          <li>Decoys and e-callers (waterfowl &amp; predator)</li>
           <li>Local knowledge, decades deep</li>
         </ul>
       </div>
       <div class="info-card">
         <h4>What to Bring</h4>
         <ul>
-          <li>Rifle sighted in for 100&ndash;200 yards</li>
+          <li>Appropriate firearm/shotgun sighted in and patterned</li>
           <li>Quality rain gear (jacket, pants, gaiters)</li>
           <li>Sturdy waterproof boots (broken in)</li>
           <li>Layered clothing (wool or synthetic, no cotton)</li>
@@ -353,12 +685,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <li>Headlamp with fresh batteries</li>
           <li>Daypack with water and food</li>
           <li>Valid Oregon hunting license and tags</li>
+          <li>Waders (waterfowl &mdash; can be provided)</li>
         </ul>
       </div>
       <div class="info-card">
         <h4>Not Included</h4>
         <ul>
           <li>Oregon hunting license and tags</li>
+          <li>Federal duck stamp (waterfowl)</li>
           <li>Lodging and meals</li>
           <li>Taxidermy and meat processing</li>
           <li>Transportation to/from Lincoln County</li>
@@ -368,11 +702,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="info-card">
         <h4>Recommended Firearms</h4>
         <ul>
-          <li>.270 Win, .308 Win, or .30-06 for elk</li>
-          <li>.243 Win, 6.5 Creedmoor, or .270 for deer</li>
-          <li>Low-power variable scope (1-6x or 2-7x)</li>
-          <li>Practice at 50&ndash;150 yards, offhand and rest</li>
-          <li>Bring ammunition you've verified for accuracy</li>
+          <li><strong style="color:var(--text)">Elk:</strong> .270 Win, .308 Win, or .30-06</li>
+          <li><strong style="color:var(--text)">Deer/Bear:</strong> .243 Win, 6.5 Creedmoor, .270</li>
+          <li><strong style="color:var(--text)">Cougar:</strong> Same as deer, or .223 Rem</li>
+          <li><strong style="color:var(--text)">Turkey:</strong> 12 or 20 ga, turkey choke, #4&ndash;#6</li>
+          <li><strong style="color:var(--text)">Upland:</strong> 20 ga or .410, open choke</li>
+          <li><strong style="color:var(--text)">Waterfowl:</strong> 12 ga, steel shot, non-toxic</li>
+          <li><strong style="color:var(--text)">Predator:</strong> .223 Rem, .22-250, or 12 ga</li>
         </ul>
       </div>
     </div>
@@ -385,11 +721,13 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="max-width:800px">
       <div class="eyebrow">Be Prepared</div>
       <h2 class="big-title reveal">Physical<br>Requirements</h2>
-      <p class="subtitle reveal" style="margin-bottom:2rem">Coast Range hunting is physically demanding. The terrain is steep, wet, and unforgiving.</p>
-      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">A typical elk hunt day involves 5&ndash;10 miles of hiking over steep, uneven terrain with elevation gains of 1,000&ndash;2,500 feet. Trails are often animal paths &mdash; narrow, slippery, and cut into hillsides. Expect to climb, descend, cross creeks, push through brush, and do it all in rain.</p>
-      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">Blacktail hunts are less demanding but still require solid fitness. Expect 3&ndash;6 miles of walking over mixed terrain, with stretches of standing, glassing, and slow-stalking through thick cover.</p>
-      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8;margin-bottom:2rem"><strong style="color:var(--text)">Minimum fitness:</strong> You should be able to hike 6 miles with a 20-pound pack over hilly terrain without stopping. If you can't do that comfortably, start training at least 8 weeks before your hunt. Stair climbing, incline treadmill, and loaded hiking are the best preparation.</p>
-      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">If an animal goes down:</strong> Expect an additional 2&ndash;4 hours of hard physical work &mdash; field dressing, quartering, and packing meat out of steep timber. A bull elk can yield 250+ pounds of boneless meat. This is the hardest part of the hunt.</p>
+      <p class="subtitle reveal" style="margin-bottom:2rem">Physical demands vary by species. Here's what to expect.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">Elk (High):</strong> A typical elk hunt day involves 5&ndash;10 miles of hiking over steep, uneven terrain with elevation gains of 1,000&ndash;2,500 feet. Trails are often animal paths &mdash; narrow, slippery, and cut into hillsides. Expect to climb, descend, cross creeks, push through brush, and do it all in rain.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">Blacktail &amp; Bear (Moderate):</strong> Expect 3&ndash;6 miles of walking over mixed terrain, with stretches of standing, glassing, and slow-stalking through thick cover. Bear hunting involves longer sits at glassing points but can include steep approaches to feeding areas.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">Cougar (High):</strong> Similar demands to elk hunting. Cougar terrain is steep, and covering ground to find fresh sign requires endurance and sure footing.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">Turkey &amp; Upland (Low&ndash;Moderate):</strong> Turkey hunting involves walking to setup points and then sitting. Upland bird hunting is walk-up work &mdash; 3&ndash;5 miles at a moderate pace over variable terrain. Accessible to most fitness levels.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">Waterfowl &amp; Predator (Low):</strong> Minimal walking. Waterfowl involves wading to set decoys and sitting in a blind. Predator hunting is drive-to, set-up, call, and repeat. Both are accessible to all fitness levels.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8;margin-bottom:2rem"><strong style="color:var(--text)">If big game goes down:</strong> Expect an additional 2&ndash;4 hours of hard physical work &mdash; field dressing, quartering, and packing meat out of steep timber. A bull elk can yield 250+ pounds of boneless meat. A bear or deer is lighter but may still be in challenging terrain.</p>
     </div>
   </div>
 </section>
@@ -411,20 +749,31 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="info-card">
         <h4>Deer Tags &mdash; General Season</h4>
         <p>Columbian blacktail deer tags for western Oregon are available over the counter (OTC). No draw required.</p>
-        <p style="margin-top:.75rem"><strong style="color:var(--text)">Requirements:</strong><br>Oregon hunting license (resident or non-resident)<br>Western Oregon deer tag<br>Hunter education certificate<br>Federal migratory bird stamp (not required for deer)</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Requirements:</strong><br>Oregon hunting license (resident or non-resident)<br>Western Oregon deer tag<br>Hunter education certificate</p>
         <p style="margin-top:.75rem">Non-resident licenses and tags can be purchased online through ODFW's licensing system.</p>
+      </div>
+      <div class="info-card">
+        <h4>Bear, Cougar &amp; Turkey</h4>
+        <p>All three species have OTC tags available &mdash; no draw required. Black bear: one per calendar year. Cougar: one per calendar year, year-round season. Turkey: spring and fall seasons with separate bag limits.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Key rules:</strong><br>No hounds or bait for bear or cougar<br>Bear: must present skull for mandatory check<br>Cougar: must present skull and hide<br>Turkey: bearded birds only (spring)</p>
+      </div>
+      <div class="info-card">
+        <h4>Waterfowl &amp; Upland</h4>
+        <p>Waterfowl requires a federal duck stamp, state waterfowl validation, and HIP registration. Upland birds require only a standard hunting license. Band-tailed pigeons require a separate HIP registration.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Non-toxic shot:</strong> Required for all waterfowl. Steel shot is standard. Bismuth and tungsten are allowed alternatives.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Predator:</strong> Coyote &mdash; no closed season, no bag limit, hunting license only. Bobcat &mdash; furbearer license required, Dec&ndash;Feb season.</p>
       </div>
       <div class="info-card">
         <h4>Non-Resident Hunters</h4>
         <p>Oregon welcomes non-resident hunters. License and tag costs are higher than resident rates.</p>
-        <p style="margin-top:.75rem"><strong style="color:var(--text)">Approximate costs (non-resident):</strong><br>Hunting license: ~$168<br>Deer tag (OTC): ~$340<br>Elk tag (if drawn): ~$565<br>Hunter education: Required (reciprocal accepted)</p>
-        <p style="margin-top:.75rem">Rimewild provides guidance on the application and licensing process.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Approximate costs (non-resident):</strong><br>Hunting license: ~$168<br>Deer tag (OTC): ~$340<br>Elk tag (if drawn): ~$565<br>Bear tag: ~$271<br>Turkey tag: ~$35<br>Federal duck stamp: ~$25</p>
+        <p style="margin-top:.75rem">Rimewild provides guidance on the application and licensing process for all species.</p>
       </div>
       <div class="info-card">
         <h4>Legal Requirements</h4>
-        <p>All hunters must wear a minimum of one article of fluorescent hunter orange or fluorescent chartreuse during rifle seasons.</p>
-        <p style="margin-top:.75rem"><strong style="color:var(--text)">Required:</strong><br>Valid Oregon hunting license<br>Species-specific tag<br>Hunter education certificate<br>Photo ID in the field<br>Compliance with all ODFW regulations</p>
-        <p style="margin-top:.75rem">Corey briefs all hunters on current regulations, boundaries, and legal requirements before the hunt.</p>
+        <p>All hunters must wear a minimum of one article of fluorescent hunter orange or fluorescent chartreuse during rifle seasons (not required for archery, turkey, waterfowl, or predator).</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Required for all hunts:</strong><br>Valid Oregon hunting license<br>Species-specific tag or stamp<br>Hunter education certificate<br>Photo ID in the field<br>Compliance with all ODFW regulations</p>
+        <p style="margin-top:.75rem">Corey briefs all hunters on current regulations, boundaries, and legal requirements before every hunt.</p>
       </div>
     </div>
   </div>
@@ -443,11 +792,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">What if I don't draw an elk tag?<span class="faq-toggle">+</span></div>
-          <div class="faq-a">Your preference points accumulate. We can plan for the following year, or you can book a blacktail deer hunt instead &mdash; those tags are available over the counter with no draw required. Many hunters combine a deer hunt with an elk application strategy.</div>
+          <div class="faq-a">Your preference points accumulate. We can plan for the following year, or you can book a blacktail deer, bear, or turkey hunt instead &mdash; those tags are available over the counter with no draw required. Many hunters combine a deer or bear hunt with an elk application strategy.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">How close are the shots?<span class="faq-toggle">+</span></div>
-          <div class="faq-a">In Coast Range timber, most shots are 50&ndash;150 yards. Longer shots are rare &mdash; the terrain is too thick. Practice shooting from field positions (kneeling, using a tree rest) at these distances. A benchrest zero at 200 yards means nothing if you can't hit offhand at 80.</div>
+          <div class="faq-a">In Coast Range timber, most big game shots are 50&ndash;150 yards. Longer shots are rare &mdash; the terrain is too thick. Turkey and upland shots are under 40 yards with a shotgun. Practice shooting from field positions (kneeling, using a tree rest) at these distances.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Can I combine multiple species in one trip?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Absolutely. Fall is prime combo season &mdash; blacktail deer, black bear, and upland birds overlap in October and November. You can hunt deer in the morning and grouse in the afternoon. Contact us to build a custom combo trip.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">What happens if I harvest an animal?<span class="faq-toggle">+</span></div>
@@ -455,11 +808,15 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">Is archery hunting available?<span class="faq-toggle">+</span></div>
-          <div class="faq-a">Currently, Rimewild focuses on rifle season hunts. Archery elk hunting in coastal timber is extremely challenging due to the dense cover and limited visibility. If you're an experienced archery hunter, contact us to discuss options.</div>
+          <div class="faq-a">Currently, Rimewild focuses on rifle and shotgun hunts. Archery elk hunting in coastal timber is extremely challenging due to the dense cover and limited visibility. If you're an experienced archery hunter, contact us to discuss options.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">What about the rain?<span class="faq-toggle">+</span></div>
           <div class="faq-a">It rains on the Oregon Coast. A lot. October and November average 8&ndash;12 inches of rain each. Quality rain gear is non-negotiable. The upside: rain moves animals, muffles sound, and keeps casual hunters off the mountain. Some of the best hunting days are the wettest.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Can I bring my own bird dog?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Yes. Well-trained bird dogs are welcome and encouraged for upland hunts. Your dog should be steady to flush, responsive to commands, and comfortable working in thick, wet cover. Discuss breed and training level with Corey before the hunt.</div>
         </div>
         <div class="faq-item" onclick="this.classList.toggle('open')">
           <div class="faq-q">Where should I stay?<span class="faq-toggle">+</span></div>
@@ -475,14 +832,18 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 </section>
 
 <!-- FINAL CTA -->
-<section class="sec sec-alt" style="text-align:center">
+<section class="sec sec-alt camo-stripe" style="text-align:center">
   <div class="wrap">
     <div class="eyebrow eyebrow-center">Ready?</div>
     <h2 class="big-title reveal">Book Your<br>Hunt</h2>
-    <p class="subtitle reveal" style="margin-inline:auto;margin-bottom:3rem">Roosevelt elk and Columbian blacktail in Oregon's Coast Range. Guided by someone who was born on this ground.</p>
+    <p class="subtitle reveal" style="margin-inline:auto;margin-bottom:3rem">Eight species across Oregon's Coast Range. Guided by someone who was born on this ground.</p>
     <div class="reveal" style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
-      <button class="btn btn-gold" onclick="openBooking('Roosevelt Elk Hunt')">Book Elk Hunt</button>
-      <button class="btn btn-ghost" onclick="openBooking('Blacktail Deer Hunt')">Book Deer Hunt</button>
+      <button class="btn btn-gold" onclick="openBooking('Roosevelt Elk Hunt')">Elk Hunt</button>
+      <button class="btn btn-ghost" onclick="openBooking('Blacktail Deer Hunt')">Deer Hunt</button>
+      <button class="btn btn-ghost" onclick="openBooking('Black Bear Hunt')">Bear Hunt</button>
+      <button class="btn btn-ghost" onclick="openBooking('Spring Turkey Hunt')">Turkey Hunt</button>
+      <button class="btn btn-ghost" onclick="openBooking('Waterfowl Hunt')">Waterfowl</button>
+      <button class="btn btn-ghost" onclick="openBooking('Predator Hunt')">Predator</button>
     </div>
   </div>
 </section>
@@ -492,9 +853,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div class="wrap">
     <div class="footer-top">
       <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
-      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
-      <div><h5>Hunting</h5><ul class="footer-links"><li><a href="#elk">Roosevelt Elk</a></li><li><a href="#blacktail">Blacktail Deer</a></li><li><a href="#included">What's Included</a></li><li><a href="#regulations">Regulations</a></li><li><a href="#faq">FAQ</a></li></ul></div>
-      <div><h5>Explore</h5><ul class="footer-links"><li><a href="rivers.html">The Rivers</a></li><li><a href="index.html#calendar">Availability</a></li><li><a href="index.html#guide">Meet Corey</a></li><li><a href="reports.html">Reports</a></li></ul></div>
+      <div><h5>Big Game</h5><ul class="footer-links"><li><a href="#elk">Roosevelt Elk</a></li><li><a href="#blacktail">Blacktail Deer</a></li><li><a href="#bear">Black Bear</a></li><li><a href="#cougar">Cougar</a></li></ul></div>
+      <div><h5>Birds &amp; Predator</h5><ul class="footer-links"><li><a href="#turkey">Wild Turkey</a></li><li><a href="#upland">Upland Birds</a></li><li><a href="#waterfowl">Waterfowl</a></li><li><a href="#predator">Coyote &amp; Bobcat</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="fishing.html">Fishing</a></li><li><a href="rivers.html">The Rivers</a></li><li><a href="index.html#calendar">Availability</a></li><li><a href="index.html#guide">Meet Corey</a></li><li><a href="reports.html">Reports</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
   </div>
@@ -514,12 +875,12 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Hunt</h2>
       <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your hunt within 48 hours.</p>
       <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
-        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option></select></div></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Cougar Hunt">Cougar Hunt &mdash; Contact for Pricing</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $350/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $325/hunter</option><option value="Predator Hunt">Predator/Varmint Hunt &mdash; $275/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option><option value="3">3 hunters</option><option value="4">4 hunters</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
-        <div class="form-group"><label class="form-label" for="bTag">Do you have your tag?</label><select class="form-input" id="bTag"><option value="yes">Yes &mdash; tag in hand</option><option value="drawn">Applied / awaiting draw</option><option value="no">No &mdash; need guidance</option><option value="otc">Deer (OTC, will purchase)</option></select></div>
-        <div class="form-group"><label class="form-label" for="bNotes">Experience &amp; Notes</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Hunting experience, fitness level, any questions..."></textarea></div>
+        <div class="form-group"><label class="form-label" for="bTag">Do you have your tag?</label><select class="form-input" id="bTag"><option value="yes">Yes &mdash; tag in hand</option><option value="drawn">Applied / awaiting draw</option><option value="no">No &mdash; need guidance</option><option value="otc">Will purchase OTC tag</option></select></div>
+        <div class="form-group"><label class="form-label" for="bNotes">Experience &amp; Notes</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Hunting experience, fitness level, species interest, any questions..."></textarea></div>
         <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Request This Hunt</button>
       </form>
     </div>
