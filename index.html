@@ -88,7 +88,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 }
 
 /* ===== HERO ===== */
-.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(100px,15vh,160px) 0 clamp(60px,10vh,120px);position:relative;overflow:hidden}
+.hero{min-height:100vh;min-height:100dvh;display:flex;flex-direction:column;justify-content:flex-end;padding:clamp(140px,18vh,200px) 0 clamp(60px,10vh,120px);position:relative;overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-overlay{position:absolute;inset:0;z-index:1;background:
   linear-gradient(180deg,rgba(10,14,12,.3) 0%,rgba(10,14,12,0) 25%,rgba(10,14,12,0) 40%,rgba(10,14,12,.5) 65%,rgba(10,14,12,.95) 85%,var(--bg) 100%)}
@@ -294,7 +294,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 /* ===== BLOG ===== */
 .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
 @media(max-width:768px){.blog-grid{grid-template-columns:1fr}}
-.blog-card{border:1px solid var(--border);overflow:hidden;transition:all .4s;cursor:pointer}
+.blog-card{display:block;text-decoration:none;color:inherit;border:1px solid var(--border);overflow:hidden;transition:all .4s;cursor:pointer}
 .blog-card:hover{background:var(--bg-card)}
 .blog-card-visual{height:220px;background-size:cover;background-position:center;transition:transform .6s}
 .blog-card:hover .blog-card-visual{transform:scale(1.05)}
@@ -1040,9 +1040,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <h2 class="big-title reveal">From the<br>Field</h2>
     <p class="subtitle reveal" style="margin-bottom:3rem">River conditions, what's running, and on-the-ground observations.</p>
     <div class="blog-grid reveal">
-      <div class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Siletz River Report &mdash; Late September</h3><p>Fall chinook are showing in good numbers. Water dropping into shape after recent rain.</p></div></div>
-      <div class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">How-To</div><h3>Winter Steelhead Fishing on the Siletz: A Complete Guide</h3><p>Everything you need to know about targeting winter steelhead on Oregon's Central Coast.</p></div></div>
-      <div class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">Seasonal</div><h3>What's Running in October: Central Coast</h3><p>Fall chinook hitting their stride, blacktail deer season opening.</p></div></div>
+      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Siletz River Report &mdash; Late September</h3><p>Fall chinook are showing in good numbers. Water dropping into shape after recent rain.</p></div></a>
+      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">How-To</div><h3>Winter Steelhead Fishing on the Siletz: A Complete Guide</h3><p>Everything you need to know about targeting winter steelhead on Oregon's Central Coast.</p></div></a>
+      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">Seasonal</div><h3>What's Running in October: Central Coast</h3><p>Fall chinook hitting their stride, blacktail deer season opening.</p></div></a>
     </div>
     <div style="text-align:center;margin-top:3rem"><a href="reports.html" class="btn btn-ghost">View All Reports</a></div>
   </div>
