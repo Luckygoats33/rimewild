@@ -35,7 +35,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -46,8 +46,8 @@
   --camo-1:#2d3328;--camo-2:#3b4a34;--camo-3:#1e2819;--camo-4:#4a5340;--camo-5:#5c6b4f;
   --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
   --shadow:0 20px 60px rgba(0,0,0,.4);
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Crimson Pro',Georgia,serif;
+  --font-body:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;
   color-scheme:dark;
 }
 body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -196,6 +196,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 @media(max-width:480px){.nav-logo img{height:50px!important}}
 @media(max-width:360px){.nav-logo img{height:44px!important}}
   </style>
+  <link rel="stylesheet" href="assets/design.css">
 </head>
 <body>
 
@@ -228,15 +229,14 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- FEATURED ARTICLE -->
 <section class="sec" style="padding-top:0">
   <div class="wrap">
-    <div class="featured-article reveal" id="featured-article" onclick="openArticle('fall-chinook-sept')">
+    <div class="featured-article reveal" id="featured-article" onclick="openArticle('fall-chinook-three-rivers')">
       <div class="featured-article-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div>
       <div class="featured-article-body">
         <div class="eyebrow eyebrow-sm">Latest Report</div>
-        <span class="date">September 22, 2026</span>
-        <h2>Fall Chinook Report &mdash; Late September 2026</h2>
-        <p>Water levels dropping into shape after last week's rain. The Siletz is running at 340 cfs, clear with a slight green tint. Chinook are pushing through the lower river in solid numbers &mdash; we're seeing fish from the Ojalla drift down to Moonshine County Park.</p>
-        <p>The Alsea is fishing even better right now. Fish are stacking up in the tide water and pushing through the deadline with each incoming tide. We've been running plugs and pulling K-15 Kwikfish in metallic green...</p>
-        <span style="font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.5rem;display:inline-block">Read Full Report &rarr;</span>
+        <span class="date">September 23, 2026</span>
+        <h2>Fall Chinook on the Siletz, Alsea, and Siuslaw</h2>
+        <p>Late September is the week the three Central Coast chinook rivers stop fishing like the same river. Here is how to choose water, tide, and technique.</p>
+        <span class="read-more">Read Full Report &rarr;</span>
       </div>
     </div>
 
@@ -296,7 +296,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Rimewild<br>Experience</h2>
       <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your trip within 24 hours.</p>
       <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option>Winter Steelhead Drift &mdash; $395/angler</option><option>Fall Chinook Salmon &mdash; $395/angler</option><option>Summer Steelhead &mdash; $375/angler</option><option>Cutthroat &amp; Trout &mdash; $295/angler</option><option>Bank &amp; Wade Fishing &mdash; $275/angler</option><option>Family &amp; Beginner &mdash; $350/group</option><option>Half-Day Fishing &mdash; $275/angler</option><option>Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option>Blacktail Deer Hunt &mdash; $1,800/hunter</option><option>Private / Custom Experience</option></select></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $250/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $4,500/hunter, multi-day</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $3,200/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,800/hunter</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $450/hunter</option><option value="Predator Hunt">Predator Hunt &mdash; $275/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $350/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5+">5+ (group)</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
@@ -310,6 +310,155 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </div>
 
+<!-- Field guides inlined from assets/extra-articles.json -->
+<script type="application/json" id="extra-articles">
+[
+  {
+    "id": "fall-chinook-three-rivers",
+    "cat": "river",
+    "img": "assets/images/oregon-river.jpg",
+    "title": "Fall Chinook on the Siletz, Alsea, and Siuslaw",
+    "excerpt": "Late September is the week the three Central Coast chinook rivers stop fishing like the same river. Here is how to choose water, tide, and technique.",
+    "date": "September 23, 2026",
+    "content": "<h3>Late September, river by river</h3>\n<p>By the last week of September the fall chinook push is no longer a rumor. Fish are in the estuaries and the first real schools are above tidewater on the Siletz and the Alsea. The Siuslaw is usually a step behind those two, which is useful: when the north rivers are crowded or high, Florence still has a tidewater bite coming.</p>\n<p>Treat this as a conditions choice, not a loyalty choice. A guided day with Rimewild is <strong>$395 per angler</strong> and we will move rivers if the gauge says to. Your Oregon fishing license, Combined Angling Tag, and Hatchery Harvest Tag (if you plan to keep a fin-clipped fish) are separate and bought through ODFW.</p>\n<h3>Siletz: green water and plug water</h3>\n<p>The Siletz comes off a rain faster than people expect and greens up into the color chinook like. In a late-September window like the one after a mid-month rise, look for a dropping river, a couple feet of visibility, and fish sliding through the Logsden-to-Siletz corridor. Drift boats cover the Ojalla reach down toward Moonshine Park. Bank anglers do fine on the gravel below Ojalla Bridge and at Morgan Park when the flow is wadeable.</p>\n<p>What is working in this kind of water is a <strong>Kwikfish or Mag Lip wrapped with a sardine strip</strong>, back-trolled through the gut of the run, plus a bobber and 3/8-ounce jig in the softer tailouts. Chartreuse, metallic green, and a plain gold plug outfish subtle colors once the river has any tint. If you can see the bottom in four feet of water, drop jig size and go more natural. If you cannot see your boots, stay with bait scent and a larger profile.</p>\n<h3>Alsea: tidewater first, highway holes second</h3>\n<p>The Alsea is the bank angler's chinook river because Highway 34 shadows the water from the valley to Waldport. In September the most consistent fishing is still the incoming tide at the deadline and the first few bends above it. Fish stack, move on the push, and then sulk in the deeper outside bends when the tide falls.</p>\n<p>Spinners — a size 5 blue or chartreuse Vibrax is the local default — and bait under a float both work from shore when you can reach the seam. From the boat, the same plug program used on the Siletz works, but the Alsea's longer pools let you repeat a drift. Mike Bauer ramp near Tidewater, Missouri Bend, and the pull-offs along 34 are the practical access. Do not assume a gravel bar is public; if it is not an obvious park or right-of-way, ask or move on.</p>\n<h3>Siuslaw: patience in a long estuary</h3>\n<p>The Siuslaw enters a wide, slow estuary at Florence. Chinook mill there. They do not sprint upstream on the first shower. Plan on the bite turning on after the second or third September rise, often a week or two after the Siletz looks busy. Until then, tidewater trolling and anchor fishing from Mapleton down toward Cushman outproduce a blind drift of the upper river.</p>\n<p>Herring or an anchovy behind a flasher on the moving tide, and a plug or bait on anchor when the current lays down, are the two setups. Watch the tide book more than the clock. The middle two hours of the incoming and the first hour of the outgoing move fish. Slack tide is for moving the boat, not for grinding the same spot.</p>\n<h3>How to pick a day this week</h3>\n<p>Read three gauges before you drive: <strong>Siletz at Siletz, Alsea near Tidewater, and Siuslaw near Mapleton</strong>. You want a river that rose and is now dropping, with color going from brown to green, not a river still climbing. If all three are blown, book a later date or fish a shorter tidewater session rather than forcing chocolate water.</p>\n<ul>\n<li><strong>Best Siletz sign:</strong> dropping flow, green tint, plugs taken on the outside bend.</li>\n<li><strong>Best Alsea sign:</strong> incoming tide, baitfish dimpling, fish rolling at the deadline.</li>\n<li><strong>Best Siuslaw sign:</strong> a fresh rise that has started to fall, and boats actually bent over in the estuary.</li>\n</ul>\n<p>Another coastal system is on the way most late-September weeks. The day it is dumping is a scouting day. The two days after, as it drops back into shape, are the days to be on the water. If you want that window with a boat and the tackle already rigged, book the chinook trip and tell us whether you prefer to fish from the boat or the bank.</p>"
+  },
+  {
+    "id": "siletz-fall-chinook",
+    "cat": "river",
+    "img": "assets/images/fish-catch.jpg",
+    "title": "Fall Chinook Salmon Fishing on the Siletz River",
+    "excerpt": "Run timing, tidewater versus upper river, plug and bobber setups, and the drifts that actually produce from August through November.",
+    "date": "September 21, 2026",
+    "content": "<h3>When the Siletz chinook run shows up</h3>\n<p>Fall chinook start nosing into Siletz Bay in August. The fishing that feels like a run, rather than a few scouts, builds through September and usually peaks in October. November is the overlap month: late salmon in the lower river and the first winter steelhead sliding in behind them. Exact timing moves with rain. A dry September holds fish in the estuary. A wet one walks them up through the canyon early.</p>\n<p>Hatchery returns matter here. Fin-clipped fish are the ones you may be allowed to keep, and the rules change. Before you unhook anything you might want to put on ice, read the current Siletz entry in the ODFW regulations. Rimewild fishes this as a <strong>$395 per angler</strong> full day. The license and tags are yours to buy.</p>\n<h3>Tidewater versus the upper river</h3>\n<p>Below the town of Siletz and out toward Kernville, the river feels the tide. Fish mill, push on the flood, and drop back on the ebb. Trolling a bait or plug through the traveling lanes, or anchoring a bend and letting scent work, beats casting at random into the middle.</p>\n<p>Above tidewater the river becomes a series of runs, tailouts, and boulder slots. This is drift-boat water from the Ojalla area downstream. Chinook hold where the current slows against a deep outside bend, at the head of a tailout, and in the soft water just downstream of a ledge. They are not spread evenly. If a drift does not show a fish in twenty minutes of a properly presented plug, move.</p>\n<h3>The two setups that cover most days</h3>\n<p><strong>Plugs.</strong> A K-14 or K-15 Kwikfish, or a Mag Lip in a similar size, in metallic green, chartreuse, or gold. Wrap a sardine or anchovy fillet so the plug leaves a scent lane. Back-troll just fast enough that the plug hunts and does not spin out. Rods stay in holders until a rod loads — then you clear the other rods and fight the fish.</p>\n<p><strong>Bobber and jig.</strong> A Cheater or other sliding float, a 3/8-ounce jig in pink, chartreuse, or a natural prawn color, set so the jig travels a foot or two above the rocks. Cast upstream at 45 degrees, mend, and watch the float. Chinook often stop the float rather than yank it under. This is also the best bank technique when you can reach the seam and the boat traffic is heavy.</p>\n<h3>Drifts and pull-outs</h3>\n<p>A practical boat day uses public ramps and does not depend on private bar access. Moonshine Park, the Siletz area, and the upper pull-outs around Ojalla are the names to know. Flows that are comfortable to row and still deep enough to hold fish are the goal. If the gauge is screaming upward, do not launch because yesterday was good. The Siletz can dirty and rise in a few hours.</p>\n<p>Bank anglers should pick one or two holes and fish them well instead of hopping every turnout. Give boats the line. A drift boat working downstream has limited steering room. Step back, let them pass, and resume.</p>\n<h3>Keeping fish, releasing fish</h3>\n<p>Assume a wild fish goes back until you have checked today's rule for that exact reach. A missing adipose fin means a hatchery fish. Photograph fish you release in the water, with wet hands, and do not drag them onto the gravel for a hero shot. Chinook in the upper 20s and 30s are common enough on a good tide that you do not need to kill the wrong fish to have a story.</p>\n<p>If you are booking your first Siletz chinook day, say so. We will put you on the plug rods or the float rod that matches the morning's color, and we will not pretend a blown river is worth the drive.</p>"
+  },
+  {
+    "id": "siuslaw-fall-chinook",
+    "cat": "river",
+    "img": "assets/images/foggy-forest.jpg",
+    "title": "Siuslaw River Fall Chinook: When, Where, and How",
+    "excerpt": "The Siuslaw chinook run is later and quieter than the Siletz. Tidewater tactics from Mapleton to Florence, plus the gear that matches the estuary.",
+    "date": "September 20, 2026",
+    "content": "<h3>A later run, on purpose</h3>\n<p>The Siuslaw does not fish on the Siletz calendar. Fall chinook enter a long, tidal river and they take their time between Florence and Mapleton. Early fish show in late summer. The reliable push often waits for September rain and keeps going into November. If you drive to Florence in the first dry week of September expecting upper-river plug fishing, you will mostly see cutthroat water and a lot of estuary.</p>\n<p>That lag is the feature. When the Alsea and Siletz are high and brown, the Siuslaw estuary can still be fishable on the tide. Fewer boats, more seals and eagles, and a chinook fishery that rewards people who read a tide table.</p>\n<h3>Tidewater trolling versus sitting on anchor</h3>\n<p>On a moving tide, troll. A herring or anchovy rig, a small flasher if the water is stained, and a speed just fast enough to keep the bait spinning covers the traveling lanes from the Cushman stretch toward Florence and up toward Mapleton as fish commit. Change depth before you change bait. Chinook in the estuary are often a few feet shallower or deeper than where you started.</p>\n<p>When the current softens, anchor on a bend or a channel edge and fish bait or a plug downstream. This is closer to river fishing. Give each anchor twenty to thirty minutes. If you are not getting bumped, the fish are in the next slot, not ignoring your bait out of spite.</p>\n<h3>Where to be on the map</h3>\n<p>Florence is the base. Old Town puts you near food, fuel, and the lower bay. Mapleton is the upriver gate, with ramp access and the start of the river road. Between them, the water changes from bay to river. Fish the transition on the incoming tide. Fish the river bends once a rise has pushed salmon out of the salt.</p>\n<p>Public ramps and county or federal sites are the plan. Whittaker Creek and the other signed recreation sites upriver are for the days the river has fish in it and the flow is safe, not for the first scout of the season.</p>\n<h3>Tackle that matches the water</h3>\n<p>Bring, or expect the guide to rig, a rod with enough backbone to turn a 20-pound fish in current. Braid in the 30- to 50-pound range with a fluorocarbon leader is standard for trolling and anchor fishing. Plugs in the same metallic and chartreuse colors used on the Alsea work once you are truly in the river. Spinners are a bank tool where you can cast to a seam without hanging the far trees.</p>\n<p>Tide influence is the whole game. Incoming water often pulls fish upstream and turns the bite on. The outgoing can pile bait and create a second window. Dead slack is your move time. A phone tide app for Florence, checked the night before, is worth more than another box of unused plugs.</p>\n<h3>Regulations and a realistic day</h3>\n<p>Siuslaw salmon rules are not the Siletz rules. Bag limits, fin-clip requirements, and any emergency closures are in the current ODFW synopsis and can change in-season. Check the morning you fish. Rimewild's fall chinook day is <strong>$395 per angler</strong>, gear included, license not included.</p>\n<p>A good Siuslaw day in late September might be a handful of fish seen and one or two hooked, not a limit every trip. The river is worth it for the quiet and for the fish that show after the coast gets its first real soaker. Book it when the forecast shows that soaker, then fish the drop.</p>"
+  },
+  {
+    "id": "alsea-river-guide",
+    "cat": "river",
+    "img": "assets/images/river-canyon.jpg",
+    "title": "Alsea River Fishing Guide: Salmon, Steelhead, and Access",
+    "excerpt": "From Alsea Bay to the valley, the species calendar, five bank spots, boat ramps, and how the river fishes differently from the Siletz.",
+    "date": "September 18, 2026",
+    "content": "<h3>Why the Alsea is the access river</h3>\n<p>Highway 34 follows the Alsea from the Coast Range to Waldport. That single fact explains the fishery. You can see the river, park near it, and fish a lot of it without owning a boat. The Siletz is a canyon with selected gates. The Alsea is a roadside river with a serious salmon and steelhead run. Both deserve a guided day. They do not deserve the same plan.</p>\n<p>Fall chinook run roughly August through November, with September and October the heart of it. Winter steelhead follow from December into March, with a hatchery component that gives bank anglers a realistic chance. Coastal cutthroat show in the upper river and the cooler tributaries from late spring through early fall. Coho ride the same fall window as chinook and are often under tighter harvest rules. Confirm every one of those seasons in the current synopsis before you keep a fish.</p>\n<h3>Five places bank anglers actually use</h3>\n<ul>\n<li><strong>Alsea Bay and the lower tidewater at Waldport.</strong> Incoming tide, baitfish, and chinook that have not committed to the river yet. Also the practical base for food and lodging.</li>\n<li><strong>The deadline area above tidewater.</strong> Where moving fish pause. Fish the push, not the slack.</li>\n<li><strong>Mike Bauer ramp near Tidewater.</strong> A known public ramp with bank water on either side when flows allow. A fair meeting point for a boat day.</li>\n<li><strong>Missouri Bend.</strong> Recreation-site access with enough room to spread out. Better when the river is not in the trees.</li>\n<li><strong>Five Rivers and the upper highway pull-offs.</strong> Cooler water, more cutthroat in summer, and steelhead holding in defined runs in winter. Walk in, fish a seam, and leave the gravel cleaner than you found it.</li>\n</ul>\n<p>These are starting points, not private spots. Other anglers will be there on a Saturday in October. Fish through, do not rope off a hole, and rotate if someone was there first.</p>\n<h3>Boat logistics</h3>\n<p>A drift from an upper ramp to a lower ramp covers more steelhead and chinook water than any single bank hole. The Alsea is rowable for a guide who knows the wood. It is a poor place to experiment with a borrowed raft at high water. Winter wood moves. If you are new to the river, the guided drift is the way to learn which bends are bends and which bends are strainers.</p>\n<p>Rimewild runs the Alsea as part of the fall chinook and winter steelhead days at <strong>$395 per angler</strong>. A bank-and-wade day, if you specifically want to learn shore techniques, is <strong>$275 per angler</strong>. Half days are <strong>$250 per angler</strong> when the bite is concentrated enough to justify a shorter session, usually a tide or a morning steelhead push.</p>\n<h3>Water character through the year</h3>\n<p>Summer is low, clear, and warm in the lower river by afternoon. Fish early. Fall rains wake the chinook and stain the river for a day or two, then it greens. Winter is a cycle of rise, blowout, and drop. The Alsea can be fishable on the bank when the Siletz is still too high to row, which is why we watch both gauges. The Alsea near Tidewater gauge is the one to learn. Pair it with a three-day rain forecast, not a single number.</p>\n<h3>How it differs from the Siletz</h3>\n<p>The Siletz gets more of a canyon steelhead reputation and more drift-boat pressure on its best winter days. The Alsea gives a beginner a fair chance from shore and a very good chinook tide. If your group includes a new angler and a patient angler, start on the Alsea. If everyone can cast and you want classic plug and jig steelhead water, we will talk about the Siletz once December is here.</p>"
+  },
+  {
+    "id": "yaquina-fishing-guide",
+    "cat": "river",
+    "img": "assets/images/drift-boat.jpg",
+    "title": "Fishing the Yaquina River and Bay: A Local's Guide",
+    "excerpt": "Newport's bay and the Yaquina upstream from Toledo: chinook, steelhead, perch, and crab, and when each one is actually the point of the day.",
+    "date": "September 17, 2026",
+    "content": "<h3>Two fisheries sharing one name</h3>\n<p>People say \"the Yaquina\" and mean the bay at Newport, the river at Toledo, or the narrower water upstream toward Elk City. Those are different trips. The bay is tide, crab, perch, and salmon that are still thinking about the ocean. The river is a smaller coastal stream with fall chinook and a winter steelhead run that never gets the attention of the Siletz. Both are worth knowing if Newport is your base.</p>\n<h3>The bay: crab, perch, and a salmon tide</h3>\n<p>Yaquina Bay is a working harbor. Fish it like one. Crab pots or rings from a pier or a boat produce Dungeness when the season is open — check the current marine regulations, which are not the same document as the river synopsis. Bay perch are the honest family fishery: light tackle, a simple rig, and fish that cooperate when the tide is moving.</p>\n<p>Fall chinook use the bay as a hallway. Trolling herring or anchovy on a moving tide is the usual approach, the same idea as Siuslaw tidewater and not the same as plugging a steelhead run. Mornings with a building tide and some cloud cover outfish a bright afternoon slack. Newport's bayfront is the logistics hub: bait, ice, and a ramp.</p>\n<h3>Upriver: Toledo to Elk City</h3>\n<p>Above the bay the river narrows. Fall chinook push through after rain, and winter steelhead hold in a smaller set of runs than on the Alsea. Bank access exists but it is patchier. A lot of the shoreline is private. Use signed public access and do not cross a fence because the water looks good.</p>\n<p>Techniques shrink with the river. Bobber and jig, a small spinner, and bait drifted along a seam cover it. You do not need a wall of plugs. You need a quiet approach and a gauge check. The Yaquina rises and falls quickly. If it looks like chocolate milk at the bridge in Toledo, go drink coffee in Newport and crab or walk the bayfront instead of forcing it.</p>\n<h3>A Newport base camp</h3>\n<p>Newport sits between the Yaquina and the roads north to the Siletz and south to the Alsea. That makes it a practical headquarters for a multi-day trip even when the day's fishing is not on the Yaquina at all. We will meet at a ramp closer to the river we choose. Staying in Newport still works if you do not mind a dawn drive.</p>\n<p>Lodging, the aquarium, and the working bay are the non-fishing reasons families pick Newport. If the group includes non-anglers, this is an easier town than a cabin up the Siletz.</p>\n<h3>What to book</h3>\n<p>A focused river day — chinook or steelhead — is the standard guided trip at <strong>$395 per angler</strong> in those seasons. If the better plan is a shorter session because of tide or because half the group wants the afternoon in town, a half day is <strong>$250 per angler</strong>. Crabbing and perch from public piers are things you can do without a guide; we would rather spend the guided hours on the salmon or steelhead water that is actually in shape.</p>\n<p>Licenses for finfish in the bay and the river still come from ODFW, and shellfish have their own license. Buy both before you assume one card covers the cooler.</p>"
+  },
+  {
+    "id": "siuslaw-river-guide",
+    "cat": "river",
+    "img": "assets/images/fishing-river.jpg",
+    "title": "Fishing the Siuslaw: Steelhead, Salmon, and Sea-Run Cutthroat",
+    "excerpt": "A full-river picture of the Siuslaw, from the estuary at Florence to the upper river road: species, seasons, and access that is actually public.",
+    "date": "September 15, 2026",
+    "content": "<h3>The shape of the river</h3>\n<p>The Siuslaw drains a wet piece of the Coast Range and meets the Pacific at Florence. The lower river is wide and tidal. Above Mapleton it becomes a clearer, smaller river under alder and fir, with cutthroat in the summer and steelhead holding in obvious pools in the winter. Most visitors only see the bridge at Florence. The fishing is in the transition and upstream.</p>\n<h3>Fall chinook and the estuary clock</h3>\n<p>Chinook are the headline from late summer into November, and they are an estuary fish first. Read the companion notes on tidewater trolling and anchor fishing, and do not skip ahead to the upper river until a rise has moved fish. Mapleton is the mental line: below it, think tide; above it, think river, and only after the fish have a reason to leave the salt.</p>\n<h3>Winter steelhead</h3>\n<p>Steelhead follow the rains from late fall into early spring. The Siuslaw does not have the reputation of the Siletz, which means you share it with fewer boats. Hatchery fish are the retention opportunity when the rules allow; unclipped fish should be treated as wild and released unless you have personally confirmed a different rule that day. The upper river road and the signed sites give you defined pools. Fish the tailout and the soft edge of the bubble line. A bobber and jig or a drift rig with eggs or a shrimp both fit this water.</p>\n<p>Flows at the Mapleton gauge tell you if the day is a boat day, a bank day, or a Florence-coffee day. Rising and dirty is the coffee. Dropping and green is the fishing.</p>\n<h3>Sea-run cutthroat in the warm months</h3>\n<p>Before the chinook, the Siuslaw is a cutthroat river. Sea-run fish move into the estuary and the lower river, and resident fish hold in the cooler upper pools. Small spinners, a light fly rod, and evening dry flies around shaded banks are enough. This is the trip we point families toward, and it is the trip that teaches water reading without a 15-pound fish punishing every mistake. Cutthroat and trout days are <strong>$295 per angler</strong>, or a family group rate of <strong>$350 for the group</strong> when the point is a patient day rather than a salmon grind.</p>\n<h3>Access without guessing</h3>\n<p>Use Florence for the bay, Mapleton for the middle river, and the Siuslaw River Road recreation sites — Whittaker Creek among them — for the upper water. Parking is obvious at the developed sites and informal at some pull-outs. If you are blocking a gate or sitting on an unmarked driveway, you are in the wrong place. Summer trails can be lined with poison oak. Long pants are not optional just because the weather is warm.</p>\n<p>The Siuslaw rewards a two-day plan: estuary or bay on the tide, upper river early the next morning. Stay in Florence, eat in Old Town, and let the gauge pick which half of the plan leads.</p>"
+  },
+  {
+    "id": "winter-steelhead-prep",
+    "cat": "howto",
+    "img": "assets/images/hero-river.jpg",
+    "title": "Winter Steelhead Prep: What to Do Before December",
+    "excerpt": "The run starts before most people book. A practical checklist for gear, regulations, fitness, and picking dates on the Siletz and Alsea.",
+    "date": "September 14, 2026",
+    "content": "<h3>Book the season, not a random Saturday</h3>\n<p>Winter steelhead on the Central Coast run from about November into April, with January and February the most consistent on the Siletz and the Alsea. The first fish in November are a bonus, not a plan. If you want a guided drift, the dates that disappear are the weekends in January after a modest rain. Start that conversation in the fall.</p>\n<p>A full-day winter steelhead drift is <strong>$395 per angler</strong> for one to three people. You are paying for the boat, the tackle, the rain gear if you need it, and a day of decisions about which river is in shape. You are not paying for a guaranteed fish. Anyone who promises a limit in a steelhead ad is selling a different river than the one we fish.</p>\n<h3>What to have handled before you meet at the ramp</h3>\n<ul>\n<li><strong>License and tags.</strong> Oregon angling license, Combined Angling Tag, and the free Hatchery Harvest Tag if keeping a fin-clipped fish is even a possibility. Buy them on MyODFW before you lose cell service in the canyon. Fees change; the state site is the price list, not a blog.</li>\n<li><strong>Clothing.</strong> Wool or synthetic base layer, a fleece, a real rain jacket, a warm hat, and gloves you can fish in. Cotton sweatshirts fail by 9 a.m. We have spare rain gear. We do not have a closet of boots in every size, so bring footwear you can stand in.</li>\n<li><strong>Food.</strong> Lunch, a sweet snack, and water. A steelhead day is eight to ten hours. The fishing slump at noon is worse if you are hungry.</li>\n<li><strong>A small bag.</strong> The boat is not a gear locker. Leave the tackle shop at home. We rig the rods.</li>\n</ul>\n<h3>The skills worth practicing</h3>\n<p>You do not need to be a steelhead angler already. You do need to be able to feel a weight tick bottom and to set the hook without ripping the rod into the next county. If you have a spinning rod, practice casting a 1/4-ounce weight in a field. If you have never fished, say that when you book. We would rather start you on a float than hand you a drift rod and watch you fight the line all morning.</p>\n<p>Reading water is the skill the day is actually for. Steelhead sit in walking-speed current with a nearby cushion: the tailout, the seam where fast meets slow, the bucket behind a boulder. We will point at those spots until you can point at them yourself.</p>\n<h3>Know the release rule before you touch a fish</h3>\n<p>On the coastal rivers we fish, plan to release any steelhead with an intact adipose fin. That fin, the small one on the back behind the dorsal, is removed from most hatchery fish. No fin, and the fish may be a keeper if the river is open for hatchery retention that day. Fin present, the fish goes back. Barbless hooks are the standard in these fisheries. Pinch them anyway. A photo happens with the fish in the water, in a few seconds, or it does not happen.</p>\n<h3>Weather and a backup river</h3>\n<p>Coastal rain is the season. We fish in it. We do not fish flooded, dangerous water, and we will move you or reschedule if the river we planned is out of shape. Watch the Siletz and Alsea gauges the week of your trip, but do not cancel yourself because one number looks high. That is the guide's call, and it is easier to make if your dates have a little flex.</p>\n<p>Pack for 40 degrees and rain even if the city forecast says 48 and cloudy. The ramp at dawn is a different climate than Newport at noon.</p>"
+  },
+  {
+    "id": "steelhead-month-by-month",
+    "cat": "seasonal",
+    "img": "assets/images/misty-mountains.jpg",
+    "title": "Oregon Coast Steelhead Season, Month by Month",
+    "excerpt": "From the first November fish to the last fish in spring: which river leads, how the water changes, and when summer steelhead take over.",
+    "date": "September 12, 2026",
+    "content": "<h3>November: scouts and leftover salmon</h3>\n<p>November is a hinge. Late fall chinook are still in the lower Siletz, Alsea, and Siuslaw, and the first winter steelhead show up behind them, usually after a series of rains. Do not plan a pure steelhead trip around the first week of the month unless you like salmon fishing that might include a bright hen. Do plan it if you want to be early and you can accept a quiet day. The rivers are less crowded than they will be in January.</p>\n<h3>December: the run becomes real</h3>\n<p>December is when the season stops being theoretical. Fresh fish enter on each storm. Holiday weeks can be busy at the ramps and empty on a random Tuesday. Water is cold, days are short, and the best fishing is often the middle of the day once the frost lifts, not the frozen first light people copy from summer trout articles. Eggs, shrimp, and jigs all work. Color follows clarity: brighter in the stain, smaller and more natural as the river clears.</p>\n<h3>January and February: the peak</h3>\n<p>These are the months to book if you get one shot. The Siletz and the Alsea both fish, and we choose the one whose gauge is dropping into shape. A classic day is a drift of eight to twelve miles, plugs in the deeper runs and a bobber or a drift rig in the tailouts. Hatchery fish are mixed with wild fish. You will release more than you keep on most days, and that is the fishery working, not the fishery failing.</p>\n<p>February can be the best month of the year or a long high-water sulk. It depends on the storm track. Build a backup date into any February weekend.</p>\n<h3>March and April: late fish, fewer boats</h3>\n<p>March is still winter fishing. The fish are there, often a little more spread out, and the crowds thin. April is the taper. Later fish, warmer afternoons, and the first overlap with summer-run steelhead on the Siletz. Techniques get a little finer as the water drops and clears. This is a good month for anglers who can only come in spring and who would rather fish a quieter river than hit the absolute peak.</p>\n<h3>May through October: summer steelhead, different fish</h3>\n<p>Summer steelhead are not small winter fish. They enter earlier, hold longer, and live in lower, clearer water. The Siletz is the river to think about. Presentations shrink: smaller jigs, hardware, and flies, with more attention to shadows and a quiet approach. A summer steelhead day is <strong>$375 per angler</strong>. By August the afternoon water can be warm enough that we start early and quit when the river tells us to, especially if we are going to release fish.</p>\n<h3>How to use this calendar</h3>\n<p>Pick the month for the kind of day you want, then let the week-of forecast pick the river. November and April are shoulder months and reward flexible people. January is the reservation. If you are pairing a hunt with a fishing day, October and November are the overlap: chinook and the start of steelhead on the water, blacktail and early elk season in the timber. Those are different boots. Do not try to do both before lunch.</p>"
+  },
+  {
+    "id": "coast-fishing-calendar",
+    "cat": "seasonal",
+    "img": "assets/images/forest-trail.jpg",
+    "title": "Oregon Coast Fishing Calendar: When to Fish for Every Species",
+    "excerpt": "A single calendar for winter steelhead, summer steelhead, fall chinook, coho, and coastal cutthroat on the Siletz, Alsea, Siuslaw, and Yaquina.",
+    "date": "September 11, 2026",
+    "content": "<h3>The year at a glance</h3>\n<p>The Central Coast is not a one-season fishery. Something is moving in the rivers almost every month. The mistake is showing up for the wrong fish. Use this as a planning map, then confirm open seasons and bag limits in the current ODFW regulations. Dates shift. Biology does not read the brochure.</p>\n<ul>\n<li><strong>Winter steelhead:</strong> November through April, peak January–February. Siletz and Alsea lead. Siuslaw is quieter and worth it when the others are high.</li>\n<li><strong>Summer steelhead:</strong> roughly May through October on the Siletz, low-water tactics, more catch-and-release.</li>\n<li><strong>Fall chinook:</strong> August through November. Siletz and Alsea first, Siuslaw and Yaquina on the tide and often a little later.</li>\n<li><strong>Coho:</strong> September through November. Know the hatchery-versus-wild rule before you fish. Many wild coho fisheries are closed to retention.</li>\n<li><strong>Coastal cutthroat:</strong> late spring through early fall, upper rivers and cooler tributaries, and sea-run fish in the estuaries.</li>\n</ul>\n<h3>Winter: December to February</h3>\n<p>This block is steelhead. Book the drift at <strong>$395 per angler</strong> or, if you want to learn the wade, a bank day at <strong>$275</strong>. Chinook are mostly gone by January. The days are short. Bring lights for the ramp and a lunch you can eat with cold hands.</p>\n<h3>Spring: March to May</h3>\n<p>March is late steelhead. April and May are the handoff to summer steelhead and, in some years, a few spring chinook signals that should not be confused with the fall run. Cutthroat wake up as the water warms. This is the start of the family window. Rivers drop, banks open, and a half day at <strong>$250 per angler</strong> makes sense if you are stacking the trip with something else on the coast.</p>\n<h3>Summer: June to August</h3>\n<p>Cutthroat and summer steelhead, early mornings, and low clear water. August is the scout month for fall chinook in the estuaries. Do not expect upper-river salmon fishing just because the calendar says August. Do expect pleasant weather and the best chance to put a kid on a trout. Family and beginner days are <strong>$350 for the group</strong>, up to four people, and they are built around that summer window.</p>\n<h3>Fall: September to November</h3>\n<p>This is the crowded, excellent season. Fall chinook are the reason, coho are the complication, and the first steelhead are the surprise at the end. It is also hunting season in the Coast Range. If you want a fishing day and a blacktail or elk day in the same week, give them separate days and separate gear. September rains decide whether the salmon are still in the bay or already in the canyon.</p>\n<h3>Matching a trip to a month</h3>\n<p>If you tell us the month and who is coming, the species choice is usually obvious. The judgment call is the river on the morning of the trip. That is the part you cannot calendar. Book the species, stay flexible on the ramp, and read the gauges the night before so the early alarm is not a surprise.</p>"
+  },
+  {
+    "id": "bank-walk-in-spots",
+    "cat": "howto",
+    "img": "assets/images/fishing-person.jpg",
+    "title": "Bank Fishing the Central Coast: Walk-In Water That Works",
+    "excerpt": "No boat required. Where to start on the Siletz, Alsea, and Siuslaw, what to carry, and how to fish a spot without crowding the next angler.",
+    "date": "September 9, 2026",
+    "content": "<h3>Why the bank is not a consolation prize</h3>\n<p>A drift boat covers water. A bank angler learns one piece of water until it makes sense. On the Central Coast that is a real advantage, especially on the Alsea, where you can reach fish without a shuttle. It is a poorer plan on a high, narrow canyon day when the only safe casts are from the boat. Knowing which day you are having is the skill.</p>\n<p>A guided bank and wade day is <strong>$275 per angler</strong>, one or two people. It is the right booking if you want to cast the whole time and understand why a spot is a spot. It is the wrong booking if you want to ride and cover twelve miles.</p>\n<h3>Where to start</h3>\n<p><strong>Alsea, Highway 34.</strong> The default. Mike Bauer, Missouri Bend, Five Rivers, and the obvious pull-offs give you runs you can watch before you wade. Fish the near seam. Do not bomb a cast across three lanes of current you cannot mend.</p>\n<p><strong>Siletz.</strong> Moonshine Park and the public water around Logsden and the town of Siletz. The canyon has less casual access than the Alsea. When you find a trail to the river, assume other people use it and that the land above the trail may be private. Stay on the gravel and the wet rock.</p>\n<p><strong>Siuslaw.</strong> Developed sites on the river road, plus estuary banks when chinook are in the tide. The upper river in summer is the friendly cutthroat version of this list.</p>\n<p>I am not publishing GPS pins for every rock. Pins go stale, they pile people onto one tailout, and some of them are driveways. Use signed public sites first. If a guide is with you, we will walk you into water that fits the flow that morning.</p>\n<h3>A bank kit that fits in one bag</h3>\n<ul>\n<li>Nine- to ten-foot spinning rod, medium-heavy, and a reel with a smooth drag.</li>\n<li>Ten- to fifteen-pound main line. Add a lighter leader if the water is clear.</li>\n<li>A small box: jigs, a few floats, pencil lead or slinky weights, hooks, swivels, and bait if the river allows it that day.</li>\n<li>Chest waders with a sole that grips algae, a wading staff, and a rain jacket.</li>\n<li>Pliers, nippers, and a rubber-mesh net if you are keeping fish. Release tools matter more than the net on a wild-fish day.</li>\n</ul>\n<p>On a guided day this list is already in the rig. Bring the clothes and the license.</p>\n<h3>How to fish one spot for an hour</h3>\n<p>Stand where you can see the seam. Make the first casts to the near water so you do not line a fish under your rod tip. Lengthen the cast only after the close water has been fished. Mend so the float or the weight moves at the speed of the current, not the speed of your belly of line. If you hang bottom every cast, you are too heavy. If you never tick, you are too light. Change weight before you change spots.</p>\n<p>A bite on a float is often a pause. A bite on a drift rig is a tap that does not feel like a rock. Set, then fight the fish downstream of the people below you if you can.</p>\n<h3>Etiquette and safety</h3>\n<p>Give other anglers a full run of space. Do not walk through the water they are fishing to reach \"your\" rock. When a boat comes through, drop your cast and let them pass. Wade with a staff, unclip your wader belt so a swamped wader can dump water, and do not cross a run that is above your comfort just because the far bank looks better. The coast claims people who treat a familiar creek like a swimming pool after a two-inch rain.</p>\n<p>Pack out line. Birds and seals do not need a souvenir. If the spot was marginal, leave anyway before you are the reason it gets posted.</p>"
+  },
+  {
+    "id": "coast-regulations",
+    "cat": "howto",
+    "img": "assets/images/fishing-gear.jpg",
+    "title": "Oregon Fishing Regulations, Central Coast Edition",
+    "excerpt": "How to read the ODFW rules for the Siletz, Alsea, Siuslaw, and Yaquina without earning an expensive lesson at the ramp.",
+    "date": "September 8, 2026",
+    "content": "<h3>There is no single coastal rule</h3>\n<p>Oregon fishing regulations are written river by river, and sometimes reach by reach. A hatchery steelhead you can keep on one section may be illegal a mile away, or illegal next week after an in-season change. Anyone who memorizes a blog post and stops checking the synopsis is how citations happen. Use this as a map of what to look up, not as the law.</p>\n<p>The documents that matter are the current Oregon Sport Fishing Regulations, the in-season regulation updates on the ODFW site, and your MyODFW license screen. Screenshots from last year do not count.</p>\n<h3>The license stack</h3>\n<p>Most anglers 12 and older need an Oregon angling license. Residents and non-residents pay different fees, and daily licenses exist if you are here for one tide. On top of the license, salmon, steelhead, sturgeon, and halibut fishing requires the Combined Angling Tag. If you might keep a fin-clipped salmon or steelhead, get the Hatchery Harvest Tag as well. It is a separate item in the store even when the fee is zero. Youth and senior categories exist. Buy the one that matches the person holding the rod, not the person who booked the trip.</p>\n<p>Rimewild cannot sell you a license or hand you a spare tag. The guide fee — <strong>$395</strong> for a full chinook or winter steelhead day, less for trout, bank, or a half day — does not include it.</p>\n<h3>Wild fish, hatchery fish, and the adipose fin</h3>\n<p>Look at the adipose fin, the small fleshy fin on the back between the dorsal fin and the tail. Clipped means a hatchery fish in the usual marking program. Unclipped means treat it as wild. On the steelhead rivers we guide, the working rule is to release unclipped steelhead. Some salmon fisheries are clipped-only too. Some are closed. The fin tells you what the fish is. The synopsis tells you what you may do about it. Both steps are required.</p>\n<p>If you are unsure, release the fish. A released fish is a legal fish. A guessed keeper is how a good day ends in a ticket.</p>\n<h3>Hooks, bait, and gear rules</h3>\n<p>Barbless hooks are required in a wide span of Oregon stream fisheries for salmon, steelhead, and trout. Pinch every barb before the first cast and you will not have to think about the exception. Bait rules also vary. Some reaches and some seasons restrict bait. Eggs and shrimp are traditional steelhead baits where they are legal. Where they are not, a jig is not a suggestion, it is the rule. Ask before you tie, or let the guide tie.</p>\n<h3>Mistakes that actually get people in trouble</h3>\n<ul>\n<li>Fishing without the Combined Angling Tag because \"I have a license.\"</li>\n<li>Keeping an unclipped steelhead because it was bright and the day was slow.</li>\n<li>Fishing a closure that was posted online after the pamphlet was printed.</li>\n<li>Using bait, treble hooks, or barbed hooks in water that does not allow them.</li>\n<li>Leaving a fish on a stringer while you \"figure out the rule.\"</li>\n</ul>\n<p>We will brief the rule for the river we launch on. You still need the license in your pocket and enough attention to stop fishing if we say the slot changed. The regulations are part of fishing here, the same as the gauge.</p>"
+  },
+  {
+    "id": "family-fishing-trips",
+    "cat": "howto",
+    "img": "assets/images/family-outdoors.jpg",
+    "title": "Family Fishing on the Oregon Coast",
+    "excerpt": "Ages, attention spans, rivers, and what a guided family day actually looks like near the Alsea and the upper Siletz.",
+    "date": "September 6, 2026",
+    "content": "<h3>The coast works for kids because the day can be short</h3>\n<p>A winter steelhead drift is a poor first fishing trip for a seven-year-old. It is long, cold, and the fish are hypothetical for hours at a time. A summer or early-fall day aimed at coastal cutthroat, with a chance to quit while everyone is still speaking, is the trip that creates a second trip. The Central Coast helps: the drives are short, the towns have food, and there is a beach for the person who is done fishing at 11.</p>\n<h3>Who the family day is built for</h3>\n<p>Rimewild's family and beginner trip is <strong>$350 for the group</strong>, up to four people, in the May through September window. It is not four salmon trips stapled together. It is patient instruction on water where fish cooperate often enough to keep a kid casting. One or two adults who also want to learn is perfect. A party of four adults who secretly wanted chinook should book the chinook day instead and be honest about it.</p>\n<p>Ages: about six and up can have a real day if an adult is there to manage the cold, the snack schedule, and the decision to go get chowder. Younger than that can come for an hour on the bank and then leave. We would rather end early than drag a miserable kid down a trail to prove a point.</p>\n<h3>What we fish and where</h3>\n<p>Coastal cutthroat in the upper Alsea and the upper Siletz are the usual target. They take small spinners and flies, they live in pretty water, and a 12-inch fish feels like a victory when you are four feet tall. If a few summer steelhead are in the same reach and someone in the group can handle the rod, we will not ignore them. We also will not rebuild the whole day around a maybe.</p>\n<p>Bank fishing is usually better than a boat for mixed ages. Kids can move, skip rocks between casts, and warm up in the rig. A boat is better when the group is older and the wind is down. We decide that when we see the people, not from the website.</p>\n<h3>What to pack for a family</h3>\n<ul>\n<li>Full rain suits even in July. Fog plus a breeze is cold.</li>\n<li>A change of clothes in the car, including socks.</li>\n<li>More snacks than you think, and a real lunch.</li>\n<li>A small pack, not a wagon of toys. The gravel is the entertainment.</li>\n<li>Licenses for anyone who needs one. Kids under the license age still need an adult who knows the rules.</li>\n<li>Leave the dip net the size of a bicycle at home. We have a net.</li>\n</ul>\n<h3>How the day goes</h3>\n<p>Meet late enough that breakfast happened. Rig simple outfits. Fish the best nearby water first so the first hour has a chance of a fish. Take the photo. Eat. Fish one more spot. Quit while the kids are asking to stay, not after they have asked to leave three times. If you want a longer adult session the next morning, book that separately as a half day or a full day. Mixing \"serious\" and \"family\" in one boat is how both halves have a bad time.</p>\n<p>The measure of the day is whether they want to come back, not whether the cooler is heavy. On this coast, the second day is when the fishing usually starts to make sense.</p>"
+  },
+  {
+    "id": "roosevelt-elk-complete",
+    "cat": "hunting",
+    "img": "assets/images/elk-forest.jpg",
+    "title": "Roosevelt Elk Hunting on Oregon's Central Coast",
+    "excerpt": "Coast Range elk live in wet timber, not on a skyline. Seasons, units, how a multi-day guided hunt actually works, and what the guide fee does not cover.",
+    "date": "September 5, 2026",
+    "content": "<h3>The animal and the country</h3>\n<p>Roosevelt elk are the coastal subspecies: heavy, dark, and built for rain and thick cover. The Oregon Coast Range holds a lot of them. You will not glass a basin at two miles and plan a stalk over lunch. You will hear a branch, see a tan rump in a regen thicket, and have a few seconds inside a hundred yards, often inside sixty. If your hunting has been open-country mule deer, reset your expectations before you buy a tag.</p>\n<h3>Tags, units, and the draw</h3>\n<p>Most quality Roosevelt elk hunting in these units is a controlled hunt. You apply through ODFW, you build preference points if you miss, and you do not buy the tag at a gas station the week before. Application deadlines typically sit in spring for the fall hunts. Rifle seasons for many coast units fall in November. Archery is a different season and a different kind of suffering in this brush. Corey will talk units with you before you apply. He will not pick a unit from a magazine article.</p>\n<p>The guided hunt is a separate bill from the tag. Rimewild's Roosevelt elk hunt is <strong>$4,500 per hunter</strong> for a multi-day hunt, typically three to five days. That is the guide fee: time, access he can legally hunt, and the work of putting you in a position. It is not a per-day rate, and it does not include your ODFW hunting license, elk tag, or travel. Non-resident tags are a serious extra cost. Look them up on the current ODFW fee schedule rather than trusting a year-old screenshot.</p>\n<h3>How the days go</h3>\n<p>You meet in the dark. The walk in is on elk trails, old skid roads, and sidehills that do not care about your knees. First light is for listening and for glassing the small openings: a clearcut edge, a creek flat, a landing. If nothing is moving, the day becomes a slow still-hunt through bedding timber. Midday is a ridge lunch and a new plan. Evening is the second movement, when elk leave the thick stuff to feed.</p>\n<p>Rain is normal. Sound carries under the canopy, and so does scent on a swirling coastal wind. We move less than you will want to. A bull that knows you are there does not become \"more huntable\" if you jog the next ridge.</p>\n<h3>Shot opportunities and rifles</h3>\n<p>Plan on close range and a rifle you shoot well from field positions, not from a bench only. A .30-06, .300, or a similar cartridge you can shoot accurately is enough. The miss in this country is usually a branch or a rushed shot, not a lack of velocity. Hunter orange is required during the rifle season. A pack you can actually carry meat with matters more than a new optic if an animal is down. A bull is a lot of weight on a sidehill. Budget time and a second set of hands for the pack-out. That work is part of the hunt, not an errand afterward.</p>\n<h3>What a guided coast hunt is not</h3>\n<p>It is not a high-odds feedlot. Coast Range success is real and it is not guaranteed. It is not hounds or bait. It is walking, glassing small holes, and being fit enough to do it again tomorrow. If five to ten miles and a couple thousand feet of up-and-down in the rain is not your week, say so before you draw the tag. We would rather hunt with you on a blacktail day that fits than pretend an elk hunt is a scenic walk.</p>\n<p>Physical prep is the part you can control now. Boots that are already broken in, rain gear that does not soak through by noon, and legs that can climb. The timber will test all three on the first morning.</p>"
+  },
+  {
+    "id": "blacktail-hunting-guide",
+    "cat": "hunting",
+    "img": "assets/images/deer-forest.jpg",
+    "title": "Blacktail Deer Hunting the Oregon Coast Range",
+    "excerpt": "Columbian blacktail in second-growth and clearcut edges: season structure, spot-and-stalk, and what a guided hunt costs beyond the tag.",
+    "date": "September 3, 2026",
+    "content": "<h3>A deer built for bad visibility</h3>\n<p>Columbian blacktail are smaller than the mule deer on a magazine cover and harder to see at forty yards than you expect. They live in the seam between cover and food: the edge of a regen unit, an overgrown road, a creek bottom with vine maple. They do not need a big basin. They need a thick place to disappear, and the Coast Range is one long thick place.</p>\n<p>If you hunt them like whitetails from a stand every day, you will see fewer deer than the person who still-hunts slowly and glasses the openings at first and last light. Both methods work in the right spot. The default on a guided day here is spot-and-stalk.</p>\n<h3>Seasons and tags</h3>\n<p>Western Oregon general-season blacktail tags are often available over the counter, which is why this hunt is easier to put on a calendar than elk. Archery comes first. Rifle season is typically a defined block in the fall, often October into early November, but the dates move and the bag limits are not a rumor you should take from a guide service website. Read the current big-game regulations before you buy the tag.</p>\n<p>You need an Oregon hunting license, a deer tag for the zone you are hunting, and a hunter education certification if you are required to have one. Those are ODFW charges. Rimewild's guided blacktail hunt is <strong>$3,200 per hunter</strong> for a one- to three-day hunt. The fee covers the guiding. It does not cover the tag, the license, your ammunition, or your hotel.</p>\n<h3>How we hunt them</h3>\n<p>Dawn is a glassing hour on clearcut edges and landings where a deer might be late getting back to bed. The stalk, if it happens, is short and fussy. You are crawling through salal, not marching across a pasture. Midday is still-hunting timber and checking beds, trails, and the downhill side of old roads. Evening is the reverse of morning: deer stepping out to feed, and you already in a spot where the wind is not in their face.</p>\n<p>Shots are close. A hundred yards is a long shot in this brush. Practice from sitting and kneeling. A rifle in the .270 to .30-06 class, or a bow if that is the season you drew, is plenty. Orange is mandatory in rifle season. A quiet rain jacket matters as much as the camo pattern. Nylon that sounds like a grocery bag will end your stalk early.</p>\n<h3>Public land, private timber, and manners</h3>\n<p>A lot of Coast Range deer live on private timberland. Some of that ground is open, some is leased, some is behind a gate that means what it says. We hunt where we have permission or where the public land is real. Do not follow a set of pins from a forum onto a tree farm and call it research. If you are hunting on your own before or after a guided day, carry a map that shows ownership and believe the map.</p>\n<h3>A realistic expectation</h3>\n<p>You can hunt three days in good country and not pull the trigger. You can also have a buck on the first morning and spend the afternoon packing. Both are normal. What we will not do is push a deer past a line we should not cross, or talk you into a shot you do not like. Blacktail hunting is mostly seeing less than you hoped and then, suddenly, seeing everything. Show up in shape, with the tag already in your pocket, and with boots that survived a wet weekend before this one.</p>"
+  },
+  {
+    "id": "alsea-winter-steelhead",
+    "cat": "river",
+    "img": "assets/images/oregon-river.jpg",
+    "title": "Alsea River Winter Steelhead: Access, Timing, and Techniques",
+    "excerpt": "December through March on the Alsea: bank access, hatchery fish, gauge numbers that matter, and the rigs that fit this river's pace.",
+    "date": "September 2, 2026",
+    "content": "<h3>The Alsea in winter</h3>\n<p>The Alsea's winter steelhead run is the reason Highway 34 has rigs on the shoulder from December into March. Fish enter on the rains, hold in the long pools and tailouts, and give bank anglers a fair chance that the deeper Siletz canyon does not always give. Hatchery returns are a real part of this river. That does not mean every fish has a clipped fin. Sort them before anyone talks about the cooler.</p>\n<p>Peak timing is January and February, with December building and March still worth a day if the water is right. A guided drift is <strong>$395 per angler</strong>. If your group would rather wade and stay on the highway holes, the bank day is <strong>$275 per angler</strong>.</p>\n<h3>Access that matches a steelhead day</h3>\n<p>Mike Bauer near Tidewater is a ramp and a meeting place. Missouri Bend and the Five Rivers area give you room to park and a walk to the water. The pull-offs along 34 are how locals fish a tide of steelhead without a shuttle. In a high river, some of those bars disappear. In a low, clear river, the fish get particular and the same bars get crowded. The good day is the green drop in between.</p>\n<p>Do not block a boat ramp to fish the plank beside it. Launch traffic on a Saturday is already tense. Park where a trailer can turn around.</p>\n<h3>Reading the Tidewater gauge</h3>\n<p>Learn the Alsea near Tidewater USGS gauge. You are looking at direction more than a magic number. A river that is falling and clearing after a rise is the river you want. A river that jumped overnight and is still rising is a day to wait or to look at the Siletz, which sometimes clears on a different schedule. Color should be green enough to see a plug a couple of feet down, not opaque.</p>\n<p>We will make the go or no-go call the morning of a guided trip. If you are fishing on your own, give yourself permission to drive to the river, look at it, and leave. That is experience, not a failed day.</p>\n<h3>Techniques for this river's speed</h3>\n<p>The Alsea often fishes a little slower and a little wider than a classic boulder-garden steelhead creek. That favors a bobber and jig in the tailouts and along the inside seams, and a drift rig with eggs or shrimp where bait is legal and the current is even. Plugs from the boat cover the guts of the longer runs, especially when fish are moving rather than locked in a slot.</p>\n<p>Jig colors: pink and white or a loud chartreuse when the river is stained; darker or more natural when you can see the rocks. Weight: enough to tick, not enough to plant the rig. Leaders a little longer in clear water. Barbless, always, in this fishery.</p>\n<h3>Wild fish and a clean bank</h3>\n<p>Release unclipped steelhead. Keep a hatchery fish only if the current rule for that reach says you can, and only if you want to. Revive a fish you release in the current, facing upstream, until it kicks. Do not drag it onto the season's mud bank for a lineup photo.</p>\n<p>The Alsea stays a bank fishery because people can reach it. It stays a good one if those people do not leave line, bait cups, and fire rings on every pull-off. Fish the drop, give the next angler the lower half of the run, and let a boat come through. There is enough river if everyone acts like they might want to be invited back.</p>"
+  },
+  {
+    "id": "gear-coast-rivers",
+    "cat": "gear",
+    "img": "assets/images/fishing-gear.jpg",
+    "title": "Fishing Gear for Oregon Coast Rivers",
+    "excerpt": "Rods, line, terminal tackle, and rain clothes that match the Siletz, Alsea, and Siuslaw — and what you can leave at home on a guided day.",
+    "date": "August 30, 2026",
+    "content": "<h3>One rod does not cover the year</h3>\n<p>Coastal rivers ask for different tools in December and in July. A practical pair is a 9- to 10-foot medium-heavy spinning rod for steelhead and chinook drift and jig work, and a lighter 7- to 8-foot rod for cutthroat. The long rod matters because you are mending line, not because you are casting to the horizon. A moderate-fast action that telegraphs a tick on the bottom will catch more fish than a broomstick that only works once the fish has hooked itself.</p>\n<p>Reels in the 3000 size, with a drag that does not stutter, are enough. Spend the money on the drag and the spare spool, not on a brand story. Braid in the 20- to 30-pound range, with a fluorocarbon leader, is a fair all-around main line for boat and bank. Some anglers still prefer mono for drift fishing because it cushions a headshake. Either works if you check it for nicks every fish.</p>\n<h3>The terminal box</h3>\n<ul>\n<li>Jigs from 1/8 ounce for summer and cutthroat up to 3/8 ounce for winter steelhead and chinook.</li>\n<li>Sliding floats and the stops and beads to match.</li>\n<li>Pencil lead or slinky weights in several sizes. Change weight all day.</li>\n<li>Hooks in bait sizes you can fish barbless, plus swivels and leader.</li>\n<li>A few plugs — Kwikfish and Mag Lip sizes used for chinook and steelhead — if you have a boat. Bank anglers can skip the whole plug box.</li>\n<li>Cured eggs or sand shrimp only on days and reaches where bait is legal.</li>\n</ul>\n<p>Colors, in order of how often they leave the box on these rivers: pink, chartreuse, black, metallic blue or green, and a plain white or natural. Stained water gets the loud end of that list.</p>\n<h3>Clothes are tackle</h3>\n<p>A breathable rain jacket with a hood that stays up, rain pants, and a wool layer underneath will outfish a new reel on a January day. Waders for bank fishing, with a sole that grips round coastal rock. A wading belt. Gloves that still let you untie a knot. Polarized glasses in a copper or amber lens, even under cloud, because you need to see the seam and your own line.</p>\n<p>On a guided trip the rods, terminal tackle, bait, and often a spare jacket are in the boat. Your job is boots, layers, food, a license, and a small dry bag for your phone. Do not arrive with three rod tubes and a crate. There is no room, and we will not fish your untested knot on a fish that took all morning to find.</p>\n<h3>What to skip</h3>\n<p>Leave the treble-hook bass lures, the five-weight trout outfit you love on a lake, and any rain suit that wets through in an hour. Leave scented gloves that smell like gasoline. Leave a net with a knotted nylon bag if you plan to release fish; rubber mesh is the one to use.</p>\n<p>If you are building a kit to fish without a guide, buy the rain gear and the long spinning rod first. The art is the weight selection and the water reading, and those are free to practice once the tools are simple enough that you trust them.</p>"
+  }
+]
+</script>
 <script>
 // NAV
 const nav=document.getElementById('nav');
@@ -842,43 +991,78 @@ const articles = [
   }
 ];
 
-// BUILD CARDS
-function buildCards(filter){
-  const grid=document.getElementById('reportGrid');
-  grid.innerHTML='';
-  const filtered=filter==='all'?articles:articles.filter(a=>a.cat===filter);
-  filtered.forEach(a=>{
-    const card=document.createElement('div');
-    card.className='report-card';
-    card.dataset.cat=a.cat;
-    card.onclick=()=>openArticle(a.id);
-    const catLabels={river:'River Report',howto:'How-To',seasonal:'Seasonal',hunting:'Hunting',gear:'Gear'};
-    card.innerHTML=`
+// LOAD ADDITIONAL FIELD GUIDES
+try {
+  const extra = JSON.parse(document.getElementById('extra-articles').textContent);
+  const ids = new Set(articles.map(a => a.id));
+  extra.forEach(a => { if (!ids.has(a.id)) articles.push(a); });
+} catch (err) {
+  console.error('Could not load additional reports', err);
+}
+
+function articleTime(a) {
+  const t = Date.parse(a.date);
+  return Number.isNaN(t) ? 0 : t;
+}
+function sortedArticles(list) {
+  return [...list].sort((a, b) => articleTime(b) - articleTime(a));
+}
+const catLabels = {river:'River Report', howto:'How-To', seasonal:'Seasonal', hunting:'Hunting', gear:'Gear'};
+
+function buildFeatured() {
+  const a = sortedArticles(articles)[0];
+  const el = document.getElementById('featured-article');
+  if (!a || !el) return;
+  el.onclick = () => openArticle(a.id);
+  el.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openArticle(a.id); } };
+  el.tabIndex = 0;
+  el.setAttribute('role', 'link');
+  const vis = el.querySelector('.featured-article-visual');
+  if (vis) vis.style.backgroundImage = `url('${a.img}')`;
+  const body = el.querySelector('.featured-article-body');
+  if (!body) return;
+  body.innerHTML = `<div class="eyebrow eyebrow-sm">Latest Report</div><span class="date">${a.date}</span><h2>${a.title}</h2><p>${a.excerpt}</p><span class="read-more">Read Full Report &rarr;</span>`;
+}
+
+function buildCards(filter) {
+  const grid = document.getElementById('reportGrid');
+  grid.innerHTML = '';
+  const filtered = sortedArticles(filter === 'all' ? articles : articles.filter(a => a.cat === filter));
+  filtered.forEach(a => {
+    const card = document.createElement('article');
+    card.className = 'report-card';
+    card.tabIndex = 0;
+    card.setAttribute('role', 'link');
+    card.dataset.cat = a.cat;
+    const open = () => openArticle(a.id);
+    card.onclick = open;
+    card.onkeydown = (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); open(); } };
+    card.innerHTML = `
       <div class="report-card-img-wrap"><div class="report-card-img" style="background-image:url('${a.img}')"></div></div>
       <div class="report-card-body">
-        <span class="report-card-cat">${catLabels[a.cat]||a.cat}</span>
+        <span class="report-card-cat">${catLabels[a.cat] || a.cat}</span>
         <h3>${a.title}</h3>
         <p>${a.excerpt}</p>
-        <span class="date">${a.date}</span>
-        <span class="read-more">${a.content?'Read Full Article →':'Coming Soon'}</span>
+        <div class="card-foot">
+          <span class="date">${a.date}</span>
+          <span class="read-more">Read Article &rarr;</span>
+        </div>
       </div>`;
     grid.appendChild(card);
   });
 }
 
-// BUILD ARTICLES
-function buildArticles(){
-  const container=document.getElementById('articleContainer');
-  container.innerHTML='';
-  const catLabels={river:'River Report',howto:'How-To',seasonal:'Seasonal',hunting:'Hunting',gear:'Gear'};
-  articles.filter(a=>a.content).forEach(a=>{
-    const el=document.createElement('div');
-    el.className='article-full';
-    el.id='article-'+a.id;
-    el.innerHTML=`
+function buildArticles() {
+  const container = document.getElementById('articleContainer');
+  container.innerHTML = '';
+  articles.filter(a => a.content).forEach(a => {
+    const el = document.createElement('div');
+    el.className = 'article-full';
+    el.id = 'article-' + a.id;
+    el.innerHTML = `
       <div class="article-full-hero" style="background-image:url('${a.img}')"></div>
       <div class="article-full-body">
-        <span class="article-cat">${catLabels[a.cat]}</span>
+        <span class="article-cat">${catLabels[a.cat] || a.cat}</span>
         <h2>${a.title}</h2>
         <div class="article-meta"><span>${a.date}</span><span>By Corey — Rimewild Guide</span></div>
         <div class="article-content">${a.content}</div>
@@ -888,35 +1072,42 @@ function buildArticles(){
   });
 }
 
-// FILTER
-document.querySelectorAll('.filter-btn').forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+document.querySelectorAll('.filter-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     buildCards(btn.dataset.cat);
   });
 });
 
-// OPEN/CLOSE ARTICLE
-function openArticle(id){
-  const el=document.getElementById('article-'+id);
-  if(!el)return;
-  document.querySelectorAll('.article-full').forEach(a=>a.classList.remove('open'));
+function openArticle(id) {
+  const el = document.getElementById('article-' + id);
+  if (!el) return;
+  document.querySelectorAll('.article-full').forEach(a => a.classList.remove('open'));
   el.classList.add('open');
-  document.getElementById('articleSection').style.display='block';
-  el.scrollIntoView({behavior:'smooth',block:'start'});
+  document.getElementById('articleSection').style.display = 'block';
+  if (location.hash !== '#' + id) history.replaceState(null, '', '#' + id);
+  el.scrollIntoView({behavior:'smooth', block:'start'});
 }
-function closeArticle(id){
-  const el=document.getElementById('article-'+id);
-  if(el)el.classList.remove('open');
-  const anyOpen=document.querySelector('.article-full.open');
-  if(!anyOpen)document.getElementById('articleSection').style.display='';
-  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth',block:'start'});
+function closeArticle(id) {
+  const el = document.getElementById('article-' + id);
+  if (el) el.classList.remove('open');
+  if (!document.querySelector('.article-full.open')) document.getElementById('articleSection').style.display = '';
+  if (location.hash) history.replaceState(null, '', location.pathname + location.search);
+  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth', block:'start'});
+}
+function openFromHash() {
+  const id = (location.hash || '').replace(/^#/, '');
+  if (id && articles.some(a => a.id === id)) openArticle(id);
 }
 
-// INIT
+const allBtn = document.querySelector('.filter-btn[data-cat="all"]');
+if (allBtn) allBtn.textContent = `All Reports (${articles.length})`;
+buildFeatured();
 buildCards('all');
 buildArticles();
+openFromHash();
+window.addEventListener('hashchange', openFromHash);
 
 // REVEAL
 if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){

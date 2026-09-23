@@ -55,7 +55,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
 *,*::before,*::after{box-sizing:border-box}
 :root {
@@ -81,8 +81,8 @@
   --border: rgba(255,255,255,.06);
   --border-hover: rgba(255,255,255,.12);
   --shadow: 0 20px 60px rgba(0,0,0,.4);
-  --font-display: 'Playfair Display', Georgia, serif;
-  --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-display: 'Crimson Pro', Georgia, serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   color-scheme: dark;
 }
 body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -498,6 +498,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 .camo-glow{box-shadow:0 0 40px rgba(45,51,40,.3),0 0 80px rgba(59,74,52,.15)}
 .camo-tag{display:inline-block;background:linear-gradient(135deg,var(--camo-2),var(--camo-4));color:var(--text);font-size:.55rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.4rem .8rem;margin-bottom:.75rem}
   </style>
+  <link rel="stylesheet" href="assets/design.css">
 </head>
 <body>
 
@@ -994,7 +995,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div class="wrap">
     <div class="eyebrow">Availability</div>
     <h2 class="big-title reveal">Plan Your<br>Trip</h2>
-    <p class="subtitle reveal" style="margin-bottom:3rem">Select a date to see available Rimewild experiences.</p>
+    <p class="subtitle reveal" style="margin-bottom:3rem">Select a date to see available Rimewild experiences. Hunting prices are guide fees. ODFW tags and licenses are purchased separately.</p>
     <div class="cal-header">
       <h3 class="cal-month" id="calMonth"></h3>
       <div class="cal-nav">
@@ -1023,7 +1024,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Experiences &amp; Pricing</div>
       <h2 class="big-title reveal">Rimewild<br>Trips</h2>
-      <p class="subtitle reveal" style="margin-inline:auto">Every experience includes all gear, tackle, and instruction.</p>
+      <p class="subtitle reveal" style="margin-inline:auto">Fishing trips include gear, tackle, and instruction. Hunting prices are guide fees for the days listed. ODFW tags and licenses are separate.</p>
     </div>
     <div class="rivers-grid reveal">
       <div class="river-card" onclick="openBooking('Winter Steelhead Drift')">
@@ -1048,31 +1049,31 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       </div>
       <div class="river-card" onclick="openBooking('Half-Day Fishing')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">4&ndash;5 Hours &bull; 1&ndash;2 Anglers &bull; Seasonal</div><h3>Half-Day Fishing</h3><p>Morning or afternoon session. Focused experience for anglers short on time.</p><div class="price-tag">$275 <small>/ angler</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">4&ndash;5 Hours &bull; 1&ndash;2 Anglers &bull; Seasonal</div><h3>Half-Day Fishing</h3><p>Morning or afternoon session. Focused experience for anglers short on time.</p><div class="price-tag">$250 <small>/ angler</small></div></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Roosevelt Elk Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/elk-forest.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">Multi-Day &bull; 1&ndash;2 Hunters &bull; Nov</div><h3>Roosevelt Elk</h3><p>Coast Range Roosevelt elk in dense coastal timber. By request and application only.</p><div class="price-tag">$2,800 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">Multi-Day &bull; 1&ndash;2 Hunters &bull; Nov</div><h3>Roosevelt Elk</h3><p>Multi-day Coast Range hunt, typically 3&ndash;5 days in dense timber. Controlled elk tag required.</p><div class="price-tag">$4,500 <small>/ hunter</small></div><p class="price-note">Guide fee for the full multi-day hunt, not per day. ODFW tag and license are separate.</p></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Blacktail Deer Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/deer-forest.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">1&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Oct&ndash;Nov</div><h3>Blacktail Deer</h3><p>Columbian blacktail in western Oregon timber. Spot-and-stalk in challenging terrain.</p><div class="price-tag">$1,800 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">1&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Oct&ndash;Nov</div><h3>Blacktail Deer</h3><p>Columbian blacktail in western Oregon timber. Spot-and-stalk over one to three days.</p><div class="price-tag">$3,200 <small>/ hunter</small></div><p class="price-note">Guide fee for the hunt. ODFW tag and license are separate.</p></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Black Bear Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">2&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Aug&ndash;Dec</div><h3>Black Bear</h3><p>Spot-and-stalk bear hunting in the Coast Range. Fall berry patches and salmon corridors.</p><div class="price-tag">$2,200 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">2&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Aug&ndash;Dec</div><h3>Black Bear</h3><p>Spot-and-stalk bear hunting in the Coast Range. Fall berry patches and salmon corridors.</p><div class="price-tag">$2,800 <small>/ hunter</small></div><p class="price-note">Guide fee for a 2&ndash;3 day hunt. ODFW tag and license are separate.</p></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Spring Turkey Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;3 Hunters &bull; Apr&ndash;May</div><h3>Spring Turkey</h3><p>Gobbler season in Coast Range timber. Calling, decoys, and patience for a morning strut.</p><div class="price-tag">$350 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;3 Hunters &bull; Apr&ndash;May</div><h3>Spring Turkey</h3><p>Gobbler season in Coast Range timber. Calling, decoys, and patience for a morning strut.</p><div class="price-tag">$450 <small>/ hunter</small></div><p class="price-note">Day guide fee. ODFW license and tag are separate.</p></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Predator Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;2 Hunters &bull; Year-Round</div><h3>Predator &amp; Varmint</h3><p>Coyote and bobcat hunting with e-callers in clearcuts and meadows. Great off-season action.</p><div class="price-tag">$275 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">Full Day &bull; 1&ndash;2 Hunters &bull; Year-Round</div><h3>Predator &amp; Varmint</h3><p>Coyote and bobcat hunting with e-callers in clearcuts and meadows. Great off-season action.</p><div class="price-tag">$275 <small>/ hunter</small></div><p class="price-note">Day guide fee. ODFW license is separate. Bobcat also needs a furbearer license.</p></div>
       </div>
       <div class="river-card camo-card" onclick="openBooking('Waterfowl Hunt')">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div></div>
-        <div class="river-card-body"><div class="river-card-species">Morning Hunt &bull; 1&ndash;4 Hunters &bull; Oct&ndash;Jan</div><h3>Waterfowl</h3><p>Ducks and geese in coastal estuaries and river bottoms. Pacific Flyway migration hunting.</p><div class="price-tag">$325 <small>/ hunter</small></div></div>
+        <div class="river-card-body"><div class="river-card-species">Morning Hunt &bull; 1&ndash;4 Hunters &bull; Oct&ndash;Jan</div><h3>Waterfowl</h3><p>Ducks and geese in coastal estuaries and river bottoms. Pacific Flyway migration hunting.</p><div class="price-tag">$350 <small>/ hunter</small></div><p class="price-note">Morning guide fee. ODFW license, validation, and duck stamp are separate.</p></div>
       </div>
     </div>
   </div>
@@ -1085,9 +1086,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <h2 class="big-title reveal">From the<br>Field</h2>
     <p class="subtitle reveal" style="margin-bottom:3rem">River conditions, what's running, and on-the-ground observations.</p>
     <div class="blog-grid reveal">
-      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Siletz River Report &mdash; Late September</h3><p>Fall chinook are showing in good numbers. Water dropping into shape after recent rain.</p></div></a>
-      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">How-To</div><h3>Winter Steelhead Fishing on the Siletz: A Complete Guide</h3><p>Everything you need to know about targeting winter steelhead on Oregon's Central Coast.</p></div></a>
-      <a href="reports.html" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">Seasonal</div><h3>What's Running in October: Central Coast</h3><p>Fall chinook hitting their stride, blacktail deer season opening.</p></div></a>
+      <a href="reports.html#fall-chinook-three-rivers" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Fall Chinook on the Siletz, Alsea, and Siuslaw</h3><p>Late September is when the three chinook rivers stop fishing the same. How to choose water, tide, and technique.</p><span class="blog-date">September 23, 2026</span></div></a>
+      <a href="reports.html#siletz-fall-chinook" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/fish-catch.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Fall Chinook Salmon Fishing on the Siletz River</h3><p>Run timing, tidewater versus the canyon, and the plug and bobber setups that cover most days.</p><span class="blog-date">September 21, 2026</span></div></a>
+      <a href="reports.html#siuslaw-fall-chinook" class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">River Report</div><h3>Siuslaw River Fall Chinook: When, Where, and How</h3><p>A later run in a long estuary. Tidewater trolling, anchor fishing, and when the upper river turns on.</p><span class="blog-date">September 20, 2026</span></div></a>
     </div>
     <div style="text-align:center;margin-top:3rem"><a href="reports.html" class="btn btn-ghost">View All Reports</a></div>
   </div>
@@ -1138,7 +1139,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Rimewild<br>Experience</h2>
       <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your trip within 24 hours.</p>
       <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $275/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Spring Turkey Hunt">Spring Turkey &mdash; $350/hunter</option><option value="Predator Hunt">Predator &amp; Varmint &mdash; $275/hunter</option><option value="Waterfowl Hunt">Waterfowl &mdash; $325/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $250/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $4,500/hunter, multi-day</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $3,200/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,800/hunter</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $450/hunter</option><option value="Predator Hunt">Predator Hunt &mdash; $275/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $350/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5+">5+ (group)</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
@@ -1198,7 +1199,7 @@ function buildFinder(){
 function selFO(v){fAns[fStep]=v;fStep++;buildFinder()}
 function getFinderResult(){
   const[act,grp,exp,when]=fAns;let trip,river,price,dur,season,desc;
-  if(act==='Hunt'){if(when==='Sep–Nov'){trip='Roosevelt Elk Hunt';river='Coast Range';price='$2,800';dur='Multi-Day';season='November';desc='Deep timber, Roosevelt elk. A true Pacific Northwest hunting experience.'}else if(when==='Mar–May'){trip='Spring Turkey Hunt';river='Coast Range';price='$350';dur='Full Day';season='Apr–May';desc='Gobbler season in Coast Range timber. Calling in a strutting tom.'}else if(when==='Dec–Feb'){trip='Waterfowl Hunt';river='Coastal Estuaries';price='$325';dur='Morning Hunt';season='Oct–Jan';desc='Pacific Flyway migration. Ducks and geese in coastal river bottoms.'}else{trip='Black Bear Hunt';river='Coast Range';price='$2,200';dur='2–3 Days';season='Aug–Dec';desc='Spot-and-stalk bear hunting in Coast Range timber. Fall berries and salmon corridors.'}}
+  if(act==='Hunt'){if(when==='Sep–Nov'){trip='Roosevelt Elk Hunt';river='Coast Range';price='$4,500';dur='Multi-Day';season='November';desc='Multi-day Coast Range elk hunt in deep timber. Guide fee covers the hunt; the ODFW tag is separate.'}else if(when==='Mar–May'){trip='Spring Turkey Hunt';river='Coast Range';price='$450';dur='Full Day';season='Apr–May';desc='Gobbler season in Coast Range timber. Calling in a strutting tom.'}else if(when==='Dec–Feb'){trip='Waterfowl Hunt';river='Coastal Estuaries';price='$350';dur='Morning Hunt';season='Oct–Jan';desc='Pacific Flyway migration. Ducks and geese in coastal river bottoms.'}else{trip='Black Bear Hunt';river='Coast Range';price='$2,800';dur='2–3 Days';season='Aug–Dec';desc='Spot-and-stalk bear hunting in Coast Range timber. Fall berries and salmon corridors.'}}
   else if(grp==='Family'){trip='Family & Beginner Trip';river='Alsea River';price='$350';dur='Full Day';season='May–Sep';desc='Patient instruction, cooperative fish. A day the whole family will remember.'}
   else if(exp==='First Timer'){trip='Bank & Wade Introduction';river='Siletz River';price='$275';dur='Full Day';season='Year-Round';desc='Learn to read water, cast, and fish from the bank.'}
   else if(when==='Dec–Feb'||when==='Mar–May'){trip='Winter Steelhead Drift';river='Siletz River';price='$395';dur='Full Day';season='Dec–Apr';desc='Cold water, heavy fish, empty rivers.'}
@@ -1210,7 +1211,7 @@ function resetFinder(){fStep=0;fAns.length=0;buildFinder()}
 buildFinder();
 
 let calY,calM,selDay=null,selTrip=null;
-const tripData={'Winter Steelhead Drift':{months:[1,2,3,4,11,12],price:'$395',a:'1–3',t:'fishing'},'Fall Chinook Salmon':{months:[8,9,10,11],price:'$395',a:'1–3',t:'fishing'},'Summer Steelhead':{months:[4,5,6,7,8,9,10],price:'$375',a:'1–3',t:'fishing'},'Cutthroat & Trout':{months:[5,6,7,8,9],price:'$295',a:'1–3',t:'fishing'},'Bank & Wade Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'fishing'},'Family & Beginner':{months:[5,6,7,8,9],price:'$350',a:'Up to 4',t:'fishing'},'Half-Day Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'fishing'},'Roosevelt Elk Hunt':{months:[11],price:'$2,800',a:'1–2',t:'hunting'},'Blacktail Deer Hunt':{months:[10,11],price:'$1,800',a:'1–2',t:'hunting'},'Black Bear Hunt':{months:[4,5,8,9,10,11,12],price:'$2,200',a:'1–2',t:'hunting'},'Spring Turkey Hunt':{months:[4,5],price:'$350',a:'1–3',t:'hunting'},'Predator Hunt':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'hunting'},'Waterfowl Hunt':{months:[10,11,12,1],price:'$325',a:'1–4',t:'hunting'}};
+const tripData={'Winter Steelhead Drift':{months:[1,2,3,4,11,12],price:'$395',a:'1–3',t:'fishing'},'Fall Chinook Salmon':{months:[8,9,10,11],price:'$395',a:'1–3',t:'fishing'},'Summer Steelhead':{months:[4,5,6,7,8,9,10],price:'$375',a:'1–3',t:'fishing'},'Cutthroat & Trout':{months:[5,6,7,8,9],price:'$295',a:'1–3',t:'fishing'},'Bank & Wade Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'fishing'},'Family & Beginner':{months:[5,6,7,8,9],price:'$350',a:'Up to 4',t:'fishing'},'Half-Day Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$250',a:'1–2',t:'fishing'},'Roosevelt Elk Hunt':{months:[11],price:'$4,500',a:'1–2',t:'hunting'},'Blacktail Deer Hunt':{months:[10,11],price:'$3,200',a:'1–2',t:'hunting'},'Black Bear Hunt':{months:[4,5,8,9,10,11,12],price:'$2,800',a:'1–2',t:'hunting'},'Spring Turkey Hunt':{months:[4,5],price:'$450',a:'1–3',t:'hunting'},'Predator Hunt':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'hunting'},'Waterfowl Hunt':{months:[10,11,12,1],price:'$350',a:'1–4',t:'hunting'}};
 function initCal(){const n=new Date();calY=n.getFullYear();calM=n.getMonth();renderCal()}
 function changeMonth(d){calM+=d;if(calM>11){calM=0;calY++}if(calM<0){calM=11;calY--}selDay=null;document.getElementById('calInfo').classList.remove('show');renderCal()}
 function getAvail(y,m,d){const dow=new Date(y,m,d).getDay();if(dow===0)return'closed';const h=((y*31+m*7+d*13)%10);if(new Date(y,m,d)<new Date(new Date().setHours(0,0,0,0)))return'closed';if(h<4)return'available';if(h<7)return'limited';return'booked'}

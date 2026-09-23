@@ -38,7 +38,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -49,8 +49,8 @@
   --camo-1:#2d3328;--camo-2:#3b4a34;--camo-3:#1e2819;--camo-4:#4a5340;--camo-5:#5c6b4f;
   --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
   --shadow:0 20px 60px rgba(0,0,0,.4);
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Crimson Pro',Georgia,serif;
+  --font-body:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;
   color-scheme:dark;
 }
 body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -253,6 +253,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 @media(max-width:480px){.nav-logo img{height:50px!important}}
 @media(max-width:360px){.nav-logo img{height:44px!important}}
   </style>
+  <link rel="stylesheet" href="assets/design.css">
 </head>
 <body>
 
@@ -386,7 +387,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <h4>Half-Day Fishing</h4>
         <div class="trip-specs">4&ndash;5 Hours &bull; 1&ndash;2 Anglers &bull; Seasonal</div>
         <p>Morning or afternoon session for anglers short on time. Focused, productive fishing on the best water available. A good option for visitors passing through or combining with other coast activities.</p>
-        <div class="price">$275 <small>/ angler</small></div>
+        <div class="price">$250 <small>/ angler</small></div>
       </div>
     </div>
   </div>
@@ -611,7 +612,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Fishing<br>Experience</h2>
       <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your trip within 24 hours.</p>
       <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $275/angler</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $250/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $4,500/hunter, multi-day</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $3,200/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,800/hunter</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $450/hunter</option><option value="Predator Hunt">Predator Hunt &mdash; $275/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $350/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>

@@ -38,7 +38,7 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500&display=swap" rel="stylesheet">
   <style>
 *,*::before,*::after{box-sizing:border-box}
 :root{
@@ -50,8 +50,8 @@
   --camo-tan:#8b7d5e;--camo-brown:#5e4a2f;
   --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
   --shadow:0 20px 60px rgba(0,0,0,.4);
-  --font-display:'Playfair Display',Georgia,serif;
-  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  --font-display:'Crimson Pro',Georgia,serif;
+  --font-body:'Work Sans',-apple-system,BlinkMacSystemFont,sans-serif;
   color-scheme:dark;
 }
 body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -221,6 +221,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
   </style>
+  <link rel="stylesheet" href="assets/design.css">
 </head>
 <body>
 
@@ -299,9 +300,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <h2>Roosevelt Elk</h2>
         <p>The Roosevelt elk is the largest subspecies of elk in North America, and Oregon's Coast Range holds one of the densest populations on the continent. These are not open-country animals &mdash; they live in the thick of coastal timber, bedding in old-growth stands and feeding in clear-cut regrowth and creek bottoms.</p>
         <p>Coast Range elk hunting is close-range work. Shots are typically 50&ndash;150 yards through timber openings. You'll be reading sign, following trails through dense brush, and glassing small clearings where bulls stage during the rut. This is spot-and-stalk hunting at its most intense &mdash; slow, quiet, and demanding.</p>
-        <p>Corey hunts a mix of private timber company land and public BLM ground that he's scouted for decades. He knows the migration corridors, the bedding benches, and the feeding areas that produce year after year.</p>
+        <p>Corey hunts a mix of private timber company land and public BLM ground that he's scouted for decades. He knows the migration corridors, the bedding benches, and the feeding areas that produce year after year. Plan on a multi-day hunt in that timber, usually three to five days, not a single morning in the woods.</p>
 
-        <div class="species-price">$2,800 <small>per hunter</small></div>
+        <div class="species-price">$4,500 <small>per hunter</small></div>
+        <p class="price-note">Multi-day guided hunt, typically 3&ndash;5 days. This is the guide fee for the hunt, not a per-day rate. ODFW elk tag and hunting license are separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>3&ndash;5 Days</div>
@@ -373,7 +375,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Blacktail hunting on the Coast Range is spot-and-stalk in its truest form. You're working edges &mdash; the border between timber and openings, old roads grown over with alder, creek bottoms where deer feed at dawn and dusk. Shots are close. A 100-yard shot is a long one.</p>
         <p>Corey targets blacktail on a mix of private and public land that he's hunted since he was a kid. He knows the feeding patterns, the travel corridors, and the bedding cover that holds deer consistently across years and conditions.</p>
 
-        <div class="species-price">$1,800 <small>per hunter</small></div>
+        <div class="species-price">$3,200 <small>per hunter</small></div>
+        <p class="price-note">Guide fee for a 1&ndash;3 day hunt. ODFW deer tag and hunting license are separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>1&ndash;3 Days</div>
@@ -404,7 +407,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Fall bear hunting coincides with berry season and salmon runs. Bears feed heavily along creek corridors and in clear-cut regrowth where huckleberries and blackberries concentrate. This creates predictable patterns &mdash; glassing berry patches at dawn and dusk, and working salmon-bearing streams where bears come to feed.</p>
         <p>Oregon prohibits the use of hounds and bait for bear hunting. All bear hunting is spot-and-stalk &mdash; which makes it honest, challenging, and deeply rewarding. Spring season targets bears emerging from dens on south-facing slopes; fall season is the higher-percentage window.</p>
 
-        <div class="species-price">$2,200 <small>per hunter</small></div>
+        <div class="species-price">$2,800 <small>per hunter</small></div>
+        <p class="price-note">Guide fee for a 2&ndash;3 day hunt. ODFW bear tag and hunting license are separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>2&ndash;3 Days</div>
@@ -462,10 +466,11 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Cougar hunting in Oregon is strictly spot-and-stalk. Hound hunting was banned by ballot measure in 1994. That makes cougar hunting one of the most challenging pursuits in North American big game. You're hunting an animal that is perfectly camouflaged, moves mostly at night, and has evolved to avoid detection.</p>
         <p>Success requires patience, detailed knowledge of cougar travel routes, and the ability to identify fresh sign &mdash; scrapes, kills, and tracks. Corey knows the corridors where cats move through his hunting areas, and snow or fresh mud on logging roads can reveal activity overnight. This is hunting at its most demanding and rewarding.</p>
 
-        <div class="species-price" style="font-size:clamp(1.5rem,3vw,2rem)">Contact for Pricing</div>
+        <div class="species-price">$3,500 <small>per hunter</small></div>
+        <p class="price-note">Multi-day spot-and-stalk. Guide fee only. ODFW cougar tag and hunting license are separate.</p>
 
         <div class="species-meta">
-          <div class="species-meta-item"><span>Duration</span>By Arrangement</div>
+          <div class="species-meta-item"><span>Duration</span>Multi-Day</div>
           <div class="species-meta-item"><span>Group Size</span>1 Hunter</div>
           <div class="species-meta-item"><span>Season</span>Year-Round (with tag)</div>
           <div class="species-meta-item"><span>Terrain</span>Steep Timber &amp; Ridge Lines</div>
@@ -473,7 +478,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
         </div>
 
-        <button class="btn btn-gold" onclick="openBooking('Cougar Hunt')">Inquire About Cougar Hunt</button>
+        <button class="btn btn-gold" onclick="openBooking('Cougar Hunt')">Book Cougar Hunt</button>
       </div>
     </div>
   </div>
@@ -497,7 +502,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Spring gobbler season is the primary draw. There's nothing like hearing a tom thunder off the roost at first light, then working him in with calls until he's strutting at 20 yards. Oregon Coast timber makes this especially intense &mdash; limited visibility means you'll hear the bird before you see it, and the close encounters are electric.</p>
         <p>Corey uses box calls, slate calls, and mouth diaphragms to work birds. He knows the roosting trees, strut zones, and travel routes that turkeys use consistently across seasons. Spring turkey hunting is accessible to all fitness levels and is an excellent introduction to hunting.</p>
 
-        <div class="species-price">$350 <small>per hunter</small></div>
+        <div class="species-price">$450 <small>per hunter</small></div>
+        <p class="price-note">Day guide fee. ODFW hunting license and turkey tag are separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>Full Day (Half-Day Available)</div>
@@ -548,6 +554,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Band-tailed pigeons are Oregon's only native migratory game bird, and the coastal corridor is one of the best flyways on the West Coast. Pass-shooting bandtails as they fly through river canyons is a unique experience you won't find inland.</p>
 
         <div class="species-price">$295 <small>per hunter</small></div>
+        <p class="price-note">Day guide fee. ODFW hunting license is separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>Full Day</div>
@@ -604,7 +611,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>The Siletz Bay, Alsea estuary, and Yaquina Bay are prime hunting locations. Mallards, pintails, American wigeon, green-winged teal, and Canada geese are the primary species. Hunting methods include jump-shooting river sloughs, layout hunting in estuaries, and decoy spreads on flooded fields.</p>
         <p>Waterfowl hunting is the most social hunt Rimewild offers. Groups of up to four can hunt together, and the action can be fast and sustained when birds are moving. Early morning hunts are the standard &mdash; you'll be set up before dawn and hunting through mid-morning.</p>
 
-        <div class="species-price">$325 <small>per hunter</small></div>
+        <div class="species-price">$350 <small>per hunter</small></div>
+        <p class="price-note">Morning guide fee. Federal duck stamp, state validation, and hunting license are separate.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>Morning Hunt (4&ndash;5 hrs)</div>
@@ -666,6 +674,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <p>Oregon has no closed season and no bag limit on coyotes. Bobcat hunting requires a furbearer license. This is excellent off-season action and a great way to sharpen shooting skills.</p>
 
         <div class="species-price">$275 <small>per hunter</small></div>
+        <p class="price-note">Day guide fee. ODFW hunting license is separate. Bobcat also requires a furbearer license.</p>
 
         <div class="species-meta">
           <div class="species-meta-item"><span>Duration</span>Full Day</div>
@@ -909,7 +918,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Hunt</h2>
       <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your hunt within 48 hours.</p>
       <form onsubmit="submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Cougar Hunt">Cougar Hunt &mdash; Contact for Pricing</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $350/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $325/hunter</option><option value="Predator Hunt">Predator/Varmint Hunt &mdash; $275/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $4,500/hunter, multi-day</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $3,200/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,800/hunter</option><option value="Cougar Hunt">Cougar Hunt &mdash; $3,500/hunter</option><option value="Spring Turkey Hunt">Spring Turkey Hunt &mdash; $450/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Waterfowl Hunt">Waterfowl Hunt &mdash; $350/hunter</option><option value="Predator Hunt">Predator Hunt &mdash; $275/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option><option value="3">3 hunters</option><option value="4">4 hunters</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
