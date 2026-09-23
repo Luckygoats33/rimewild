@@ -112,7 +112,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .btn-gold:hover{background:var(--gold-bright);color:var(--bg);transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,169,77,.3)}
 .btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2);padding:1.1rem 2.8rem}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.btn-text{background:none;color:var(--gold);padding:.5rem 0;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase}
+.btn-text{background:none;color:var(--gold);padding:.5rem 0;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;min-height:44px;display:inline-flex;align-items:center}
 .btn-text:hover{color:var(--gold-bright)}
 .btn-text::after{content:' \2192';transition:transform .2s}
 .btn-text:hover::after{transform:translateX(4px)}
@@ -126,7 +126,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0}
 .nav-links a{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,239,231,.5);transition:color .3s}
 .nav-links a:hover{color:var(--text)}
-.nav-cta .btn-gold{padding:.75rem 2rem;font-size:.65rem}
+.nav-cta .btn-gold{padding:.875rem 2rem;font-size:.65rem;min-height:44px}
 .nav-toggle{display:none;background:none;color:var(--text);font-size:1.6rem;padding:.25rem}
 @media(max-width:1000px){
   .nav-links{display:none}
@@ -504,7 +504,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <!-- NAV -->
 <nav class="nav" id="nav">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="Rimewild"></a>
+    <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="Rimewild" width="1024" height="1024"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="fishing.html">Fishing</a></li>
       <li><a href="hunting.html">Hunting</a></li>
@@ -518,7 +518,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <main>
 <!-- HERO -->
 <section class="hero" id="hero">
-  <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-river.jpg">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-river.jpg" fetchpriority="high">
     <source src="assets/hero.mp4" type="video/mp4">
   </video>
   <div class="hero-overlay"></div>
@@ -1115,7 +1115,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <footer class="footer camo-stripe">
   <div class="wrap">
     <div class="footer-top">
-      <div><a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Rimewild" style="height:60px;width:auto;margin-bottom:1rem"></a><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
+      <div><a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Rimewild" width="1024" height="1024" style="height:60px;width:auto;margin-bottom:1rem"></a><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
       <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
       <div><h5>Explore</h5><ul class="footer-links"><li><a href="hunting.html">Hunting</a></li><li><a href="rivers.html">The Rivers</a></li><li><a href="reports.html">Reports</a></li><li><a href="#whats-wild">What's Running</a></li><li><a href="#guide">Meet Corey</a></li></ul></div>
       <div><h5>Plan</h5><ul class="footer-links"><li><a href="#booking-section">Book a Trip</a></li><li><a href="#booking-section">What to Bring</a></li><li><a href="#booking-section">Licenses</a></li><li><a href="#booking-section">Lodging</a></li><li><a href="#booking-section">FAQ</a></li></ul></div>
