@@ -13,6 +13,8 @@ Guide: **Corey** — born and raised, lifelong hunter and fisherman.
 
 ## Website
 
+Header, footer, and the mobile Email/Book bar come from `partials/header.html` and `partials/footer.html`. After editing those, run `node scripts/sync-chrome.mjs` so every page stays in sync. `node scripts/sync-chrome.mjs --check` fails if a page has drifted.
+
 **Artifact URL:** https://claude.ai/artifact/JBR4AaqFKeKnN5vTfiuQ1C
 
 ### Sections Built

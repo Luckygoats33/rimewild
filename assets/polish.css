@@ -1,0 +1,685 @@
+/* Shared layout, mobile, and accessibility polish. Brand palette stays dark evergreen. */
+
+:focus-visible {
+  outline: 2px solid var(--gold-bright, #dfc462);
+  outline-offset: 3px;
+}
+
+.form-input:focus,
+.form-input:focus-visible {
+  outline: 2px solid var(--gold, #c4a94d);
+  outline-offset: 2px;
+  border-color: var(--gold, #c4a94d);
+}
+
+button,
+.btn,
+.nav-toggle,
+.filter-btn,
+.species-nav a,
+.finder-option,
+.type-chip,
+.faq-item,
+.report-card,
+.river-card,
+.featured-article {
+  -webkit-tap-highlight-color: rgba(196, 169, 77, .25);
+}
+
+.nav-toggle {
+  min-width: 44px;
+  min-height: 44px;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.nav-links a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+
+[id] {
+  scroll-margin-top: 96px;
+}
+
+/* One link treatment for header, the mobile menu, and the footer nav. */
+.nav-links a {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 231, .5);
+  text-decoration: none;
+}
+.nav-links a:hover,
+.nav-links a.active,
+.nav-links a[aria-current="page"] {
+  color: var(--text);
+}
+.nav-links .nav-cta a.btn-gold,
+.nav-links .nav-cta a.btn-gold:hover,
+.nav-links .nav-cta a.btn-gold:focus-visible {
+  color: var(--bg);
+  letter-spacing: .2em;
+}
+.footer-legal a {
+  font-family: var(--font-body);
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: rgba(240, 239, 231, .5);
+}
+.footer-legal a:hover,
+.footer-legal a:focus-visible {
+  color: var(--text);
+}
+
+/* Keep the hamburger usable once Rivers is in the bar.
+   Scope the hide/overlay to #navLinks so the footer list stays visible. */
+@media (max-width: 1120px) {
+  #navLinks {
+    display: none;
+  }
+  #navLinks.open {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 14, 12, .98);
+    backdrop-filter: blur(30px);
+    -webkit-backdrop-filter: blur(30px);
+    padding: 108px 28px calc(6.5rem + env(safe-area-inset-bottom, 0px));
+    gap: 0.35rem;
+    z-index: 150;
+    overflow-y: auto;
+  }
+  #navLinks.open a {
+    font-size: 1.15rem;
+    letter-spacing: .08em;
+    color: var(--text-dim);
+    width: 100%;
+    padding: .35rem 0;
+  }
+  #navLinks.open a:hover,
+  #navLinks.open a.active,
+  #navLinks.open a[aria-current="page"] {
+    color: var(--text);
+  }
+  #navLinks.open .nav-cta {
+    width: 100%;
+    margin-top: .75rem;
+  }
+  #navLinks.open .nav-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .nav-toggle {
+    display: inline-flex !important;
+    z-index: 160;
+    position: relative;
+  }
+}
+
+@media (min-width: 1121px) {
+  #navLinks {
+    gap: 1.35rem;
+  }
+  .nav-toggle {
+    display: none !important;
+  }
+}
+
+.footer-top {
+  grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+  align-items: start;
+}
+.footer-site-nav .nav-links {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: .15rem;
+  position: static;
+  inset: auto;
+  padding: 0;
+  background: none;
+  overflow: visible;
+}
+.footer-site-nav .nav-cta {
+  margin-top: .85rem;
+}
+
+/* Shared hero. Only the image, eyebrow, title, subcopy, and button labels change. */
+.site-hero {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  position: relative;
+  overflow: hidden;
+  padding: clamp(140px, 18vh, 200px) 0 clamp(60px, 10vh, 120px);
+}
+.site-hero-media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-size: cover;
+  background-position: center;
+}
+.site-hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(10, 14, 12, .35) 0%, rgba(10, 14, 12, 0) 28%, rgba(10, 14, 12, .55) 62%, rgba(10, 14, 12, .95) 86%, var(--bg) 100%);
+}
+.site-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-inline: clamp(20px, 4vw, 48px);
+}
+.site-hero .eyebrow {
+  margin-bottom: 1.25rem;
+}
+.site-hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 8vw, 7.5rem);
+  font-weight: 900;
+  letter-spacing: -.03em;
+  line-height: .92;
+  margin: 0 0 1.25rem;
+  text-wrap: balance;
+}
+.site-hero-title span {
+  display: block;
+  color: var(--gold);
+  font-style: italic;
+  font-weight: 500;
+  font-size: .42em;
+  letter-spacing: .04em;
+  line-height: 1.2;
+  margin-top: .55rem;
+}
+.site-hero-sub {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: clamp(.95rem, 1.5vw, 1.12rem);
+  color: var(--text-dim);
+  max-width: 46ch;
+  line-height: 1.7;
+  margin: 0 0 1.75rem;
+}
+.site-hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.site-hero-ctas .btn {
+  min-height: 48px;
+}
+
+/* Sticky call/book bar — sits above content, hides while menu or booking is open.
+   Declared here so every page gets it, including ones without the rule inlined. */
+.mobile-bar {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  align-items: stretch;
+  padding: .75rem 16px calc(.75rem + env(safe-area-inset-bottom, 0px));
+  background: rgba(10, 14, 12, .97);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-top: 1px solid var(--border);
+  z-index: 130;
+  gap: .75rem;
+}
+
+.mobile-bar .btn {
+  min-height: 48px;
+  flex-direction: column;
+  gap: .1rem;
+  line-height: 1.15;
+  padding: .55rem .7rem;
+  letter-spacing: .14em;
+}
+
+.mobile-bar small {
+  display: block;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: none;
+  opacity: .8;
+}
+
+@media (max-width: 768px) {
+  .mobile-bar {
+    display: flex;
+    z-index: 130;
+  }
+  body {
+    padding-bottom: calc(7rem + env(safe-area-inset-bottom, 0px));
+  }
+}
+
+body.nav-open .mobile-bar,
+body:has(.booking-overlay.show) .mobile-bar {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@media (max-width: 480px) {
+  .wrap,
+  .nav-inner,
+  .site-hero-content {
+    padding-inline: 16px;
+  }
+  .sec {
+    padding-block: clamp(52px, 9vh, 88px);
+  }
+  .big-title {
+    font-size: clamp(2.05rem, 9vw, 2.8rem);
+  }
+  .site-hero-title {
+    font-size: clamp(2.3rem, 11vw, 3.4rem);
+  }
+  .site-hero-ctas .btn,
+  .cta-band .btn {
+    width: 100%;
+    justify-content: center;
+  }
+  .btn {
+    letter-spacing: .12em;
+  }
+  .stat-row,
+  .overview-grid {
+    gap: .75rem;
+  }
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 360px) {
+  .mobile-bar {
+    gap: .45rem;
+    padding-inline: 12px;
+  }
+  .mobile-bar .btn {
+    letter-spacing: .08em;
+    font-size: .62rem;
+  }
+  .mobile-bar small {
+    display: none;
+  }
+}
+
+/* Grids that used a hard minmax overflow below ~340px. */
+.cal-grid {
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+}
+.gear-scroll,
+.season-bar-container,
+.featured-article,
+.featured-article > * {
+  max-width: 100%;
+  min-width: 0;
+}
+.wrap:has(.season-table) .reveal,
+div:has(> .season-table) {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.report-grid,
+.rivers-grid,
+.info-grid,
+.plan-grid,
+.species-grid,
+.gear-grid,
+.access-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr));
+}
+
+@media (max-width: 768px) {
+  .tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .species-section,
+  .species-section > *,
+  .river-dive,
+  .river-dive > *,
+  .river-dive.reverse,
+  .river-dive.reverse > * {
+    direction: ltr !important;
+    min-width: 0;
+  }
+  .species-img,
+  .river-dive-visual,
+  .featured-article-visual {
+    min-height: 220px;
+    max-width: 100%;
+    min-width: 0;
+    aspect-ratio: auto;
+  }
+  .species-meta,
+  .trip-meta,
+  .river-meta {
+    grid-template-columns: 1fr 1fr;
+    gap: .85rem 1rem;
+  }
+  .timeline {
+    padding-left: 2rem;
+  }
+  .timeline-item {
+    grid-template-columns: 4.25rem 1fr;
+    gap: .75rem;
+  }
+  .img-break-text h2 {
+    font-size: clamp(1.8rem, 9vw, 3rem);
+  }
+  .featured-article-body {
+    padding: 1.35rem 1.15rem 1.5rem;
+  }
+  .article-full-hero {
+    height: 190px;
+  }
+  .article-full-body {
+    padding: 1.25rem 1.05rem 2.25rem;
+  }
+  .article-full-body .article-meta {
+    gap: .35rem 1rem;
+  }
+}
+
+.faq-item.open .faq-a {
+  max-height: 48rem;
+}
+
+.faq-q {
+  gap: 1rem;
+}
+
+.filter-bar {
+  gap: .5rem;
+}
+
+.filter-btn {
+  min-height: 44px;
+}
+
+.species-nav a,
+.finder-option,
+.type-chip {
+  min-height: 44px;
+}
+
+.type-chip {
+  display: inline-flex;
+  align-items: center;
+}
+
+/* What's wild: keep the season window visible on a phone. */
+@media (max-width: 700px) {
+  .wild-row.header {
+    display: none;
+  }
+  .wild-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "name status"
+      "window window";
+    row-gap: .35rem;
+    align-items: center;
+    padding: 1rem 1rem;
+  }
+  .wild-name {
+    grid-area: name;
+    font-size: 1.05rem;
+  }
+  .wild-status {
+    grid-area: status;
+    min-width: 0;
+    justify-self: end;
+    padding: .4rem .65rem;
+  }
+  .wild-window {
+    grid-area: window;
+    display: block;
+    padding-left: 0;
+    font-size: .8rem;
+  }
+  .wild-action {
+    display: none;
+  }
+}
+
+.species-rate {
+  margin-top: .9rem;
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--gold);
+  letter-spacing: .01em;
+}
+
+.species-rate small {
+  font-family: var(--font-body);
+  font-size: .72rem;
+  font-weight: 500;
+  color: var(--text-dim);
+  letter-spacing: .04em;
+}
+
+/* Booking modal */
+.booking-lead {
+  color: var(--text-dim);
+  font-size: .92rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.booking-send-note {
+  color: var(--text-muted);
+  font-size: .78rem;
+  line-height: 1.5;
+  margin: .85rem 0 0;
+}
+
+.booking-close {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+.form-input {
+  font-size: 16px;
+  min-height: 48px;
+}
+
+textarea.form-input {
+  min-height: 120px;
+}
+
+.form-success .booking-preview {
+  text-align: left;
+  white-space: pre-wrap;
+  font-family: var(--font-body);
+  font-size: .82rem;
+  line-height: 1.55;
+  color: var(--text-dim);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  padding: 1rem;
+  margin: 1.25rem 0;
+  max-height: 220px;
+  overflow: auto;
+}
+
+.form-success .btn {
+  margin-top: .75rem;
+}
+
+.footer-brand img {
+  height: 60px;
+  width: auto;
+  margin-bottom: 1rem;
+}
+.footer-tagline {
+  font-size: .9rem;
+  color: var(--text-dim);
+  max-width: 34ch;
+  line-height: 1.7;
+}
+.footer-contact {
+  font-size: .9rem;
+  margin: 0;
+  line-height: 1.6;
+}
+.footer-contact span {
+  color: var(--text-muted);
+  font-size: .78rem;
+}
+.footer-legal {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .35rem 1.25rem;
+}
+
+@media (max-width: 640px) {
+  .booking-overlay.show {
+    padding: 0;
+    align-items: stretch;
+  }
+  .booking-modal {
+    max-width: none;
+    max-height: none;
+    height: 100dvh;
+    border: 0;
+    padding: 1rem 1rem calc(1.25rem + env(safe-area-inset-bottom, 0px));
+  }
+  .booking-modal h2 {
+    padding-right: 2.5rem;
+  }
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Reports */
+.featured-article {
+  cursor: pointer;
+}
+
+.featured-article:focus-visible {
+  outline: 2px solid var(--gold-bright);
+  outline-offset: 4px;
+}
+
+.report-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  color: inherit;
+  background: transparent;
+  width: 100%;
+  font: inherit;
+}
+
+.report-card.is-soon {
+  cursor: default;
+}
+
+.report-card.is-soon:hover {
+  transform: none;
+  border-color: var(--border);
+  box-shadow: none;
+}
+
+.report-card .read-more.is-soon {
+  color: var(--text-muted);
+}
+
+.reports-empty {
+  grid-column: 1 / -1;
+  border: 1px solid var(--border);
+  padding: 2rem 1.25rem;
+  color: var(--text-dim);
+  text-align: center;
+  margin: 0;
+}
+
+#articleSection[hidden] {
+  display: none !important;
+}
+
+.article-reader {
+  padding-top: 0;
+}
+
+.article-toolbar {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.article-close {
+  min-height: 44px;
+}
+
+.article-full.open {
+  scroll-margin-top: 84px;
+}
+
+.article-content p,
+.article-full-body .article-content p {
+  overflow-wrap: break-word;
+}
+
+@media (max-width: 480px) {
+  .cal-day-label {
+    padding: .35rem 0;
+    letter-spacing: 0;
+    font-size: .55rem;
+  }
+  .cal-day {
+    font-size: .75rem;
+  }
+  .filter-btn {
+    padding: .65rem .8rem;
+    letter-spacing: .1em;
+  }
+  .report-card-body {
+    padding: 1.15rem 1rem 1.25rem;
+  }
+  .report-card h3 {
+    font-size: 1.12rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .report-card,
+  .river-card,
+  .btn,
+  .nav-links a {
+    transition: none;
+  }
+  .report-card:hover,
+  .btn-gold:hover {
+    transform: none;
+  }
+}
