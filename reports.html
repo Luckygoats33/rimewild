@@ -12,12 +12,12 @@
   <meta property="og:description" content="River conditions, fishing and hunting reports, and field observations from Oregon's Central Coast.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://luckygoats33.github.io/rimewild/reports.html">
-  <meta property="og:image" content="https://luckygoats33.github.io/rimewild/assets/fishing-river.jpg">
+  <meta property="og:image" content="https://luckygoats33.github.io/rimewild/assets/images/fishing-river.jpg">
   <meta property="og:site_name" content="Rimewild">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="The Rimewild Report — River Conditions & Field Reports">
   <meta name="twitter:description" content="River conditions, fishing and hunting reports from Oregon's Central Coast.">
-  <meta name="twitter:image" content="https://luckygoats33.github.io/rimewild/assets/fishing-river.jpg">
+  <meta name="twitter:image" content="https://luckygoats33.github.io/rimewild/assets/images/fishing-river.jpg">
   <meta name="geo.region" content="US-OR">
   <meta name="geo.placename" content="Lincoln City, Oregon">
   <script type="application/ld+json">
@@ -250,12 +250,12 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 
     <!-- FILTERS -->
     <div class="filter-bar" id="filterBar">
-      <button type="button" class="filter-btn" active" data-cat="all">All Reports</button>
-      <button type="button" class="filter-btn"" data-cat="river">River Reports</button>
-      <button type="button" class="filter-btn"" data-cat="howto">How-To</button>
-      <button type="button" class="filter-btn"" data-cat="seasonal">Seasonal</button>
-      <button type="button" class="filter-btn"" data-cat="hunting">Hunting</button>
-      <button type="button" class="filter-btn"" data-cat="gear">Gear</button>
+      <button type="button" class="filter-btn active" data-cat="all">All Reports</button>
+      <button type="button" class="filter-btn" data-cat="river">River Reports</button>
+      <button type="button" class="filter-btn" data-cat="howto">How-To</button>
+      <button type="button" class="filter-btn" data-cat="seasonal">Seasonal</button>
+      <button type="button" class="filter-btn" data-cat="hunting">Hunting</button>
+      <button type="button" class="filter-btn" data-cat="gear">Gear</button>
     </div>
 
     <!-- REPORT GRID -->
@@ -327,10 +327,11 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <h2>Book Your Rimewild<br>Experience</h2>
       <p class="booking-lead">This form opens your email app with a message to <a href="mailto:will@supportwellnessglobal.com">will@supportwellnessglobal.com</a>. Send it to request the date — nothing is booked until that message goes out. Guide phone is not listed yet.</p>
       <form class="booking-request" action="mailto:will@supportwellnessglobal.com" method="POST" enctype="text/plain" onsubmit="return submitBooking(event)">
-        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" name="bTrip" required><option value="">Select a trip...</option><option>Winter Steelhead Drift &mdash; $395/angler</option><option>Fall Chinook Salmon &mdash; $395/angler</option><option>Summer Steelhead &mdash; $375/angler</option><option>Cutthroat &amp; Trout &mdash; $295/angler</option><option>Bank &amp; Wade Fishing &mdash; $275/angler</option><option>Family &amp; Beginner &mdash; $350/group</option><option>Half-Day Fishing &mdash; $275/angler</option><option>Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option>Blacktail Deer Hunt &mdash; $1,800/hunter</option><option>Private / Custom Experience</option></select></div>
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" name="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $275/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Black Bear Hunt">Black Bear Hunt &mdash; $2,200/hunter</option><option value="Spring Turkey Hunt">Spring Turkey &mdash; $350/hunter</option><option value="Predator Hunt">Predator &amp; Varmint &mdash; $275/hunter</option><option value="Waterfowl Hunt">Waterfowl &mdash; $325/hunter</option><option value="Upland Bird Hunt">Upland Bird Hunt &mdash; $295/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" name="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" name="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5+">5+ (group)</option></select></div></div>
         <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" name="bName" autocomplete="name" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" name="bEmail" autocomplete="email" placeholder="you@example.com" required></div></div>
         <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" name="bPhone" autocomplete="tel" placeholder="Your number (optional)"></div>
+        <div class="form-group"><label class="form-label" for="bExp">Experience Level</label><select class="form-input" id="bExp" name="bExp"><option value="first-timer">First Timer</option><option value="some">Some Experience</option><option value="experienced">Experienced</option></select></div>
         <div class="form-group"><label class="form-label" for="bNotes">Anything We Should Know?</label><textarea class="form-input" id="bNotes" name="bNotes" rows="3" placeholder="Special requests, questions..."></textarea></div>
         <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Email This Request</button>
       </form>
@@ -354,7 +355,7 @@ document.getElementById('navToggle').addEventListener('click',()=>{const n=docum
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('navToggle').innerHTML='&#9776;'})});
 
 // BOOKING
-function openBooking(){const o=document.getElementById('bookingOverlay');o.classList.add('show');document.body.style.overflow='hidden';document.getElementById('bookingForm').hidden=false;document.getElementById('bookingSuccess').hidden=true}
+function openBooking(t){const o=document.getElementById('bookingOverlay');o.classList.add('show');document.body.style.overflow='hidden';document.getElementById('bookingForm').hidden=false;document.getElementById('bookingSuccess').hidden=true;if(t){const s=document.getElementById('bTrip');for(let i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break}}}}
 function closeBooking(){document.getElementById('bookingOverlay').classList.remove('show');document.body.style.overflow=''}
 function submitBooking(e){e.preventDefault();document.getElementById('bookingForm').hidden=true;document.getElementById('bookingSuccess').hidden=false}
 

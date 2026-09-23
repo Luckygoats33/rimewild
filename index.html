@@ -12,12 +12,12 @@
   <meta property="og:description" content="Premium guided fishing and hunting on Oregon's Central Coast. Steelhead, salmon, elk, and blacktail deer on the Siletz, Alsea, and Siuslaw rivers.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://luckygoats33.github.io/rimewild/">
-  <meta property="og:image" content="https://luckygoats33.github.io/rimewild/assets/hero-river.jpg">
+  <meta property="og:image" content="https://luckygoats33.github.io/rimewild/assets/images/hero-river.jpg">
   <meta property="og:site_name" content="Rimewild">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Rimewild — Guided Fishing & Hunting | Oregon's Central Coast">
   <meta name="twitter:description" content="Premium guided fishing and hunting on Oregon's Central Coast. Steelhead, salmon, elk, and blacktail deer.">
-  <meta name="twitter:image" content="https://luckygoats33.github.io/rimewild/assets/hero-river.jpg">
+  <meta name="twitter:image" content="https://luckygoats33.github.io/rimewild/assets/images/hero-river.jpg">
   <meta name="geo.region" content="US-OR">
   <meta name="geo.placename" content="Lincoln City, Oregon">
   <meta name="geo.position" content="44.9582;-124.0177">
@@ -118,7 +118,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .btn-text:hover::after{transform:translateX(4px)}
 
 /* ===== NAV ===== */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.5rem 0;transition:all .5s;background:rgba(0,0,0,.85);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
 .nav.scrolled{background:rgba(0,0,0,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);padding:.75rem 0;border-bottom:1px solid var(--border)}
 .nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
 .nav-logo img{height:70px;width:auto;transition:height .4s}
@@ -352,7 +352,7 @@ button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3
 .blog-card p{font-size:.85rem;color:var(--text-dim);margin:0;line-height:1.6}
 
 /* ===== BOOKING MODAL ===== */
-.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:1000;display:none;align-items:center;justify-content:center;padding:24px}
 .booking-overlay.show{display:flex}
 .booking-modal{background:var(--bg-elevated);border:1px solid var(--border);width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:clamp(2rem,4vw,3.5rem)}
 .booking-modal h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
@@ -522,7 +522,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <main>
 <!-- HERO -->
 <section class="site-hero" id="hero">
-  <div class="site-hero-media" style="background-image:url('assets/images/hero-river.jpg')" role="img" aria-label="Oregon Central Coast river"></div>
+  <video class="site-hero-media" autoplay muted loop playsinline fetchpriority="high" poster="assets/images/hero-river.jpg" style="width:100%;height:100%;object-fit:cover">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
   <div class="site-hero-overlay"></div>
   <div class="site-hero-content">
     <p class="eyebrow">Oregon's Central Coast</p>
@@ -688,7 +690,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <h2 class="big-title reveal">Rimewild<br>Country</h2>
     <p class="subtitle reveal" style="margin-bottom:3rem">Central Oregon Coast rivers from the headwaters of the Coast Range to the tidal estuaries.</p>
     <div class="rivers-grid reveal">
-      <div class="river-card" onclick="location.href='rivers.html'">
+      <div class="river-card" onclick="location.href='rivers.html#siletz'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Steelhead &bull; Chinook &bull; Cutthroat</div>
@@ -696,7 +698,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>67 miles of Coast Range water. The Siletz is Rimewild's home river &mdash; winter steelhead runs from December through April make it one of the most productive fisheries on the Oregon coast.</p>
         </div>
       </div>
-      <div class="river-card" onclick="location.href='rivers.html'">
+      <div class="river-card" onclick="location.href='rivers.html#alsea'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Steelhead &bull; Cutthroat</div>
@@ -704,7 +706,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>Running from the Coast Range to Waldport, the Alsea delivers strong fall chinook runs and excellent bank access for all skill levels.</p>
         </div>
       </div>
-      <div class="river-card" onclick="location.href='rivers.html'">
+      <div class="river-card" onclick="location.href='rivers.html#siuslaw'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Coho &bull; Steelhead</div>
@@ -712,7 +714,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>The Siuslaw winds through dense coastal forest near Florence. Quieter than the Siletz, with fewer boats and more wildlife.</p>
         </div>
       </div>
-      <div class="river-card" onclick="location.href='rivers.html'">
+      <div class="river-card" onclick="location.href='rivers.html#yaquina'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/drift-boat.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Steelhead &bull; Bay Species</div>
