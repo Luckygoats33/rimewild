@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Hunting — Rimewild | Elk & Blacktail Deer on Oregon's Coast Range</title>
+  <meta name="description" content="Guided Roosevelt elk and Columbian blacktail deer hunting on Oregon's Central Coast Range. Dense coastal timber, spot-and-stalk, with a guide born on this land.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#0a0e0c;--bg-elevated:#111916;--bg-card:#151d19;--bg-card-hover:#1c2821;
+  --text:#f0efe7;--text-dim:#9fa39b;--text-muted:#5a5e57;
+  --gold:#c4a94d;--gold-bright:#dfc462;--gold-dim:rgba(196,169,77,.12);
+  --green:#3d6b4f;--green-bright:#5ba373;
+  --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
+  --shadow:0 20px 60px rgba(0,0,0,.4);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color-scheme:dark;
+}
+body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:700;line-height:1.05;margin:0}
+p{margin:0 0 1.25rem}
+a{color:var(--gold);text-decoration:none;transition:color .2s}a:hover{color:var(--gold-bright)}
+img{max-width:100%;height:auto;display:block}
+button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3s ease}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+.wrap{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+.sec{padding-block:clamp(80px,12vh,160px)}
+.sec-alt{background:var(--bg-elevated)}
+
+.eyebrow{font-family:var(--font-body);font-size:.65rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.eyebrow-center{justify-content:center}.eyebrow-center::before{display:none}
+
+.big-title{font-size:clamp(2.8rem,6vw,5.5rem);text-wrap:balance;letter-spacing:-.02em;margin-bottom:1rem}
+.med-title{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.01em;margin-bottom:.75rem}
+.subtitle{font-family:var(--font-display);font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--text-dim);max-width:55ch;line-height:1.5}
+
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.1rem 2.8rem;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:0;transition:all .35s ease}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{background:var(--gold-bright);color:var(--bg);transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,169,77,.3)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2);padding:1.1rem 2.8rem}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(10,14,12,.7);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px)}
+.nav.scrolled{padding:.75rem 0;border-bottom:1px solid var(--border)}
+.nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:45px;width:auto;transition:height .4s}
+.nav.scrolled .nav-logo img{height:36px}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,239,231,.5);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta .btn-gold{padding:.75rem 2rem;font-size:.65rem}
+.nav-toggle{display:none;background:none;color:var(--text);font-size:1.6rem;padding:.25rem}
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(10,14,12,.98);backdrop-filter:blur(30px);padding:100px 40px 40px;gap:2rem;z-index:99}
+  .nav-links.open a{font-size:1.2rem;letter-spacing:.1em;color:var(--text-dim)}
+  .nav-toggle{display:block;z-index:101}
+}
+
+/* HERO */
+.page-hero{min-height:70vh;display:flex;flex-direction:column;justify-content:flex-end;padding:0 0 clamp(60px,8vh,100px);position:relative;overflow:hidden;background-size:cover;background-position:center}
+.page-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,12,.4) 0%,rgba(10,14,12,0) 30%,rgba(10,14,12,.6) 60%,var(--bg) 100%)}
+.page-hero-content{position:relative;z-index:1;max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+.page-hero-content h1{font-size:clamp(3rem,9vw,8rem);font-weight:900;letter-spacing:-.03em;line-height:.92;margin-bottom:1rem}
+.page-hero-content h1 span{display:block;color:var(--gold);font-style:italic;font-weight:500;font-size:.4em;letter-spacing:.05em;margin-top:.5rem}
+.page-hero-sub{font-size:clamp(.88rem,1.5vw,1.1rem);color:var(--text-dim);max-width:50ch;line-height:1.7}
+
+/* IMG BREAK */
+.img-break{height:clamp(300px,50vh,600px);position:relative;overflow:hidden;background-size:cover;background-position:center;background-attachment:scroll}
+@media(min-width:769px){.img-break{background-attachment:fixed}}
+.img-break::after{content:'';position:absolute;inset:0;background:linear-gradient(to bottom,var(--bg) 0%,transparent 15%,transparent 85%,var(--bg) 100%)}
+.img-break-text{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:1;text-align:center;padding:2rem}
+.img-break-text h2{font-size:clamp(2.5rem,7vw,5rem);font-weight:900;letter-spacing:-.02em;text-shadow:0 4px 40px rgba(0,0,0,.5)}
+
+/* SPECIES DETAIL */
+.species-section{display:grid;grid-template-columns:1fr 1.2fr;gap:clamp(3rem,6vw,6rem);align-items:start}
+@media(max-width:768px){.species-section{grid-template-columns:1fr}}
+.species-img{aspect-ratio:4/5;background-size:cover;background-position:center;position:relative;overflow:hidden}
+.species-img::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg) 0%,transparent 30%)}
+.species-content .eyebrow{margin-bottom:2rem}
+.species-content h2{font-size:clamp(2rem,4vw,3.5rem);font-weight:900;margin-bottom:1.5rem}
+.species-content p{color:var(--text-dim);font-size:1rem;line-height:1.8}
+.species-price{font-family:var(--font-display);font-size:clamp(2.5rem,4vw,3.5rem);font-weight:800;color:var(--gold);margin:1.5rem 0 .25rem}
+.species-price small{font-size:.4em;font-weight:400;color:var(--text-dim)}
+.species-meta{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem;margin:2rem 0;padding:2rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.species-meta-item span{display:block;font-size:.55rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.2rem}
+.species-meta-item{font-size:.95rem}
+
+/* TIMELINE */
+.timeline{margin:3rem 0}
+.timeline-item{display:grid;grid-template-columns:80px 1fr;gap:1.5rem;padding:2rem 0;border-bottom:1px solid var(--border)}
+.timeline-item:first-child{padding-top:0}
+.timeline-time{font-family:var(--font-display);font-size:1.4rem;font-weight:800;color:var(--gold)}
+.timeline-desc h4{font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:.4rem}
+.timeline-desc p{font-size:.88rem;color:var(--text-dim);margin:0;line-height:1.6}
+
+/* INFO GRID */
+.info-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:0}
+.info-card{padding:2.5rem;border:1px solid var(--border);transition:background .3s}
+.info-card:hover{background:var(--bg-card)}
+.info-card h4{font-family:var(--font-display);font-size:1.2rem;font-weight:600;margin-bottom:1rem}
+.info-card ul{font-size:.88rem;color:var(--text-dim);padding-left:1.2rem;margin:0;line-height:1.9}
+.info-card p{font-size:.88rem;color:var(--text-dim);margin:0;line-height:1.7}
+
+/* FAQ */
+.faq-item{border-bottom:1px solid var(--border);padding:1.75rem 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-family:var(--font-display);font-size:1.15rem;font-weight:600}
+.faq-toggle{font-size:1.5rem;color:var(--gold);transition:transform .3s;flex-shrink:0;margin-left:1rem}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .4s ease,padding .3s;font-size:.92rem;color:var(--text-dim);line-height:1.7}
+.faq-item.open .faq-a{max-height:300px;padding-top:1rem}
+.faq-item.open .faq-toggle{transform:rotate(45deg)}
+
+/* STAT */
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;text-align:center;padding:3rem 0;border-top:1px solid var(--border);border-bottom:1px solid var(--border);margin:3rem 0}
+@media(max-width:600px){.stat-row{grid-template-columns:1fr}}
+.stat-num{font-family:var(--font-display);font-size:clamp(2.5rem,5vw,4rem);font-weight:800;color:var(--gold);line-height:1}
+.stat-label{font-size:.65rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--text-muted);margin-top:.5rem}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:clamp(4rem,8vh,6rem) 0 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(2rem,4vw,4rem);margin-bottom:4rem}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+.footer-brand{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.25rem}
+.footer-brand span{color:var(--gold)}
+.footer h5{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:.6rem}
+.footer-links a{font-size:.88rem;color:var(--text-dim)}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.7rem;letter-spacing:.05em;color:var(--text-muted)}
+
+/* BOOKING */
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.booking-overlay.show{display:flex}
+.booking-modal{background:var(--bg-elevated);border:1px solid var(--border);width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:clamp(2rem,4vw,3.5rem)}
+.booking-modal h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
+.booking-close{float:right;background:none;color:var(--text-muted);font-size:2rem;padding:0;line-height:1}
+.booking-close:hover{color:var(--text)}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+.form-input{width:100%;padding:.9rem 1.25rem;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:.9rem;transition:border-color .2s}
+.form-input:focus{outline:none;border-color:var(--gold)}
+.form-input::placeholder{color:var(--text-muted)}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5e57' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.25rem center;padding-right:3rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-success{text-align:center;padding:3rem 0}
+.form-success h3{font-size:2rem;margin-bottom:.75rem;color:var(--gold)}
+
+/* MOBILE BAR */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;padding:.75rem 20px calc(.75rem + env(safe-area-inset-bottom,0px));background:rgba(10,14,12,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-top:1px solid var(--border);z-index:100;gap:.75rem}
+@media(max-width:768px){.mobile-bar{display:flex}body{padding-bottom:5rem}}
+.mobile-bar .btn{flex:1;text-align:center;justify-content:center;padding:.85rem 1rem;font-size:.65rem}
+
+/* REVEAL */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.vis{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Rimewild"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="fishing.html">Fishing</a></li>
+      <li><a href="hunting.html" class="active">Hunting</a></li>
+      <li><a href="rivers.html">Waters</a></li>
+      <li><a href="reports.html">Reports</a></li>
+      <li><a href="index.html#guide">Guide</a></li>
+      <li><a href="index.html#calendar">Availability</a></li>
+      <li class="nav-cta"><a href="#" class="btn btn-gold" onclick="openBooking()">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero" style="background-image:url('assets/images/elk-forest.jpg')">
+  <div class="page-hero-content">
+    <div class="eyebrow">Rimewild Hunting</div>
+    <h1>Hunt the<br>Coast Range<span>Roosevelt Elk &amp; Columbian Blacktail Deer</span></h1>
+    <p class="page-hero-sub">Dense coastal timber. Steep ravines. Old-growth stands. This is hunting at its most raw &mdash; guided by someone who's walked this ground his entire life.</p>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="sec">
+  <div class="wrap">
+    <div style="max-width:800px">
+      <div class="eyebrow">Coast Range Hunting</div>
+      <h2 class="big-title reveal">Oregon's Last<br>Wild Timber</h2>
+      <p class="subtitle reveal" style="margin-bottom:2rem">The Oregon Coast Range is not the Rockies. There are no open meadows, no glassing from ridgelines, no long-distance shots across alpine basins.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">This is thick, wet, coastal timber &mdash; second-growth Douglas fir, old-growth Sitka spruce, and tangled alder bottoms wrapped in fog. Visibility is measured in yards, not miles. Sound carries through the canopy. Trails are elk trails, carved into hillsides that drop hundreds of feet to creek bottoms.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">This is hunting that rewards patience, fitness, and local knowledge. Corey has been walking this timber since childhood &mdash; he knows the benches where elk bed, the saddles they cross, and the creek bottoms where blacktail feed at first light. That knowledge is the difference between a hard hunt and a productive one.</p>
+    </div>
+
+    <div class="stat-row reveal">
+      <div><div class="stat-num">2</div><div class="stat-label">Species Hunted</div></div>
+      <div><div class="stat-num">30+</div><div class="stat-label">Years in This Timber</div></div>
+      <div><div class="stat-num">100%</div><div class="stat-label">Private & Public Access</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break" style="background-image:url('assets/images/foggy-forest.jpg')">
+  <div class="img-break-text"><h2>Into the Timber</h2></div>
+</div>
+
+<!-- ROOSEVELT ELK -->
+<section class="sec" id="elk">
+  <div class="wrap">
+    <div class="species-section">
+      <div class="species-img reveal" style="background-image:url('assets/images/elk-forest.jpg')"></div>
+      <div class="species-content reveal">
+        <div class="eyebrow">Big Game</div>
+        <h2>Roosevelt Elk</h2>
+        <p>The Roosevelt elk is the largest subspecies of elk in North America, and Oregon's Coast Range holds one of the densest populations on the continent. These are not open-country animals &mdash; they live in the thick of coastal timber, bedding in old-growth stands and feeding in clear-cut regrowth and creek bottoms.</p>
+        <p>Coast Range elk hunting is close-range work. Shots are typically 50&ndash;150 yards through timber openings. You'll be reading sign, following trails through dense brush, and glassing small clearings where bulls stage during the rut. This is spot-and-stalk hunting at its most intense &mdash; slow, quiet, and demanding.</p>
+        <p>Corey hunts a mix of private timber company land and public BLM ground that he's scouted for decades. He knows the migration corridors, the bedding benches, and the feeding areas that produce year after year.</p>
+
+        <div class="species-price">$2,800 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>3&ndash;5 Days</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;2 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>November (Rifle)</div>
+          <div class="species-meta-item"><span>Terrain</span>Dense Coastal Timber</div>
+          <div class="species-meta-item"><span>Method</span>Spot &amp; Stalk</div>
+          <div class="species-meta-item"><span>Tag</span>Controlled Hunt Draw</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Roosevelt Elk Hunt')">Book Elk Hunt</button>
+      </div>
+    </div>
+
+    <!-- ELK: TYPICAL DAY -->
+    <div style="margin-top:clamp(4rem,8vh,6rem)">
+      <div class="eyebrow">A Day in the Timber</div>
+      <h3 class="med-title reveal">Typical Elk Hunt Day</h3>
+      <div class="timeline reveal">
+        <div class="timeline-item">
+          <div class="timeline-time">4:30a</div>
+          <div class="timeline-desc"><h4>Meet &amp; Gear Check</h4><p>Meet at the trailhead. Final gear check, review the day's plan, discuss wind direction and approach. Coffee in the dark.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">5:15a</div>
+          <div class="timeline-desc"><h4>Hike In</h4><p>Move into position before first light. Slow, quiet approach along elk trails and logging roads to glassing points or known staging areas.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">6:00a</div>
+          <div class="timeline-desc"><h4>First Light</h4><p>Glass clear-cuts, meadow edges, and creek bottoms. Listen for bugling, breaking branches, and cow calls. The first two hours of light are the highest-percentage window.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">8:00a</div>
+          <div class="timeline-desc"><h4>Push Timber</h4><p>If no elk at first light, transition to still-hunting through bedding timber. Slow movement through thick cover, reading fresh sign &mdash; tracks, rubs, wallows, and droppings.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">12:00p</div>
+          <div class="timeline-desc"><h4>Midday Break</h4><p>Lunch on the ridge. Reassess the morning, adjust strategy. Elk bed down midday in thick cover &mdash; this is a good time to rest, glass, and plan the afternoon approach.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">3:00p</div>
+          <div class="timeline-desc"><h4>Afternoon Hunt</h4><p>Reposition for the evening feed. Elk begin moving again 2&ndash;3 hours before dark, heading from bedding timber to feeding areas. This is often the best opportunity.</p></div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-time">Dark</div>
+          <div class="timeline-desc"><h4>Debrief</h4><p>Hike out. Review the day, discuss tomorrow's strategy. If an elk is down, field processing begins immediately.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break" style="background-image:url('assets/images/forest-trail.jpg')">
+  <div class="img-break-text"><h2>Blacktail Country</h2></div>
+</div>
+
+<!-- BLACKTAIL DEER -->
+<section class="sec" id="blacktail">
+  <div class="wrap">
+    <div class="species-section" style="direction:rtl">
+      <div style="direction:ltr">
+        <div class="species-img reveal" style="background-image:url('assets/images/deer-forest.jpg')"></div>
+      </div>
+      <div class="species-content reveal" style="direction:ltr">
+        <div class="eyebrow">Coastal Deer</div>
+        <h2>Columbian Blacktail</h2>
+        <p>The Columbian blacktail is the ghost of the Pacific Northwest timber. Smaller than a mule deer, more elusive than a whitetail, and evolved for dense coastal forest. They thrive in the tangled transition zones between old-growth and clear-cut &mdash; places where visibility drops to nothing and patience is the primary skill.</p>
+        <p>Blacktail hunting on the Coast Range is spot-and-stalk in its truest form. You're working edges &mdash; the border between timber and openings, old roads grown over with alder, creek bottoms where deer feed at dawn and dusk. Shots are close. A 100-yard shot is a long one.</p>
+        <p>Corey targets blacktail on a mix of private and public land that he's hunted since he was a kid. He knows the feeding patterns, the travel corridors, and the bedding cover that holds deer consistently across years and conditions.</p>
+
+        <div class="species-price">$1,800 <small>per hunter</small></div>
+
+        <div class="species-meta">
+          <div class="species-meta-item"><span>Duration</span>1&ndash;3 Days</div>
+          <div class="species-meta-item"><span>Group Size</span>1&ndash;2 Hunters</div>
+          <div class="species-meta-item"><span>Season</span>October&ndash;November</div>
+          <div class="species-meta-item"><span>Terrain</span>Timber Edges &amp; Clear-Cuts</div>
+          <div class="species-meta-item"><span>Method</span>Spot &amp; Stalk</div>
+          <div class="species-meta-item"><span>Tag</span>General Season (OTC)</div>
+        </div>
+
+        <button class="btn btn-gold" onclick="openBooking('Blacktail Deer Hunt')">Book Deer Hunt</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="sec sec-alt" id="included">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="eyebrow eyebrow-center">Logistics</div>
+      <h2 class="big-title reveal">What's Included<br>&amp; What to Bring</h2>
+    </div>
+    <div class="info-grid reveal">
+      <div class="info-card">
+        <h4>Included in Your Hunt</h4>
+        <ul>
+          <li>Guided days in the field with Corey</li>
+          <li>Access to private timber company land</li>
+          <li>Scouting and pre-hunt reconnaissance</li>
+          <li>Field dressing and quartering assistance</li>
+          <li>Transport of game from field to vehicle</li>
+          <li>Game bags and basic field processing gear</li>
+          <li>Local knowledge, decades deep</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>What to Bring</h4>
+        <ul>
+          <li>Rifle sighted in for 100&ndash;200 yards</li>
+          <li>Quality rain gear (jacket, pants, gaiters)</li>
+          <li>Sturdy waterproof boots (broken in)</li>
+          <li>Layered clothing (wool or synthetic, no cotton)</li>
+          <li>Binoculars (8x42 or 10x42)</li>
+          <li>Headlamp with fresh batteries</li>
+          <li>Daypack with water and food</li>
+          <li>Valid Oregon hunting license and tags</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>Not Included</h4>
+        <ul>
+          <li>Oregon hunting license and tags</li>
+          <li>Lodging and meals</li>
+          <li>Taxidermy and meat processing</li>
+          <li>Transportation to/from Lincoln County</li>
+          <li>Gratuity (appreciated, not expected)</li>
+        </ul>
+      </div>
+      <div class="info-card">
+        <h4>Recommended Firearms</h4>
+        <ul>
+          <li>.270 Win, .308 Win, or .30-06 for elk</li>
+          <li>.243 Win, 6.5 Creedmoor, or .270 for deer</li>
+          <li>Low-power variable scope (1-6x or 2-7x)</li>
+          <li>Practice at 50&ndash;150 yards, offhand and rest</li>
+          <li>Bring ammunition you've verified for accuracy</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PHYSICAL REQUIREMENTS -->
+<section class="sec" id="fitness">
+  <div class="wrap">
+    <div style="max-width:800px">
+      <div class="eyebrow">Be Prepared</div>
+      <h2 class="big-title reveal">Physical<br>Requirements</h2>
+      <p class="subtitle reveal" style="margin-bottom:2rem">Coast Range hunting is physically demanding. The terrain is steep, wet, and unforgiving.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">A typical elk hunt day involves 5&ndash;10 miles of hiking over steep, uneven terrain with elevation gains of 1,000&ndash;2,500 feet. Trails are often animal paths &mdash; narrow, slippery, and cut into hillsides. Expect to climb, descend, cross creeks, push through brush, and do it all in rain.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8">Blacktail hunts are less demanding but still require solid fitness. Expect 3&ndash;6 miles of walking over mixed terrain, with stretches of standing, glassing, and slow-stalking through thick cover.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8;margin-bottom:2rem"><strong style="color:var(--text)">Minimum fitness:</strong> You should be able to hike 6 miles with a 20-pound pack over hilly terrain without stopping. If you can't do that comfortably, start training at least 8 weeks before your hunt. Stair climbing, incline treadmill, and loaded hiking are the best preparation.</p>
+      <p class="reveal" style="color:var(--text-dim);font-size:1rem;line-height:1.8"><strong style="color:var(--text)">If an animal goes down:</strong> Expect an additional 2&ndash;4 hours of hard physical work &mdash; field dressing, quartering, and packing meat out of steep timber. A bull elk can yield 250+ pounds of boneless meat. This is the hardest part of the hunt.</p>
+    </div>
+  </div>
+</section>
+
+<!-- REGULATIONS -->
+<section class="sec sec-alt" id="regulations">
+  <div class="wrap">
+    <div class="eyebrow">Regulations &amp; Licensing</div>
+    <h2 class="big-title reveal">Oregon<br>Requirements</h2>
+    <p class="subtitle reveal" style="margin-bottom:3rem">All hunters must comply with ODFW regulations. Rimewild handles the logistics &mdash; you handle the paperwork.</p>
+
+    <div class="info-grid reveal">
+      <div class="info-card">
+        <h4>Elk Tags &mdash; Controlled Hunt</h4>
+        <p>Roosevelt elk in the Coast Range units require a controlled hunt tag, obtained through ODFW's annual draw. Applications open in early spring for the fall season.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Key dates:</strong><br>Application deadline: typically mid-May<br>Draw results: typically late June<br>Season: November rifle<br>Units: varies by year &mdash; Corey advises on best units</p>
+        <p style="margin-top:.75rem">Preference points accumulate if unsuccessful. Corey can advise on unit selection to maximize draw odds.</p>
+      </div>
+      <div class="info-card">
+        <h4>Deer Tags &mdash; General Season</h4>
+        <p>Columbian blacktail deer tags for western Oregon are available over the counter (OTC). No draw required.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Requirements:</strong><br>Oregon hunting license (resident or non-resident)<br>Western Oregon deer tag<br>Hunter education certificate<br>Federal migratory bird stamp (not required for deer)</p>
+        <p style="margin-top:.75rem">Non-resident licenses and tags can be purchased online through ODFW's licensing system.</p>
+      </div>
+      <div class="info-card">
+        <h4>Non-Resident Hunters</h4>
+        <p>Oregon welcomes non-resident hunters. License and tag costs are higher than resident rates.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Approximate costs (non-resident):</strong><br>Hunting license: ~$168<br>Deer tag (OTC): ~$340<br>Elk tag (if drawn): ~$565<br>Hunter education: Required (reciprocal accepted)</p>
+        <p style="margin-top:.75rem">Rimewild provides guidance on the application and licensing process.</p>
+      </div>
+      <div class="info-card">
+        <h4>Legal Requirements</h4>
+        <p>All hunters must wear a minimum of one article of fluorescent hunter orange or fluorescent chartreuse during rifle seasons.</p>
+        <p style="margin-top:.75rem"><strong style="color:var(--text)">Required:</strong><br>Valid Oregon hunting license<br>Species-specific tag<br>Hunter education certificate<br>Photo ID in the field<br>Compliance with all ODFW regulations</p>
+        <p style="margin-top:.75rem">Corey briefs all hunters on current regulations, boundaries, and legal requirements before the hunt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="sec" id="faq">
+  <div class="wrap">
+    <div style="max-width:800px">
+      <div class="eyebrow">Frequently Asked</div>
+      <h2 class="big-title reveal">Hunting<br>FAQ</h2>
+      <div class="reveal" style="margin-top:3rem">
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What's the success rate for elk hunts?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Roosevelt elk success rates on the Oregon Coast Range vary by unit and year, but generally range from 10&ndash;25% for rifle season. Corey's local knowledge and access to quality ground improves those odds significantly, but elk hunting is never a guarantee. It's a hunt, not a harvest.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What if I don't draw an elk tag?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Your preference points accumulate. We can plan for the following year, or you can book a blacktail deer hunt instead &mdash; those tags are available over the counter with no draw required. Many hunters combine a deer hunt with an elk application strategy.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">How close are the shots?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">In Coast Range timber, most shots are 50&ndash;150 yards. Longer shots are rare &mdash; the terrain is too thick. Practice shooting from field positions (kneeling, using a tree rest) at these distances. A benchrest zero at 200 yards means nothing if you can't hit offhand at 80.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What happens if I harvest an animal?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Field dressing and quartering happen in the field with Corey's assistance. Meat is packed out to the vehicle in game bags. Rimewild can recommend local meat processors in the Lincoln City/Newport area for butchering and packaging. Taxidermy referrals are also available.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Is archery hunting available?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Currently, Rimewild focuses on rifle season hunts. Archery elk hunting in coastal timber is extremely challenging due to the dense cover and limited visibility. If you're an experienced archery hunter, contact us to discuss options.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">What about the rain?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">It rains on the Oregon Coast. A lot. October and November average 8&ndash;12 inches of rain each. Quality rain gear is non-negotiable. The upside: rain moves animals, muffles sound, and keeps casual hunters off the mountain. Some of the best hunting days are the wettest.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Where should I stay?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Lincoln City, Newport, or Toledo offer lodging close to hunting areas. Corey can recommend specific places that work well for early-morning departures. Budget motels, vacation rentals, and campgrounds are all options.</div>
+        </div>
+        <div class="faq-item" onclick="this.classList.toggle('open')">
+          <div class="faq-q">Cancellation policy?<span class="faq-toggle">+</span></div>
+          <div class="faq-a">Full refund with 14+ days notice. 50% refund with 7&ndash;13 days notice. Hunts cancelled due to dangerous conditions (wildfire, extreme weather) are rescheduled or fully refunded. Unsuccessful hunts are not refundable &mdash; this is hunting, and effort is the guarantee, not outcome.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="sec sec-alt" style="text-align:center">
+  <div class="wrap">
+    <div class="eyebrow eyebrow-center">Ready?</div>
+    <h2 class="big-title reveal">Book Your<br>Hunt</h2>
+    <p class="subtitle reveal" style="margin-inline:auto;margin-bottom:3rem">Roosevelt elk and Columbian blacktail in Oregon's Coast Range. Guided by someone who was born on this ground.</p>
+    <div class="reveal" style="display:flex;gap:1.25rem;justify-content:center;flex-wrap:wrap">
+      <button class="btn btn-gold" onclick="openBooking('Roosevelt Elk Hunt')">Book Elk Hunt</button>
+      <button class="btn btn-ghost" onclick="openBooking('Blacktail Deer Hunt')">Book Deer Hunt</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
+      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
+      <div><h5>Hunting</h5><ul class="footer-links"><li><a href="#elk">Roosevelt Elk</a></li><li><a href="#blacktail">Blacktail Deer</a></li><li><a href="#included">What's Included</a></li><li><a href="#regulations">Regulations</a></li><li><a href="#faq">FAQ</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="rivers.html">The Rivers</a></li><li><a href="index.html#calendar">Availability</a></li><li><a href="index.html#guide">Meet Corey</a></li><li><a href="reports.html">Reports</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="tel:" class="btn btn-ghost" style="font-size:.65rem">Call / Text</a>
+  <button class="btn btn-gold" onclick="openBooking()" style="font-size:.65rem">Book a Hunt</button>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
+  <div class="booking-modal">
+    <button class="booking-close" onclick="closeBooking()" aria-label="Close">&times;</button>
+    <div id="bookingForm">
+      <h2>Book Your Hunt</h2>
+      <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your hunt within 48 hours.</p>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a hunt...</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Custom/Combo">Custom / Combo Hunt</option></select></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Dates</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Hunters</label><select class="form-input" id="bGuests" required><option value="1">1 hunter</option><option value="2">2 hunters</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
+        <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
+        <div class="form-group"><label class="form-label" for="bTag">Do you have your tag?</label><select class="form-input" id="bTag"><option value="yes">Yes &mdash; tag in hand</option><option value="drawn">Applied / awaiting draw</option><option value="no">No &mdash; need guidance</option><option value="otc">Deer (OTC, will purchase)</option></select></div>
+        <div class="form-group"><label class="form-label" for="bNotes">Experience &amp; Notes</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Hunting experience, fitness level, any questions..."></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Request This Hunt</button>
+      </form>
+    </div>
+    <div id="bookingSuccess" hidden>
+      <div class="form-success"><h3>Request Received</h3><p style="color:var(--text-dim)">We'll confirm your Rimewild hunt within 48 hours.</p><button class="btn btn-ghost" onclick="closeBooking()" style="margin-top:1.5rem">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+document.getElementById('navToggle').addEventListener('click',()=>{const n=document.getElementById('navLinks');n.classList.toggle('open');document.getElementById('navToggle').innerHTML=n.classList.contains('open')?'&#10005;':'&#9776;'});
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('navToggle').innerHTML='&#9776;'})});
+
+function openBooking(t){
+  const o=document.getElementById('bookingOverlay');o.classList.add('show');document.body.style.overflow='hidden';
+  document.getElementById('bookingForm').hidden=false;document.getElementById('bookingSuccess').hidden=true;
+  if(t){const s=document.getElementById('bTrip');for(let i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break}}}
+}
+function closeBooking(){document.getElementById('bookingOverlay').classList.remove('show');document.body.style.overflow=''}
+function submitBooking(e){e.preventDefault();document.getElementById('bookingForm').hidden=true;document.getElementById('bookingSuccess').hidden=false}
+
+if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+</script>
+</body>
+</html>

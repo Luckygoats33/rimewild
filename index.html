@@ -350,6 +350,62 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   .reveal-delay-3{transition-delay:.3s}
 }
 @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+
+/* ===== NEW: DAY TIMELINE ===== */
+.timeline{position:relative;padding-left:3rem;max-width:700px}
+.timeline::before{content:'';position:absolute;left:0;top:0;bottom:0;width:1px;background:var(--border)}
+.timeline-item{position:relative;padding-bottom:3rem}
+.timeline-item:last-child{padding-bottom:0}
+.timeline-item::before{content:'';position:absolute;left:-3rem;top:.4rem;width:9px;height:9px;background:var(--gold);border-radius:50%}
+.timeline-time{font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.4rem}
+.timeline-item h4{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:.5rem}
+.timeline-item p{font-size:.88rem;color:var(--text-dim);margin:0;line-height:1.6}
+@media(max-width:768px){.timeline-wrap-grid{grid-template-columns:1fr!important}}
+
+/* ===== NEW: SPECIES CARDS ===== */
+.species-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:0}
+.species-card{padding:2.5rem;border:1px solid var(--border);transition:all .3s}
+.species-card:hover{background:var(--bg-card)}
+.species-card h4{font-family:var(--font-display);font-size:1.4rem;font-weight:700;margin-bottom:.5rem}
+.species-season{font-size:.6rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.species-card p{font-size:.88rem;color:var(--text-dim);margin:0;line-height:1.6}
+.species-weight{font-family:var(--font-display);font-size:2rem;font-weight:800;color:var(--gold);margin-top:1rem}
+.species-weight small{font-size:.6em;color:var(--text-dim);font-weight:400}
+
+/* ===== NEW: MAP/LOCATION ===== */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0}
+@media(max-width:768px){.loc-grid{grid-template-columns:1fr}}
+.loc-card{padding:2.5rem;border:1px solid var(--border);transition:background .3s}
+.loc-card:hover{background:var(--bg-card)}
+.loc-card h4{font-family:var(--font-display);font-size:1.15rem;font-weight:600;margin-bottom:.5rem}
+.loc-card p{font-size:.88rem;color:var(--text-dim);margin:0;line-height:1.6}
+.loc-distance{font-size:.65rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-top:.75rem}
+
+/* ===== NEW: PROMISE BAR ===== */
+.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0}
+@media(max-width:600px){.promise-grid{grid-template-columns:1fr}}
+.promise-item{padding:3rem 2.5rem;border:1px solid var(--border);text-align:center;transition:background .3s}
+.promise-item:hover{background:var(--bg-card)}
+.promise-icon{font-size:2rem;margin-bottom:1rem;opacity:.6}
+.promise-item h4{font-family:var(--font-display);font-size:1.2rem;font-weight:700;margin-bottom:.75rem}
+.promise-item p{font-size:.85rem;color:var(--text-dim);margin:0;max-width:30ch;margin-inline:auto;line-height:1.6}
+
+/* ===== NEW: CTA BANNER ===== */
+.cta-banner{padding:clamp(60px,10vh,120px) 0;text-align:center;position:relative;overflow:hidden;background-size:cover;background-position:center}
+.cta-banner::after{content:'';position:absolute;inset:0;background:rgba(10,14,12,.8)}
+.cta-banner>*{position:relative;z-index:1}
+.cta-banner h2{font-size:clamp(2.5rem,6vw,4.5rem);font-weight:900;letter-spacing:-.02em;margin-bottom:1rem}
+.cta-banner p{font-size:clamp(.9rem,1.5vw,1.15rem);color:var(--text-dim);max-width:45ch;margin:0 auto 2.5rem;line-height:1.7}
+
+/* ===== NEW: WEATHER ===== */
+.weather-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0}
+@media(max-width:768px){.weather-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.weather-grid{grid-template-columns:1fr}}
+.weather-card{padding:2.5rem;border:1px solid var(--border);text-align:center}
+.weather-card h4{font-family:var(--font-display);font-size:1.1rem;font-weight:600;margin-bottom:.5rem}
+.weather-temp{font-family:var(--font-display);font-size:2.5rem;font-weight:800;color:var(--gold);line-height:1}
+.weather-range{font-size:.75rem;color:var(--text-dim);margin-top:.25rem}
+.weather-desc{font-size:.82rem;color:var(--text-dim);margin-top:.75rem;line-height:1.5}
   </style>
 </head>
 <body>
@@ -360,12 +416,12 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="Rimewild"></a>
     <ul class="nav-links" id="navLinks">
       <li><a href="#whats-wild">Seasons</a></li>
-      <li><a href="#fishing">Fishing</a></li>
-      <li><a href="#hunting">Hunting</a></li>
-      <li><a href="#rivers">Waters</a></li>
+      <li><a href="fishing.html">Fishing</a></li>
+      <li><a href="hunting.html">Hunting</a></li>
+      <li><a href="rivers.html">Waters</a></li>
       <li><a href="#guide">Guide</a></li>
-      <li><a href="#gallery">Gallery</a></li>
       <li><a href="#calendar">Availability</a></li>
+      <li><a href="reports.html">Reports</a></li>
       <li class="nav-cta"><a href="#booking-section" class="btn btn-gold" onclick="openBooking()">Book Now</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
@@ -379,7 +435,6 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </video>
   <div class="hero-overlay"></div>
   <div class="hero-content">
-    <img src="assets/logo.png" alt="Rimewild" class="hero-logo">
     <h1 class="hero-title">Wild Water.<br>Wild Country.<span>Guided Fishing &amp; Hunting &mdash; Oregon's Central Coast</span></h1>
     <p class="hero-sub">Steelhead, salmon, elk, and blacktail deer on the Siletz, Alsea, and Siuslaw rivers with a guide who was born on this water.</p>
     <div class="hero-ctas">
@@ -446,6 +501,24 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </section>
 
+<!-- SPECIES GUIDE -->
+<section class="sec sec-alt" id="species">
+  <div class="wrap">
+    <div class="eyebrow">Species Guide</div>
+    <h2 class="big-title reveal">What You're<br>After</h2>
+    <p class="subtitle reveal" style="margin-bottom:3rem">Seven species across four river systems. Here's what runs on Oregon's Central Coast.</p>
+    <div class="species-grid reveal">
+      <div class="species-card"><h4>Winter Steelhead</h4><div class="species-season">December &ndash; April</div><p>The flagship species. Wild winter steelhead in coastal rivers are aggressive, powerful, and chrome-bright. The Siletz and Alsea produce some of the best winter steelhead fishing in Oregon.</p><div class="species-weight">8&ndash;15 <small>lbs avg</small></div></div>
+      <div class="species-card"><h4>Fall Chinook</h4><div class="species-season">August &ndash; November</div><p>The king of Pacific salmon. Fall chinook push into coastal rivers with power and size that nothing else matches. They're the reason people book trips months in advance.</p><div class="species-weight">15&ndash;40 <small>lbs avg</small></div></div>
+      <div class="species-card"><h4>Summer Steelhead</h4><div class="species-season">April &ndash; October</div><p>Acrobatic, hard-fighting fish in warmer water. Summer steelhead on the Siletz are aggressive hitters that put on aerial displays.</p><div class="species-weight">6&ndash;12 <small>lbs avg</small></div></div>
+      <div class="species-card"><h4>Coho Salmon</h4><div class="species-season">September &ndash; November</div><p>Aggressive and willing biters. Coho hit plugs and spinners hard. They're excellent table fare and a perfect species for newer anglers.</p><div class="species-weight">8&ndash;12 <small>lbs avg</small></div></div>
+      <div class="species-card"><h4>Coastal Cutthroat</h4><div class="species-season">May &ndash; September</div><p>Native trout species. Light tackle, beautiful upper river water, and fish that hit dry flies and small spinners. The best summer fishery on the coast.</p><div class="species-weight">1&ndash;4 <small>lbs avg</small></div></div>
+      <div class="species-card"><h4>Roosevelt Elk</h4><div class="species-season">November (Rifle)</div><p>The largest elk subspecies in North America. Coast Range Roosevelt elk live in dense timber and require patience, conditioning, and local knowledge to hunt successfully.</p><div class="species-weight">700&ndash;1,100 <small>lbs (bulls)</small></div></div>
+      <div class="species-card"><h4>Blacktail Deer</h4><div class="species-season">October &ndash; November</div><p>Columbian blacktail are a subspecies of mule deer adapted to dense coastal forest. They're challenging spot-and-stalk quarry in steep, thick terrain.</p><div class="species-weight">130&ndash;200 <small>lbs avg</small></div></div>
+    </div>
+  </div>
+</section>
+
 <!-- IMAGE BREAK -->
 <div class="img-break" style="background-image:url('assets/images/misty-mountains.jpg')">
   <div class="img-break-text"><h2>Into the Wild</h2></div>
@@ -457,16 +530,16 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <div class="eyebrow">Choose Your Adventure</div>
     <h2 class="big-title reveal">How Do You Want<br>to Get Wild?</h2>
     <div class="adventure-grid reveal" style="margin-top:3rem">
-      <div class="adventure-tile" style="background-image:url('assets/images/fishing-river.jpg')" onclick="scrollTo('#trip-finder')">
+      <a class="adventure-tile" style="background-image:url('assets/images/fishing-river.jpg')" href="fishing.html">
         <div class="eyebrow" style="color:rgba(255,255,255,.5)">Fishing</div>
         <h3>Fish the Rivers</h3>
         <p>Salmon, steelhead, cutthroat on the Siletz, Alsea &amp; Siuslaw</p>
-      </div>
-      <div class="adventure-tile" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" onclick="scrollTo('#trip-finder')">
+      </a>
+      <a class="adventure-tile" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" href="hunting.html">
         <div class="eyebrow" style="color:rgba(255,255,255,.5)">Hunting</div>
         <h3>Hunt the Coast Range</h3>
         <p>Roosevelt elk &amp; Columbian blacktail in coastal timber</p>
-      </div>
+      </a>
     </div>
     <div class="type-chips">
       <div class="type-chip" onclick="scrollTo('#trip-finder')">Drift Boat</div>
@@ -500,7 +573,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
     <h2 class="big-title reveal">Rimewild<br>Country</h2>
     <p class="subtitle reveal" style="margin-bottom:3rem">Central Oregon Coast rivers from the headwaters of the Coast Range to the tidal estuaries.</p>
     <div class="rivers-grid reveal">
-      <div class="river-card" onclick="scrollTo('#calendar')">
+      <div class="river-card" onclick="location.href='rivers.html'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Steelhead &bull; Chinook &bull; Cutthroat</div>
@@ -508,7 +581,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>67 miles of Coast Range water. The Siletz is Rimewild's home river &mdash; winter steelhead runs from December through April make it one of the most productive fisheries on the Oregon coast.</p>
         </div>
       </div>
-      <div class="river-card" onclick="scrollTo('#calendar')">
+      <div class="river-card" onclick="location.href='rivers.html'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Steelhead &bull; Cutthroat</div>
@@ -516,7 +589,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>Running from the Coast Range to Waldport, the Alsea delivers strong fall chinook runs and excellent bank access for all skill levels.</p>
         </div>
       </div>
-      <div class="river-card" onclick="scrollTo('#calendar')">
+      <div class="river-card" onclick="location.href='rivers.html'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Coho &bull; Steelhead</div>
@@ -524,7 +597,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
           <p>The Siuslaw winds through dense coastal forest near Florence. Quieter than the Siletz, with fewer boats and more wildlife.</p>
         </div>
       </div>
-      <div class="river-card" onclick="scrollTo('#calendar')">
+      <div class="river-card" onclick="location.href='rivers.html'">
         <div class="river-card-visual-wrap"><div class="river-card-visual" style="background-image:url('assets/images/drift-boat.jpg')"></div></div>
         <div class="river-card-body">
           <div class="river-card-species">Chinook &bull; Steelhead &bull; Bay Species</div>
@@ -574,6 +647,43 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="diff-item"><div class="diff-num">02</div><h4>Small Groups</h4><p>You won't be one of six people in a boat. Rimewild keeps it small because that's how you actually learn.</p></div>
       <div class="diff-item"><div class="diff-num">03</div><h4>Real Fishing</h4><p>You cast, you work water, you read current, you set the hook. This isn't a sightseeing float. You walk away knowing more.</p></div>
       <div class="diff-item"><div class="diff-num">04</div><h4>Conditions-Driven</h4><p>We follow the river, the season, and the fish. If the Siletz is blown out, we move to the Alsea. Flexibility is the advantage.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- A DAY ON THE WATER -->
+<section class="sec sec-alt">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:start" class="timeline-wrap-grid">
+      <div>
+        <div class="eyebrow">A Day on the Water</div>
+        <h2 class="big-title reveal">What to<br>Expect</h2>
+        <p class="subtitle reveal">Every trip is different &mdash; weather, water, fish. But here's how a typical winter steelhead day unfolds.</p>
+      </div>
+      <div class="timeline reveal" style="margin-top:1rem">
+        <div class="timeline-item"><div class="timeline-time">5:30 AM</div><h4>Meet at the Ramp</h4><p>We meet at the launch. Coffee's on. We rig rods, talk about the plan, and read the conditions together.</p></div>
+        <div class="timeline-item"><div class="timeline-time">6:00 AM</div><h4>First Drift</h4><p>On the water before first light. The first couple hours are the most productive. You're casting immediately.</p></div>
+        <div class="timeline-item"><div class="timeline-time">9:00 AM</div><h4>Work the Water</h4><p>We move through 8&ndash;12 miles of river, hitting every productive run. You'll learn to read water, spot holding lies, and adjust your presentation.</p></div>
+        <div class="timeline-item"><div class="timeline-time">12:00 PM</div><h4>Lunch on the River</h4><p>Pull over, eat, rest, swap stories. You might be processing a fish at this point.</p></div>
+        <div class="timeline-item"><div class="timeline-time">1:00 PM</div><h4>Afternoon Push</h4><p>Back on the water. Afternoon light changes the game &mdash; different techniques, different spots.</p></div>
+        <div class="timeline-item"><div class="timeline-time">3:30 PM</div><h4>Final Runs</h4><p>Last few spots before take-out. Some of the best fishing happens in the last hour.</p></div>
+        <div class="timeline-item"><div class="timeline-time">4:00 PM</div><h4>Take Out</h4><p>We clean fish, break down gear, and recap the day. You head back knowing the river better than when you arrived.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- THE PROMISE -->
+<section class="sec">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="eyebrow eyebrow-center">The Rimewild Promise</div>
+      <h2 class="big-title reveal">Our Word</h2>
+    </div>
+    <div class="promise-grid reveal">
+      <div class="promise-item"><div class="promise-icon">&#9733;</div><h4>No Fish, No Problem</h4><p>If conditions are genuinely unfishable, we reschedule at no charge. You'll never pay for a day that never had a chance.</p></div>
+      <div class="promise-item"><div class="promise-icon">&#9878;</div><h4>Honest Reports</h4><p>We'll tell you what's running and what's not. If it's a tough bite, you'll hear that before you book, not after.</p></div>
+      <div class="promise-item"><div class="promise-icon">&#10003;</div><h4>All Gear Included</h4><p>Rods, reels, tackle, bait, rain gear. Show up with your license and lunch &mdash; we handle everything else.</p></div>
     </div>
   </div>
 </section>
@@ -632,8 +742,102 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   </div>
 </section>
 
+<!-- WEATHER & CLIMATE -->
+<section class="sec" id="climate">
+  <div class="wrap">
+    <div class="eyebrow">Weather &amp; Climate</div>
+    <h2 class="big-title reveal">Oregon Coast<br>Conditions</h2>
+    <p class="subtitle reveal" style="margin-bottom:3rem">The Central Coast is wet, mild, and wild. That's what makes the fishing so good.</p>
+    <div class="weather-grid reveal">
+      <div class="weather-card"><h4>Winter</h4><div class="weather-temp">48&deg;</div><div class="weather-range">38&ndash;52&deg;F</div><div class="weather-desc">Heavy rain, swollen rivers, peak steelhead. Bring serious rain gear. This is prime time.</div></div>
+      <div class="weather-card"><h4>Spring</h4><div class="weather-temp">55&deg;</div><div class="weather-range">42&ndash;60&deg;F</div><div class="weather-desc">Rain easing, rivers clearing. Late steelhead, early cutthroat. Wildflowers in the Coast Range.</div></div>
+      <div class="weather-card"><h4>Summer</h4><div class="weather-temp">65&deg;</div><div class="weather-range">52&ndash;72&deg;F</div><div class="weather-desc">Mild and dry. Low water, technical fishing. Best weather for families and beginners.</div></div>
+      <div class="weather-card"><h4>Fall</h4><div class="weather-temp">55&deg;</div><div class="weather-range">44&ndash;62&deg;F</div><div class="weather-desc">First rains push fish upstream. Chinook runs peak. Hunting season opens. The most diverse season.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<div class="cta-banner" style="background-image:url('assets/images/river-canyon.jpg')">
+  <div class="wrap" style="position:relative;z-index:1">
+    <h2>Your River<br>Is Waiting</h2>
+    <p>The fish are running, the water's right, and Corey's got the drift boat ready. Don't just read about it.</p>
+    <button class="btn btn-gold" onclick="openBooking()">Book Your Trip</button>
+  </div>
+</div>
+
+<!-- LOCATION & LOGISTICS -->
+<section class="sec sec-alt" id="location">
+  <div class="wrap">
+    <div class="eyebrow">Getting Here</div>
+    <h2 class="big-title reveal">Central Oregon<br>Coast</h2>
+    <p class="subtitle reveal" style="margin-bottom:3rem">Rimewild country stretches from Lincoln City south to Florence, centered on the Siletz River corridor.</p>
+    <div class="loc-grid reveal">
+      <div class="loc-card"><h4>From Portland</h4><p>Straight shot down Highway 18 through the Coast Range. McMinnville to the coast in about 90 minutes. Lincoln City is your gateway.</p><div class="loc-distance">2 hours &bull; 100 miles</div></div>
+      <div class="loc-card"><h4>From Salem</h4><p>Highway 20 west through Corvallis to the coast. Passes through the heart of the Alsea River drainage.</p><div class="loc-distance">1.5 hours &bull; 85 miles</div></div>
+      <div class="loc-card"><h4>From Eugene</h4><p>Highway 126 west to Florence on the Siuslaw. Beautiful drive through old-growth forest and the Coast Range.</p><div class="loc-distance">1.5 hours &bull; 65 miles</div></div>
+      <div class="loc-card"><h4>Nearest Airports</h4><p>Portland International (PDX) is the closest major airport. Rental cars available. Eugene airport (EUG) is closer for southern rivers.</p><div class="loc-distance">PDX: 2.5 hrs &bull; EUG: 1.5 hrs</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONSERVATION -->
+<section class="sec" id="conservation">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:center">
+      <div class="reveal">
+        <div class="eyebrow">Conservation</div>
+        <h2 class="big-title">Wild Fish.<br>Wild Rivers.</h2>
+      </div>
+      <div class="reveal">
+        <p style="color:var(--text-dim);font-size:1rem;line-height:1.8">Rimewild practices catch-and-release for all wild steelhead. Hatchery fish may be retained per ODFW regulations. We support habitat restoration, river access stewardship, and responsible harvest.</p>
+        <p style="color:var(--text-dim);font-size:1rem;line-height:1.8">These rivers have sustained people for thousands of years. The fishing is good because the rivers are healthy. Keeping them that way isn't optional &mdash; it's the whole point.</p>
+        <p style="color:var(--text-dim);font-size:1rem;line-height:1.8;margin:0">We use barbless hooks, rubber-mesh nets, and handle every fish with care. If it's wild, it goes back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IMAGE BREAK -->
+<div class="img-break" style="background-image:url('assets/images/fishing-person.jpg')">
+  <div class="img-break-text"><h2>Tight Lines</h2></div>
+</div>
+
+<!-- TECHNIQUES -->
+<section class="sec sec-alt" id="techniques">
+  <div class="wrap">
+    <div style="text-align:center;margin-bottom:4rem">
+      <div class="eyebrow eyebrow-center">Techniques</div>
+      <h2 class="big-title reveal">How We Fish</h2>
+    </div>
+    <div class="diff-grid reveal">
+      <div class="diff-item"><div class="diff-num">&#9978;</div><h4>Drift Boat</h4><p>The workhorse of coastal river fishing. We drift 8&ndash;12 miles of river, stopping at every productive run. You fish from a stable platform while Corey rows and positions.</p></div>
+      <div class="diff-item"><div class="diff-num">&#9872;</div><h4>Back-Bouncing</h4><p>The go-to technique for winter steelhead. Bouncing bait through steelhead runs is tactile, technical, and deadly effective when done right.</p></div>
+      <div class="diff-item"><div class="diff-num">&#10038;</div><h4>Plug Pulling</h4><p>Hot-shotting plugs through holding water. The plug works while you hold the rod. When a steelhead hits a plug, you feel it in your chest.</p></div>
+      <div class="diff-item"><div class="diff-num">&#9730;</div><h4>Bank &amp; Wade</h4><p>Walk the river, read water from shore, and cast to visible fish. The most intimate way to learn a river. No boat between you and the water.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- GIFT TRIPS -->
+<section class="sec">
+  <div class="wrap">
+    <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(3rem,6vw,6rem);align-items:center">
+      <div class="reveal">
+        <div class="eyebrow">Gift Experiences</div>
+        <h2 class="big-title">Give the<br>River</h2>
+        <p class="subtitle" style="margin-bottom:2rem">A Rimewild gift certificate is the best fishing gift anyone will ever receive. Available for any trip, any amount.</p>
+        <button class="btn btn-gold" onclick="openBooking('Private/Custom')">Purchase a Gift Trip</button>
+      </div>
+      <div class="reveal" style="aspect-ratio:4/3;background:url('assets/images/drift-boat.jpg') center/cover;position:relative">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,rgba(10,14,12,.3),rgba(10,14,12,.1))"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- GALLERY -->
-<section class="sec" id="gallery">
+<section class="sec sec-alt" id="gallery">
   <div class="wrap">
     <div style="text-align:center;margin-bottom:4rem">
       <div class="eyebrow eyebrow-center">Gallery</div>
@@ -756,7 +960,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <div class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">How-To</div><h3>Winter Steelhead Fishing on the Siletz: A Complete Guide</h3><p>Everything you need to know about targeting winter steelhead on Oregon's Central Coast.</p></div></div>
       <div class="blog-card"><div class="blog-card-visual-wrap"><div class="blog-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div></div><div class="blog-card-body"><div class="eyebrow" style="font-size:.55rem">Seasonal</div><h3>What's Running in October: Central Coast</h3><p>Fall chinook hitting their stride, blacktail deer season opening.</p></div></div>
     </div>
-    <div style="text-align:center;margin-top:3rem"><a href="#report" class="btn btn-ghost">View All Reports</a></div>
+    <div style="text-align:center;margin-top:3rem"><a href="reports.html" class="btn btn-ghost">View All Reports</a></div>
   </div>
 </section>
 
@@ -782,8 +986,8 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
   <div class="wrap">
     <div class="footer-top">
       <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
-      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="#fishing">Winter Steelhead</a></li><li><a href="#fishing">Fall Chinook</a></li><li><a href="#fishing">Cutthroat &amp; Trout</a></li><li><a href="#fishing">Bank &amp; Wade</a></li><li><a href="#fishing">Family Trips</a></li></ul></div>
-      <div><h5>Explore</h5><ul class="footer-links"><li><a href="#rivers">The Rivers</a></li><li><a href="#whats-wild">What's Running</a></li><li><a href="#calendar">Availability</a></li><li><a href="#guide">Meet Corey</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#report">Reports</a></li></ul></div>
+      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="rivers.html">The Rivers</a></li><li><a href="#whats-wild">What's Running</a></li><li><a href="#calendar">Availability</a></li><li><a href="#guide">Meet Corey</a></li><li><a href="hunting.html">Hunting</a></li><li><a href="reports.html">Reports</a></li></ul></div>
       <div><h5>Plan</h5><ul class="footer-links"><li><a href="#booking-section">Book a Trip</a></li><li><a href="#booking-section">What to Bring</a></li><li><a href="#booking-section">Licenses</a></li><li><a href="#booking-section">Lodging</a></li><li><a href="#booking-section">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
