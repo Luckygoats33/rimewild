@@ -250,8 +250,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <li><a href="index.html">Home</a></li>
         <li><a href="fishing.html">Fishing</a></li>
         <li><a href="hunting.html">Hunting</a></li>
-
         <li><a href="reports.html">Reports</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li class="nav-cta"><a href="index.html#booking-section" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" type="button" aria-label="Open menu" aria-controls="navLinks" aria-expanded="false">&#9776;</button>
@@ -605,8 +606,9 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
         <li><a href="index.html">Home</a></li>
         <li><a href="fishing.html">Fishing</a></li>
         <li><a href="hunting.html">Hunting</a></li>
-
         <li><a href="reports.html">Reports</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
         <li class="nav-cta"><a href="index.html#booking-section" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
         </ul>
       </nav>
@@ -657,7 +659,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <script>
 const nav=document.getElementById('nav');
 window.addEventListener('scroll',()=>{const s=window.scrollY>60;nav.classList.toggle('scrolled',s);nav.classList.toggle('camo-nav-border',s)},{passive:true});
-document.getElementById('navToggle').addEventListener('click',()=>{const n=document.getElementById('navLinks');n.classList.toggle('open');document.getElementById('navToggle').innerHTML=n.classList.contains('open')?'&#10005;':'&#9776;'});
+document.getElementById('navToggle').addEventListener('click',()=>{const n=document.getElementById('navLinks');n.classList.toggle('open');const isOpen=n.classList.contains('open');document.body.classList.toggle('nav-open',isOpen);document.getElementById('navToggle').innerHTML=isOpen?'&#10005;':'&#9776;'});
 document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('navToggle').innerHTML='&#9776;'})});
 
 function openBooking(t,d){
