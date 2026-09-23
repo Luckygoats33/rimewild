@@ -179,10 +179,7 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
       <li><a href="index.html">Home</a></li>
       <li><a href="fishing.html">Fishing</a></li>
       <li><a href="hunting.html">Hunting</a></li>
-      <li><a href="rivers.html">Waters</a></li>
       <li><a href="reports.html" class="active">Reports</a></li>
-      <li><a href="index.html#calendar">Availability</a></li>
-      <li><a href="index.html#guide">Guide</a></li>
       <li class="nav-cta"><a href="#" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
     </ul>
     <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
@@ -252,10 +249,10 @@ select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csv
 <footer class="footer camo-stripe">
   <div class="wrap">
     <div class="footer-top">
-      <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
+      <div><a href="index.html" class="footer-brand"><img src="assets/logo.png" alt="Rimewild" style="height:60px;width:auto;margin-bottom:1rem"></a><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
       <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
-      <div><h5>Explore</h5><ul class="footer-links"><li><a href="rivers.html">The Rivers</a></li><li><a href="index.html#whats-wild">What's Running</a></li><li><a href="index.html#calendar">Availability</a></li><li><a href="index.html#guide">Meet Corey</a></li><li><a href="reports.html">Reports</a></li></ul></div>
-      <div><h5>Plan</h5><ul class="footer-links"><li><a href="index.html#booking-section">Book a Trip</a></li><li><a href="index.html#booking-section">What to Bring</a></li><li><a href="index.html#booking-section">Licenses</a></li><li><a href="index.html#booking-section">Lodging</a></li><li><a href="index.html#booking-section">FAQ</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="hunting.html">Hunting</a></li><li><a href="rivers.html">The Rivers</a></li><li><a href="reports.html">Reports</a></li></ul></div>
+      <div><h5>Plan</h5><ul class="footer-links"><li><a href="index.html#booking-section">Book a Trip</a></li><li><a href="index.html#booking-section">What to Bring</a></li><li><a href="index.html#booking-section">Licenses</a></li><li><a href="index.html#booking-section">FAQ</a></li></ul></div>
     </div>
     <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
   </div>
@@ -542,37 +539,276 @@ const articles = [
     id:'siletz-sept-report',cat:'river',img:'assets/images/fishing-river.jpg',
     title:'Siletz River Report — Early September 2026',
     excerpt:'Summer steelhead still present in the upper river. First chinook scouts showing below Ojalla.',
-    date:'September 3, 2026'
+    date:'September 3, 2026',
+    content:`<h3>Current Conditions</h3>
+<p>The Siletz is running low and clear at <strong>185 cfs at the Siletz gauge</strong> — classic late-summer flows. Water temps are sitting in the upper 50s by midday, which is fine for steelhead but pushing the comfort zone. Morning sessions are fishing best, with the first three hours of daylight producing the most action before temps climb.</p>
+
+<p>Visibility is 5+ feet in the main stem. That kind of clarity makes fish spooky, so downsizing your presentations and staying low on the bank is essential. The upper river above Logsden has slightly more color from tributary inflows, and that's where we've been spending most of our time.</p>
+
+<h3>Summer Steelhead</h3>
+<p>There are still <strong>summer steelhead holding in the upper river</strong>. These are late-season fish — they've been in the system for weeks, know every rock and shadow, and won't tolerate sloppy presentations. But they're aggressive when you get the drift right.</p>
+
+<p>We've been fishing the runs above Moonshine and into the canyon stretch with <strong>small corky-and-yarn setups</strong> — size 10 corky in pink or orange under a piece of fluorescent yarn, drifted on 6-pound fluorocarbon leader. The key is getting your weight dialed so the rig barely ticks bottom without hanging up. In this low water, that means 1/8 to 3/16 oz pencil lead at most.</p>
+
+<p>Fly anglers are having good days in the upper canyon. <strong>Skating dry flies</strong> through the tailouts at dawn has produced some explosive strikes. A size 6 Muddler Minnow or Waller Waker fished on a floating line with a riffle hitch is the setup. Cast across and slightly downstream, mend to get the fly swinging, and hold on. Not every fish commits, but the ones that do are unforgettable.</p>
+
+<h3>First Chinook Scouts</h3>
+<p>We're starting to see the first <strong>fall chinook scouts below Ojalla Bridge</strong>. These are early fish — advance runners ahead of the main push that typically arrives in late September and October. We spotted three fish holding in the deep slot below the bridge on Tuesday morning, and a client hooked one on a spinner near Sam Creek on Thursday that came unbuttoned after a short fight.</p>
+
+<p>It's too early to target chinook specifically, but if you're on the lower river for steelhead, tie on a <strong>Blue Fox Vibrax #5 in chrome/green</strong> and make some casts through the deeper runs. You might get lucky. The main chinook push is still 3-4 weeks out, depending on rain.</p>
+
+<h3>What to Watch</h3>
+<p>The first significant fall rain system will change everything. Once the river bumps to 500+ cfs and drops back, chinook will push in from the bay in serious numbers. NOAA's extended forecast shows the pattern shifting toward wetter weather by mid-September. When that first good rain hits, we'll be on the lower river with plugs and we'll update this report.</p>
+
+<p>In the meantime, summer steelhead fishing is still worth the trip. Get here early, fish light, and enjoy having the river mostly to yourself. This is one of the quietest weeks of the year on the Siletz.</p>
+
+<h3>Access Notes</h3>
+<p>Morgan County Park is open and fishable. The gravel bar below Ojalla is accessible but low — watch your footing on the slick rocks. The upper canyon access off Forest Service roads is in good shape. Be aware that some of the seasonal logging roads above Logsden have active operations — drive slow and yield to trucks.</p>`
   },
   {
     id:'alsea-chinook-report',cat:'river',img:'assets/images/fish-catch.jpg',
     title:'Alsea Fall Chinook — Season Preview',
     excerpt:'The Alsea tideline is primed for an excellent chinook season. Water conditions and early fish counts look strong.',
-    date:'August 20, 2026'
+    date:'August 20, 2026',
+    content:`<h3>Season Outlook</h3>
+<p>The Alsea River is shaping up for one of its best fall chinook seasons in recent memory. ODFW's offshore test fishery data showed <strong>strong returns of Alsea-origin chinook</strong> throughout the summer, and early tidewater counts at the Alsea Hatchery are running about 20% above the 10-year average. If the pattern holds, we should see good numbers from mid-September through November.</p>
+
+<p>The Alsea chinook run has a different character than the Siletz. Fish stage in the tidewater longer, stacking up between the bay and the deadline before pushing upstream in waves tied to rain and tide cycles. This staging behavior means the tideline can produce <strong>fast action for days at a stretch</strong> once fish arrive — you're fishing over a concentration of fresh chrome, not waiting for individual fish to pass through.</p>
+
+<h3>Where to Fish</h3>
+<h4>The Tideline</h4>
+<p>The stretch from the <strong>ODFW deadline upstream to Hellion Rapids</strong> is ground zero for early-season chinook on the Alsea. Fish push through on each incoming tide, hold in the deeper slots, and gradually work upstream as flows allow. The deadline area itself fishes best on the incoming tide — set up an hour before the turn and fish through the first two hours of incoming water.</p>
+
+<h4>Mid-River</h4>
+<p>Once rain pushes fish upstream, the stretch from <strong>Five Rivers confluence up to the Mike Bauer Wayside</strong> holds fish well. There are several deep pools with gravel tailouts that chinook use as resting water. This stretch gets less pressure than the tideline and can produce steady fishing through October and November.</p>
+
+<h4>Upper River</h4>
+<p>Late-season fish that push into the upper Alsea above the South Fork confluence are often the largest of the run. This is remote water with limited access, but the payoff can be a 30-pound buck chinook in a pool you have to yourself.</p>
+
+<h3>Techniques</h3>
+<p>In the tidewater, <strong>spinners and spoons</strong> are the go-to. Cast a Blue Fox Vibrax #5 in chrome/blue across the current on the incoming tide and retrieve just fast enough to feel the blade vibrate. The chrome finish catches light in the tannic Alsea water and triggers reaction strikes from fresh fish.</p>
+
+<p>For bobber anglers, a <strong>3/8 oz pink marabou jig under a Cheater float</strong> fished through the deeper tidewater slots is deadly. Set the float depth to keep the jig 18 inches off bottom and let it drift through on a natural presentation. Alsea chinook are less aggressive on the take than Siletz fish — watch for the float to tip or track sideways rather than plunge.</p>
+
+<p>Upriver, switch to <strong>drift fishing with cured roe</strong>. Pencil lead setups in the 3/8 to 1/2 oz range, 24-inch fluorocarbon leaders in 15-pound test, and a nickel-sized cluster of BorX O Fire cured eggs on a size 2/0 hook. Bounce the rig through the tailouts and along the seams where current meets slack water.</p>
+
+<h3>Timing Your Trip</h3>
+<p>The earliest reliable fishing starts in <strong>mid-September</strong>, assuming we get at least one rain event to push fish off the bar and into the river. The peak window on the Alsea is typically the <strong>last two weeks of October</strong>, when the largest concentration of fish is distributed from the tideline through the mid-river reaches.</p>
+
+<p>If you're planning a trip, watch the Alsea gauge at Tidewater. When flows bump above 1,000 cfs from a rain event and start dropping, the fishing turns on within 48-72 hours as the water clears and fresh fish push in. We'll send a report as soon as the first fish start showing.</p>
+
+<h3>Regulations</h3>
+<p>The Alsea has specific regulations for chinook retention that change seasonally. As of this writing, hatchery chinook (adipose fin clipped) may be retained — check ODFW's current regulations before your trip, as emergency closures and rule changes can happen quickly based on run timing and escapement goals. Wild chinook must be released on the Alsea.</p>`
   },
   {
     id:'blacktail-prep',cat:'hunting',img:'assets/images/deer-forest.jpg',
     title:'Blacktail Deer: Pre-Season Scouting Report',
     excerpt:'Trail camera data and field observations from Coast Range timber units. Where the deer are bedding and feeding ahead of October opener.',
-    date:'September 18, 2026'
+    date:'September 18, 2026',
+    content:`<h3>Scouting Summary</h3>
+<p>We've been running trail cameras and doing glassing sessions across our primary hunting units in the Coast Range since mid-August. The short version: <strong>deer numbers look solid</strong>, body condition is excellent after a good summer of browse, and we're seeing multiple mature bucks in the units we'll be hunting come October.</p>
+
+<p>We run 14 trail cameras across four timber company properties between the Siletz and Alsea drainages. Over the past 30 days, we've logged <strong>340+ individual deer photos</strong>, with activity concentrated in two main patterns: early-morning feeding in clearcut edges and late-evening movement along logging road corridors.</p>
+
+<h3>What the Cameras Are Showing</h3>
+<h4>Unit A — Upper Siletz Drainage</h4>
+<p>This is our strongest unit right now. A <strong>3-year-old replant clearcut</strong> that's growing in thick with fireweed, vine maple, and blackberry is drawing deer from the surrounding old-growth timber. We're getting consistent photos of 6-8 does with fawns and <strong>three mature bucks</strong> — two forks and a solid 3x3 that we've been watching since last season. He's added mass this year and is a legitimate shooter.</p>
+
+<p>The bucks are arriving at the clearcut edge between <strong>6:45 and 7:15 PM</strong>, feeding for 20-30 minutes, then melting back into the timber. Morning activity is earlier — first light, around 6:00 AM — but the deer don't stay in the open as long. The evening pattern is more reliable for a shot opportunity.</p>
+
+<h4>Unit B — Alsea North Fork Ridge</h4>
+<p>Moderate activity. The recent logging operation on the adjacent section has disrupted some of the established patterns. Deer are still using the area but sticking tighter to cover. We're seeing more <strong>nocturnal movement</strong> on the cameras here than in Unit A. This unit may need a few more weeks to settle after the logging equipment moves out.</p>
+
+<h4>Units C & D — Mid-Coast Timber</h4>
+<p>Good numbers of does and young bucks. We haven't confirmed a mature buck in these units yet this season, but the terrain is steep and brushy — cameras only cover a fraction of the usable habitat. These units historically produce deer during rifle season when hunting pressure pushes animals off the ridges and into the draws.</p>
+
+<h3>Browse and Habitat Conditions</h3>
+<p>The Coast Range had <strong>good summer moisture this year</strong> — scattered rain events through June and July kept the browse green longer than usual. The fireweed and vine maple in the replant units are lush. Blackberry production is heavy, and we're seeing deer feeding heavily on berries in the evening sessions. Body condition on the does is noticeably better than last year at this time.</p>
+
+<p>The sword fern understory in the timber stands is thick, which provides excellent bedding cover. Deer are bedding in the old-growth edges where fern cover meets the canopy, typically on <strong>northeast-facing slopes</strong> where morning shade keeps temperatures cooler.</p>
+
+<h3>Pre-Rut Activity</h3>
+<p>No rut activity yet — that's expected. Blacktail rut in the Coast Range typically kicks off in <strong>late October to mid-November</strong>, peaking around the first week of November. Right now, bucks are still in bachelor groups and summer patterns. By the rifle opener in early October, bucks will be separating from bachelor groups and starting to establish individual territories. Movement should increase significantly in the two weeks after opener.</p>
+
+<h3>Game Plan for October</h3>
+<p>Based on what we're seeing, our primary strategy for opening week will be:</p>
+<ul>
+<li><strong>Morning hunts:</strong> Set up on clearcut edges before first light in Unit A. Glass the replant for feeding deer and move on animals spotted in the open.</li>
+<li><strong>Evening hunts:</strong> Position along the logging road corridor where cameras show consistent evening movement. Wind typically switches to a downslope draw in the last hour of light — set up accordingly.</li>
+<li><strong>Mid-day:</strong> Still-hunt the timber edges and old-growth transition zones. Blacktail will bed in these areas, and a slow, quiet approach can produce close-range opportunities on bedded deer.</li>
+</ul>
+
+<p>Shot distances will likely be <strong>50 to 150 yards</strong>. Bring a rifle you shoot confidently from a sitting position — there's rarely time or terrain for a prone shot in Coast Range clearcuts. A variable scope in the 2-7x or 3-9x range is ideal.</p>
+
+<h3>What You Need</h3>
+<p>Oregon blacktail deer tags in the Coast Range are mostly over-the-counter for general season. Purchase your tag through ODFW before arrival. Bring waterproof boots with ankle support, rain gear you trust for all-day use, quality binoculars (8x42 minimum), and layered clothing for temperatures ranging from the mid-30s at dawn to the low 50s by afternoon. We provide transport, local knowledge, and game processing contacts.</p>`
   },
   {
     id:'gear-winter-steelhead',cat:'gear',img:'assets/images/fishing-gear.jpg',
     title:'Gear Guide: Winter Steelhead Essentials',
     excerpt:'The rods, reels, terminal tackle, and rain gear that actually matter for Oregon coast winter steelhead.',
-    date:'July 15, 2026'
+    date:'July 15, 2026',
+    content:`<h3>What Actually Matters</h3>
+<p>You can spend a fortune on steelhead gear or fish effectively with a focused setup. After 15+ winters on the Siletz, Alsea, and Siuslaw, here's what I actually use and recommend — not the most expensive gear, but the stuff that performs when it's 38 degrees, raining sideways, and you've got a hot fish on.</p>
+
+<h3>Rods</h3>
+<h4>Drift Fishing Rod</h4>
+<p>A <strong>9-foot medium-heavy spinning rod</strong> with a sensitive tip and solid backbone is the workhorse. You need to feel the difference between lead ticking rock and a steelhead mouthing your bait — that's all in the tip. But when you set the hook, the rod needs enough power to turn a 12-pound fish in current.</p>
+
+<p>What I use: <strong>Lamiglas X-11 9'0" MH</strong>. It's not the fanciest rod on the river, but it's been my go-to for eight seasons. The tip telegraphs bottom contact perfectly, it loads well for casting pencil lead rigs, and it handles fish without breaking a sweat. Around $120 — you don't need to spend more.</p>
+
+<p>Budget option: the <strong>Okuma SST 9'0" MH</strong> is a solid rod for under $80. Slightly less sensitivity in the tip but plenty of backbone.</p>
+
+<h4>Float Rod</h4>
+<p>For bobber and jig, step up to a <strong>10'6" to 11-foot medium-light to medium</strong> spinning rod. The extra length gives you better mending ability and float control. You want a soft tip that loads on the hook set — winter steelhead inhale jigs, and a stiff rod pulls the hook.</p>
+
+<p>What I use: <strong>G. Loomis E6X 1265-2S</strong>. At $250 it's the most I've spent on a rod, but it's worth it for float work. The tip is soft enough to load on a subtle take, and the length gives excellent line control.</p>
+
+<h3>Reels</h3>
+<p>A <strong>3000-series spinning reel</strong> with a smooth drag and decent line capacity covers both drift and float fishing. You don't need a centerpin for the rivers we fish — spinning gear handles these waters perfectly.</p>
+
+<p>What I use: <strong>Shimano Stradic FL 3000</strong>. The drag is buttery smooth, which matters when a steelhead runs downstream into fast water. Line lay is excellent, and it's held up to thousands of hours of use. Around $200.</p>
+
+<p>Budget option: <strong>Shimano Sienna 3000</strong>. At $35, it's shockingly good. The drag isn't as refined as the Stradic, but it works. I keep two rigged as backups in the boat.</p>
+
+<h3>Line and Leader</h3>
+<h4>Mainline</h4>
+<p>I run <strong>12-pound monofilament</strong> for drift fishing and <strong>15-pound braid with a mono topshot</strong> for float fishing. Mono has stretch, which is forgiving on the hook set and provides shock absorption when a fish runs. Braid has zero stretch, which means better float control and sensitivity — but you need that mono topshot (about 6 feet of 12-pound) as a shock absorber between the braid and your leader.</p>
+
+<p>Mainline brand: <strong>Maxima Ultragreen</strong> in mono. It's been the standard on Oregon rivers for decades because it works. In braid, <strong>PowerPro 20-pound</strong> in moss green.</p>
+
+<h4>Leader</h4>
+<p><strong>8 to 10-pound fluorocarbon</strong>, 24 to 30 inches long. Fluorocarbon is nearly invisible in water and more abrasion-resistant than mono — important when your leader is ticking rocks on every drift. I use <strong>Seaguar Red Label</strong> in 8-pound for clear water and 10-pound for stained conditions.</p>
+
+<h3>Terminal Tackle</h3>
+<h4>For Drift Fishing</h4>
+<ul>
+<li><strong>Pencil lead:</strong> 3/16 to 1/2 oz depending on current speed. Buy it by the spool and cut to length. Crimp to a surgical tubing slider above a barrel swivel.</li>
+<li><strong>Hooks:</strong> Gamakatsu Octopus in sizes 1 and 2 for roe. Size 1/0 for sand shrimp. Red or black — I've never noticed a color difference in hookup rate.</li>
+<li><strong>Corkies and yarn:</strong> Size 10 and 12 corkies in pink, orange, and peach. Fluorescent yarn in matching colors. Thread the corky on the leader above the hook, then tie a small tuft of yarn behind the eye.</li>
+<li><strong>Bait:</strong> Cured salmon roe is king. I cure with BorX O Fire in red and natural. Sand shrimp is the second choice, especially in lower water. Fresh is better than frozen.</li>
+</ul>
+
+<h4>For Float Fishing</h4>
+<ul>
+<li><strong>Floats:</strong> Thill Steelhead floats or Beau Mac Cheater floats. Size the float to the weight of your jig — it should support the jig but sink with minimal resistance when a fish takes.</li>
+<li><strong>Jigs:</strong> 1/4 to 3/8 oz marabou jigs in pink/white, cerise, black/purple, and orange/white. Tied on a 60-degree jig head. I tie my own, but <strong>Beau Mac and Hawken</strong> make solid pre-tied options.</li>
+</ul>
+
+<h3>Rain Gear</h3>
+<p>This is where most people under-invest, and it's where you'll regret it most. Oregon coast winter rain is not a drizzle — it's sustained, heavy, wind-driven, and lasts all day. You need gear rated for commercial fishing, not weekend hiking.</p>
+
+<ul>
+<li><strong>Jacket:</strong> A breathable waterproof shell with sealed seams, adjustable cuffs, and a hood that stays up in wind. I use a <strong>Grundéns Buoy X jacket</strong>. It's designed for commercial fishermen who work in rain every day. Around $200 and worth every penny. Simms and Patagonia make good options at higher price points.</li>
+<li><strong>Waders:</strong> For bank fishing, you need chest waders with built-in gravel guards and felt or studded rubber soles. <strong>Simms Freestone</strong> waders are the sweet spot — breathable, durable, and around $200. Neoprene bootfoot waders work too and are warmer, but less mobile for walking.</li>
+<li><strong>Gloves:</strong> Neoprene fishing gloves with textured grip. Your hands will be wet all day. Cold, wet hands can't tie knots or feel bites. <strong>Glacier Glove Kenai</strong> — $20 and they last two seasons.</li>
+<li><strong>Base layer:</strong> Merino wool base layer top and bottom. Not cotton. Not synthetic. Merino regulates temperature, doesn't stink after three days, and still insulates when damp.</li>
+</ul>
+
+<h3>The Non-Negotiables</h3>
+<p><strong>Polarized sunglasses.</strong> Even on overcast days, polarized lenses cut glare and let you see structure, fish, and your line underwater. They're the single most important piece of gear besides your rod. Amber or copper lenses work best in the low-light conditions common on the Oregon coast. You don't need expensive ones — a $30 pair of <strong>KastKing polarized glasses</strong> works fine.</p>
+
+<p><strong>Headlamp.</strong> You'll be rigging in the dark. Bring one with a red-light mode so you don't kill your night vision or spook fish at the launch.</p>`
   },
   {
     id:'coastal-cutthroat',cat:'howto',img:'assets/images/fishing-person.jpg',
     title:'Coastal Cutthroat Trout: The Overlooked Fishery',
     excerpt:'Aggressive fish, beautiful water, and almost no one else on the river. Coastal cutthroat are the Central Coast\'s best-kept secret.',
-    date:'June 20, 2026'
+    date:'June 20, 2026',
+    content:`<h3>The Best Fishing Nobody's Doing</h3>
+<p>While everyone chases steelhead and salmon on the main stems, the upper rivers and tributaries of Oregon's Central Coast hold one of the most <strong>underrated fisheries in the Pacific Northwest</strong>: coastal cutthroat trout. These aren't the 6-inch creek fish you might expect. Coastal cutthroat in the Siletz and Alsea systems routinely hit 14-18 inches, with occasional fish pushing past 20. They're aggressive, they eat dry flies, and you'll have the water to yourself.</p>
+
+<p>I guide cutthroat trips from May through September, and they're some of my favorite days on the water. The pace is different from salmon and steelhead — you're moving through the river, reading small water, and making short, accurate casts to visible fish or likely holding spots. It's active, engaging fishing.</p>
+
+<h3>Where to Find Them</h3>
+<p>Coastal cutthroat trout occupy the upper reaches of every river system on the Central Coast. On the Siletz, the best cutthroat water starts above <strong>Logsden and extends into the canyon</strong> and tributary streams. On the Alsea, the <strong>North Fork and South Fork</strong> above the main stem confluence hold excellent populations. The smaller Coast Range creeks — Drift Creek, Five Rivers, Yaquina tributaries — are also productive.</p>
+
+<p>In these upper reaches, look for:</p>
+<ul>
+<li><strong>Pool tailouts:</strong> Where shallow water speeds up before dropping into the next riffle. Cutthroat station here to intercept food washing downstream. This is prime dry-fly water.</li>
+<li><strong>Undercut banks:</strong> Cutthroat are ambush feeders. A dark undercut on the outside of a bend, especially with overhanging alder or vine maple, will hold fish all season.</li>
+<li><strong>Log jams and structure:</strong> Any wood in the water creates a current break and food funnel. Fish the seams on either side and the calm water directly behind.</li>
+<li><strong>Riffle edges:</strong> The transition zone between the fast riffle and the slower edge water. Cutthroat sit in the slower water and dart into the riffle to grab food.</li>
+</ul>
+
+<h3>Techniques</h3>
+<h4>Dry Fly Fishing</h4>
+<p>This is the pinnacle of cutthroat fishing and the method I use most. Coastal cutthroat are <strong>enthusiastic surface feeders</strong> from June through September. They eat caddis, mayflies, stoneflies, and terrestrials — basically anything that lands on the water.</p>
+
+<p>Rig a <strong>4 or 5-weight fly rod</strong>, 8 to 9 feet, with a floating line and 9-foot tapered leader to 5X tippet. Pattern selection is forgiving — these fish aren't selective like spring creek trout. My go-to flies:</p>
+<ul>
+<li><strong>Elk Hair Caddis</strong> size 12-16 — the all-around best dry fly for coastal cutthroat</li>
+<li><strong>Royal Wulff</strong> size 12-14 — visible, buoyant, and the fish love it</li>
+<li><strong>Stimulator</strong> size 8-12 — great in faster water and as an indicator for a dropper nymph</li>
+<li><strong>Parachute Adams</strong> size 14-16 — for calmer pools and picky fish</li>
+<li><strong>Small hopper patterns</strong> size 10-12 — deadly from July through September when grasshoppers are active along the banks</li>
+</ul>
+
+<p>The approach matters more than the fly. Stay low, approach from downstream, and make your first cast count. Cutthroat in small water spook easily, and once they bolt, that pool is done for 20 minutes.</p>
+
+<h4>Spinning Gear</h4>
+<p>Not a fly angler? No problem. A <strong>light spinning rod (5 to 6 feet, ultralight to light action)</strong> with 4-pound monofilament catches plenty of cutthroat. Small inline spinners — <strong>Rooster Tail or Panther Martin in size 1/16 to 1/8 oz</strong> — are effective. Cast upstream or across and retrieve just fast enough to feel the blade turn. Gold blade with a black body is my top producer.</p>
+
+<p>Small spoons in the 1/8 oz range also work well, especially in deeper pools. A <strong>Kastmaster in gold</strong> cast into the head of a pool and allowed to flutter down through the water column imitates a wounded baitfish and triggers aggressive strikes.</p>
+
+<h3>Best Times</h3>
+<p>The cutthroat season runs from <strong>late May through the end of September</strong>, with peak fishing in June and July. Water temperatures are in the ideal range, insect hatches are most active, and the fish are feeding aggressively after a long winter.</p>
+
+<p>August can be excellent but requires early starts — water temps climb by afternoon in low-water years, and fish become lethargic. The first two hours of daylight and the last hour before dark are the windows. September brings cooler water and a second burst of activity as fish feed heavily before fall.</p>
+
+<p>Overcast days with light rain fish better than bluebird days. Cloud cover reduces the fish's ability to see you and increases their willingness to look up for surface food. A light rain dimples the surface and makes dry flies harder for the fish to inspect — they eat faster and with less hesitation.</p>
+
+<h3>Regulations and Conservation</h3>
+<p>Coastal cutthroat are <strong>wild fish</strong> on Oregon's Central Coast. There is no hatchery supplementation. ODFW regulations require barbless hooks and have specific retention limits that vary by stream — on some waters, it's catch-and-release only. Check current regulations for the specific stream you plan to fish.</p>
+
+<p>Handle these fish with care. Wet your hands before touching them, keep them in the water as much as possible, and use barbless hooks for clean releases. A healthy cutthroat population is a sign of a healthy watershed — these fish are worth protecting.</p>
+
+<h3>Why Book a Cutthroat Trip</h3>
+<p>Cutthroat trips are priced lower than our salmon and steelhead outings, the scenery in the upper river is stunning, and you'll catch fish. It's the best way to learn water-reading skills that apply to all river fishing. If you've never fly fished, a cutthroat trip is the ideal introduction — forgiving fish, beautiful water, and a guide who'll put you on them. Bring a camera. The upper Siletz canyon in June is as good as it gets.</p>`
   },
   {
     id:'siuslaw-report',cat:'river',img:'assets/images/foggy-forest.jpg',
     title:'Siuslaw River — Late Summer Conditions',
     excerpt:'Low water and warm temps have pushed fish into the deeper holes. Here\'s where to find them.',
-    date:'August 10, 2026'
+    date:'August 10, 2026',
+    content:`<h3>Current Conditions</h3>
+<p>The Siuslaw is running at <strong>summer minimum flows</strong> — about 45 cfs at the Mapleton gauge, which is typical for early August. Water temperatures are reaching the <strong>mid-60s by afternoon</strong> in the lower river near Florence, with the upper river above Mapleton staying cooler in the high 50s to low 60s thanks to shading from the dense riparian canopy.</p>
+
+<p>Visibility is excellent — 6+ feet in the main stem. The water has that clear green tint that comes from low flows and algae growth on the rocks. It's beautiful water to look at but challenging to fish. The combination of extreme clarity and warm temps has pushed resident fish into specific holding patterns that you need to understand to be productive.</p>
+
+<h3>Where the Fish Are</h3>
+<p>In these conditions, fish concentrate in three types of water:</p>
+
+<h4>Deep Pools</h4>
+<p>Any pool deeper than 6 feet with shade cover is holding fish right now. The <strong>big bend pool below Whittaker Creek confluence</strong> had a pod of at least a dozen cutthroat and a couple of late-season summer steelhead when I walked it on Tuesday. The depth and shade keep water temps 3-5 degrees cooler than the surrounding riffles.</p>
+
+<h4>Tributary Mouths</h4>
+<p>Where cold tributaries enter the Siuslaw, you'll find fish stacked at the confluence. <strong>Whittaker Creek, Sweet Creek, and Indian Creek</strong> are all running noticeably cooler than the main stem. Trout and the occasional steelhead position where the cold water mixes in, getting the benefit of cooler temps and higher oxygen levels. Focus your effort within 50 yards upstream and downstream of these junctions.</p>
+
+<h4>Shaded Undercuts</h4>
+<p>The Siuslaw has excellent riparian cover in many stretches — big-leaf maple, alder, and Douglas fir create deep shade along the banks. Fish are tucked tight against <strong>shaded undercut banks</strong>, especially on the north-facing side of east-west stretches where shade lasts longest. These fish are feeding on terrestrial insects — ants, beetles, and hoppers that fall from the overhanging vegetation.</p>
+
+<h3>How to Fish It</h3>
+<p>Early and late. <strong>Fish the first two hours after dawn and the last two hours before dark.</strong> Between 10 AM and 5 PM, water temps in the exposed sections are too warm for productive fishing, and the fish go dormant. An early morning session can be genuinely excellent — rising fish, active feeding, and soft light on the water. The afternoon heat shuts everything down.</p>
+
+<h4>Fly Fishing</h4>
+<p>Morning dry-fly fishing is outstanding right now. <strong>Small caddis patterns (size 14-16)</strong> in tan or olive are matching the active hatch. Fish them with a dead drift through pool tailouts and along the shaded bank edges. In the evening, switch to a small <strong>elk hair caddis or stimulator</strong> — the fish get less selective as light fades and they're trying to pack in calories before full dark.</p>
+
+<p>For the deeper pools during midday, drop a <strong>small bead-head nymph</strong> (Prince Nymph or Hare's Ear in size 14) under an indicator and work it through the head of the pool where current pushes food into the holding water. This is the best approach for the few summer steelhead still in the system — they're holding in the deepest slots and won't come to the surface in these temps.</p>
+
+<h4>Spinning Gear</h4>
+<p>Ultralight setups with <strong>small spinners in gold or copper</strong> work well in the morning hours. Cast upstream and retrieve with the current, just fast enough to keep the blade turning. In the deeper pools, a <strong>1/8 oz gold Kastmaster</strong> let down on a tight line and jigged slowly through the water column can reach fish holding deep that won't come up for a surface presentation.</p>
+
+<h3>Summer Steelhead Status</h3>
+<p>There are <strong>scattered summer steelhead in the Siuslaw</strong>, but numbers are low compared to the Siletz. The fish that are here have been in the river for weeks and are holding in the deepest, coldest water they can find. We spotted two fish in the <strong>Mapleton bridge pool</strong> on Thursday — both appeared to be hatchery fish based on size and condition. Targeting them specifically is tough in these flows, but if you drift a roe cluster or small jig through the right pool at dawn, you have a chance.</p>
+
+<h3>Looking Ahead</h3>
+<p>The Siuslaw's fall chinook run typically <strong>lags the Siletz and Alsea by 2-3 weeks</strong>. Fish push through the long estuary slowly, and it usually takes two or three significant rain events in September to bring fish above the tidal influence in fishable numbers. When the river rises above 500 cfs and starts dropping, the chinook fishing turns on quickly.</p>
+
+<p>For now, the Siuslaw is a <strong>cutthroat trout destination</strong>. Fish it early, fish it light, and enjoy the solitude. This is one of the least-pressured rivers on the Central Coast in August, and the scenery along the upper river is hard to beat.</p>
+
+<h3>Access</h3>
+<p>The <strong>Siuslaw River Road</strong> from Mapleton upstream provides multiple pullouts with river access. The BLM sites at Whittaker Creek and Clay Creek are open and have maintained trails to the river. Watch for poison oak on the access trails — it's at peak growth right now. Wet-wading is comfortable in the afternoon temps, so waders are optional for bank anglers.</p>`
   }
 ];
 
