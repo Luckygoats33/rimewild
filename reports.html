@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>The Rimewild Report — River Conditions & Field Reports | Oregon Central Coast</title>
+  <meta name="description" content="River conditions, seasonal fishing and hunting reports, how-to guides, and field observations from Oregon's Central Coast. Updated weekly by guide Corey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#0a0e0c;--bg-elevated:#111916;--bg-card:#151d19;--bg-card-hover:#1c2821;
+  --text:#f0efe7;--text-dim:#9fa39b;--text-muted:#5a5e57;
+  --gold:#c4a94d;--gold-bright:#dfc462;--gold-dim:rgba(196,169,77,.12);
+  --green:#3d6b4f;--green-bright:#5ba373;
+  --border:rgba(255,255,255,.06);--border-hover:rgba(255,255,255,.12);
+  --shadow:0 20px 60px rgba(0,0,0,.4);
+  --font-display:'Playfair Display',Georgia,serif;
+  --font-body:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+  color-scheme:dark;
+}
+body{margin:0;font-family:var(--font-body);background:var(--bg);color:var(--text);line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:700;line-height:1.05;margin:0}
+p{margin:0 0 1.25rem}
+a{color:var(--gold);text-decoration:none;transition:color .2s}a:hover{color:var(--gold-bright)}
+img{max-width:100%;height:auto;display:block}
+button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .3s ease}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+.wrap{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+.sec{padding-block:clamp(80px,12vh,160px)}
+.sec-alt{background:var(--bg-elevated)}
+
+.eyebrow{font-family:var(--font-body);font-size:.65rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
+.eyebrow::before{content:'';width:40px;height:1px;background:var(--gold)}
+.eyebrow-center{justify-content:center}.eyebrow-center::before{display:none}
+.eyebrow-sm{font-size:.55rem;margin-bottom:.75rem}
+
+.big-title{font-size:clamp(2.8rem,6vw,5.5rem);text-wrap:balance;letter-spacing:-.02em;margin-bottom:1rem}
+.med-title{font-size:clamp(2rem,4vw,3.5rem);letter-spacing:-.01em;margin-bottom:.75rem}
+.subtitle{font-family:var(--font-display);font-style:italic;font-size:clamp(1.1rem,2vw,1.4rem);color:var(--text-dim);max-width:55ch;line-height:1.5}
+
+.btn{display:inline-flex;align-items:center;gap:.6rem;padding:1.1rem 2.8rem;font-size:.72rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;border-radius:0;transition:all .35s ease}
+.btn-gold{background:var(--gold);color:var(--bg)}
+.btn-gold:hover{background:var(--gold-bright);color:var(--bg);transform:translateY(-2px);box-shadow:0 8px 30px rgba(196,169,77,.3)}
+.btn-ghost{background:transparent;color:var(--text);border:1px solid rgba(255,255,255,.2);padding:1.1rem 2.8rem}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
+
+/* NAV */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:all .5s;background:rgba(10,14,12,.95);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border-bottom:1px solid var(--border)}
+.nav.scrolled{padding:.75rem 0}
+.nav-inner{max-width:1400px;margin:0 auto;padding-inline:clamp(20px,4vw,48px);display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:40px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2.5rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:.68rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,239,231,.5);transition:color .3s}
+.nav-links a:hover,.nav-links a.active{color:var(--text)}
+.nav-cta .btn-gold{padding:.75rem 2rem;font-size:.65rem}
+.nav-toggle{display:none;background:none;color:var(--text);font-size:1.6rem;padding:.25rem}
+@media(max-width:1000px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:fixed;inset:0;background:rgba(10,14,12,.98);backdrop-filter:blur(30px);padding:100px 40px 40px;gap:2rem;z-index:99}
+  .nav-links.open a{font-size:1.2rem;letter-spacing:.1em;color:var(--text-dim)}
+  .nav-toggle{display:block;z-index:101}
+}
+
+/* PAGE HERO */
+.page-hero{padding:clamp(140px,18vh,200px) 0 clamp(60px,10vh,120px);position:relative;overflow:hidden}
+.page-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.page-hero-bg::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,14,12,.7) 0%,rgba(10,14,12,.5) 40%,rgba(10,14,12,.9) 80%,var(--bg) 100%)}
+.page-hero .wrap{position:relative;z-index:1}
+
+/* FILTER BAR */
+.filter-bar{display:flex;flex-wrap:wrap;gap:.75rem;margin-bottom:3rem}
+.filter-btn{background:transparent;border:1px solid var(--border);padding:.75rem 1.5rem;font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--text-dim);cursor:pointer;transition:all .25s}
+.filter-btn:hover{border-color:var(--gold);color:var(--gold)}
+.filter-btn.active{border-color:var(--gold);background:var(--gold-dim);color:var(--gold)}
+
+/* FEATURED ARTICLE */
+.featured-article{display:grid;grid-template-columns:1.2fr 1fr;gap:0;border:1px solid var(--border);margin-bottom:clamp(3rem,6vw,5rem)}
+@media(max-width:768px){.featured-article{grid-template-columns:1fr}}
+.featured-article-visual{position:relative;min-height:400px;background-size:cover;background-position:center;overflow:hidden}
+.featured-article-visual::after{content:'';position:absolute;inset:0;background:rgba(10,14,12,.3)}
+.featured-article-body{padding:clamp(2rem,4vw,3.5rem);display:flex;flex-direction:column;justify-content:center}
+.featured-article-body h2{font-size:clamp(1.8rem,3vw,2.5rem);margin-bottom:1rem}
+.featured-article-body .date{font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem;display:block}
+.featured-article-body p{color:var(--text-dim);font-size:.95rem;line-height:1.7}
+
+/* REPORT GRID */
+.report-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:clamp(1rem,2vw,2rem)}
+@media(max-width:400px){.report-grid{grid-template-columns:1fr}}
+.report-card{border:1px solid var(--border);overflow:hidden;transition:all .4s;cursor:pointer}
+.report-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:var(--shadow)}
+.report-card-img-wrap{overflow:hidden;height:200px}
+.report-card-img{height:200px;background-size:cover;background-position:center;transition:transform .6s}
+.report-card:hover .report-card-img{transform:scale(1.04)}
+.report-card-body{padding:1.75rem}
+.report-card-cat{font-size:.55rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:block}
+.report-card h3{font-size:1.25rem;margin-bottom:.5rem;line-height:1.3;transition:color .2s}
+.report-card:hover h3{color:var(--gold)}
+.report-card p{font-size:.85rem;color:var(--text-dim);margin:0 0 .75rem;line-height:1.6}
+.report-card .date{font-size:.65rem;color:var(--text-muted);letter-spacing:.05em}
+.report-card .read-more{font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);display:inline-block;margin-top:.5rem;transition:color .2s}
+.report-card:hover .read-more{color:var(--gold-bright)}
+
+/* FULL ARTICLE */
+.article-full{display:none;border:1px solid var(--border);margin-bottom:2rem;overflow:hidden}
+.article-full.open{display:block}
+.article-full-hero{height:clamp(250px,35vw,400px);background-size:cover;background-position:center;position:relative}
+.article-full-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,var(--bg-card) 0%,transparent 50%)}
+.article-full-body{padding:clamp(2rem,4vw,4rem);max-width:800px}
+.article-full-body .article-cat{font-size:.55rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:block}
+.article-full-body h2{font-size:clamp(1.8rem,3.5vw,2.8rem);margin-bottom:1rem}
+.article-full-body .article-meta{font-size:.7rem;color:var(--text-muted);letter-spacing:.08em;margin-bottom:2rem;display:flex;gap:2rem;flex-wrap:wrap}
+.article-full-body .article-content{color:var(--text-dim);font-size:1rem;line-height:1.85}
+.article-full-body .article-content h3{font-size:1.4rem;margin:2rem 0 1rem;color:var(--text)}
+.article-full-body .article-content h4{font-size:1.1rem;margin:1.5rem 0 .75rem;color:var(--text)}
+.article-full-body .article-content ul{padding-left:1.5rem;margin:0 0 1.25rem}
+.article-full-body .article-content li{margin-bottom:.5rem}
+.article-full-body .article-content strong{color:var(--text)}
+.article-close{background:none;color:var(--text-muted);font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;padding:.5rem 0;display:inline-flex;align-items:center;gap:.5rem;margin-top:2rem;cursor:pointer;transition:color .2s}
+.article-close:hover{color:var(--text)}
+
+/* BOOKING MODAL */
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);backdrop-filter:blur(8px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.booking-overlay.show{display:flex}
+.booking-modal{background:var(--bg-elevated);border:1px solid var(--border);width:100%;max-width:580px;max-height:90vh;overflow-y:auto;padding:clamp(2rem,4vw,3.5rem)}
+.booking-modal h2{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.5rem}
+.booking-close{float:right;background:none;color:var(--text-muted);font-size:2rem;padding:0;line-height:1}
+.booking-close:hover{color:var(--text)}
+.form-group{margin-bottom:1.5rem}
+.form-label{display:block;font-size:.6rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.5rem}
+.form-input{width:100%;padding:.9rem 1.25rem;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--font-body);font-size:.9rem;transition:border-color .2s}
+.form-input:focus{outline:none;border-color:var(--gold)}
+.form-input::placeholder{color:var(--text-muted)}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%235a5e57' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1.25rem center;padding-right:3rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1.25rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-success{text-align:center;padding:3rem 0}
+.form-success h3{font-size:2rem;margin-bottom:.75rem;color:var(--gold)}
+
+/* FOOTER */
+.footer{border-top:1px solid var(--border);padding:clamp(4rem,8vh,6rem) 0 2rem}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:clamp(2rem,4vw,4rem);margin-bottom:4rem}
+@media(max-width:768px){.footer-top{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-top{grid-template-columns:1fr}}
+.footer-brand{font-family:var(--font-display);font-size:clamp(1.5rem,3vw,2rem);font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:1.25rem}
+.footer-brand span{color:var(--gold)}
+.footer h5{font-size:.6rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1.25rem}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:.6rem}
+.footer-links a{font-size:.88rem;color:var(--text-dim)}
+.footer-links a:hover{color:var(--text)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:2rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.7rem;letter-spacing:.05em;color:var(--text-muted)}
+
+/* ANIMATIONS */
+@media(prefers-reduced-motion:no-preference){
+  .reveal{opacity:0;transform:translateY(40px);transition:opacity .8s cubic-bezier(.16,1,.3,1),transform .8s cubic-bezier(.16,1,.3,1)}
+  .reveal.vis{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo.png" alt="Rimewild"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="fishing.html">Fishing</a></li>
+      <li><a href="hunting.html">Hunting</a></li>
+      <li><a href="rivers.html">Waters</a></li>
+      <li><a href="reports.html" class="active">Reports</a></li>
+      <li><a href="index.html#calendar">Availability</a></li>
+      <li><a href="index.html#guide">Guide</a></li>
+      <li class="nav-cta"><a href="#" class="btn btn-gold" onclick="openBooking();return false">Book Now</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('assets/images/misty-mountains.jpg')"></div>
+  <div class="wrap">
+    <div class="eyebrow">From the Field</div>
+    <h1 class="big-title">The Rimewild<br>Report</h1>
+    <p class="subtitle">River conditions, what's running, and field observations from Oregon's Central Coast. Updated weekly by guide Corey.</p>
+  </div>
+</section>
+
+<!-- FEATURED ARTICLE -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="featured-article reveal" id="featured-article" onclick="openArticle('fall-chinook-sept')">
+      <div class="featured-article-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div>
+      <div class="featured-article-body">
+        <div class="eyebrow eyebrow-sm">Latest Report</div>
+        <span class="date">September 22, 2026</span>
+        <h2>Fall Chinook Report &mdash; Late September 2026</h2>
+        <p>Water levels dropping into shape after last week's rain. The Siletz is running at 340 cfs, clear with a slight green tint. Chinook are pushing through the lower river in solid numbers &mdash; we're seeing fish from the Ojalla drift down to Moonshine County Park.</p>
+        <p>The Alsea is fishing even better right now. Fish are stacking up in the tide water and pushing through the deadline with each incoming tide. We've been running plugs and pulling K-15 Kwikfish in metallic green...</p>
+        <span style="font-size:.65rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-top:.5rem;display:inline-block">Read Full Report &rarr;</span>
+      </div>
+    </div>
+
+    <!-- FILTERS -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-cat="all">All Reports</button>
+      <button class="filter-btn" data-cat="river">River Reports</button>
+      <button class="filter-btn" data-cat="howto">How-To</button>
+      <button class="filter-btn" data-cat="seasonal">Seasonal</button>
+      <button class="filter-btn" data-cat="hunting">Hunting</button>
+      <button class="filter-btn" data-cat="gear">Gear</button>
+    </div>
+
+    <!-- REPORT GRID -->
+    <div class="report-grid reveal" id="reportGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- FULL ARTICLE CONTAINERS -->
+<section class="sec" style="padding-top:0" id="articleSection">
+  <div class="wrap" id="articleContainer">
+    <!-- Articles injected by JS -->
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="sec sec-alt">
+  <div class="wrap" style="text-align:center">
+    <div class="eyebrow eyebrow-center">Ready?</div>
+    <h2 class="big-title reveal">Book Your<br>Experience</h2>
+    <p class="subtitle reveal" style="margin-inline:auto;margin-bottom:2.5rem">Conditions are right. Let's get on the water.</p>
+    <button class="btn btn-gold reveal" onclick="openBooking()">Book a Trip</button>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div><div class="footer-brand">RIME<span>WILD</span></div><p style="font-size:.9rem;color:var(--text-dim);max-width:30ch;line-height:1.7">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
+      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="fishing.html">Winter Steelhead</a></li><li><a href="fishing.html">Fall Chinook</a></li><li><a href="fishing.html">Cutthroat &amp; Trout</a></li><li><a href="fishing.html">Bank &amp; Wade</a></li><li><a href="fishing.html">Family Trips</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="rivers.html">The Rivers</a></li><li><a href="index.html#whats-wild">What's Running</a></li><li><a href="index.html#calendar">Availability</a></li><li><a href="index.html#guide">Meet Corey</a></li><li><a href="reports.html">Reports</a></li></ul></div>
+      <div><h5>Plan</h5><ul class="footer-links"><li><a href="index.html#booking-section">Book a Trip</a></li><li><a href="index.html#booking-section">What to Bring</a></li><li><a href="index.html#booking-section">Licenses</a></li><li><a href="index.html#booking-section">Lodging</a></li><li><a href="index.html#booking-section">FAQ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
+  </div>
+</footer>
+
+<!-- BOOKING MODAL -->
+<div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
+  <div class="booking-modal">
+    <button class="booking-close" onclick="closeBooking()" aria-label="Close">&times;</button>
+    <div id="bookingForm">
+      <h2>Book Your Rimewild<br>Experience</h2>
+      <p style="color:var(--text-dim);font-size:.9rem;margin-bottom:2rem">Fill out the form below and we'll confirm your trip within 24 hours.</p>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option>Winter Steelhead Drift &mdash; $395/angler</option><option>Fall Chinook Salmon &mdash; $395/angler</option><option>Summer Steelhead &mdash; $375/angler</option><option>Cutthroat &amp; Trout &mdash; $295/angler</option><option>Bank &amp; Wade Fishing &mdash; $275/angler</option><option>Family &amp; Beginner &mdash; $350/group</option><option>Half-Day Fishing &mdash; $275/angler</option><option>Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option>Blacktail Deer Hunt &mdash; $1,800/hunter</option><option>Private / Custom Experience</option></select></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5+">5+ (group)</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
+        <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
+        <div class="form-group"><label class="form-label" for="bNotes">Anything We Should Know?</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Special requests, questions..."></textarea></div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center;margin-top:.5rem;padding:1.1rem">Request This Trip</button>
+      </form>
+    </div>
+    <div id="bookingSuccess" hidden>
+      <div class="form-success"><h3>Request Received</h3><p style="color:var(--text-dim)">We'll confirm your Rimewild experience within 24 hours.</p><button class="btn btn-ghost" onclick="closeBooking()" style="margin-top:1.5rem">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// NAV
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>60)},{passive:true});
+document.getElementById('navToggle').addEventListener('click',()=>{const n=document.getElementById('navLinks');n.classList.toggle('open');document.getElementById('navToggle').innerHTML=n.classList.contains('open')?'&#10005;':'&#9776;'});
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>{document.getElementById('navLinks').classList.remove('open');document.getElementById('navToggle').innerHTML='&#9776;'})});
+
+// BOOKING
+function openBooking(){const o=document.getElementById('bookingOverlay');o.classList.add('show');document.body.style.overflow='hidden';document.getElementById('bookingForm').hidden=false;document.getElementById('bookingSuccess').hidden=true}
+function closeBooking(){document.getElementById('bookingOverlay').classList.remove('show');document.body.style.overflow=''}
+function submitBooking(e){e.preventDefault();document.getElementById('bookingForm').hidden=true;document.getElementById('bookingSuccess').hidden=false}
+
+// ARTICLES DATA
+const articles = [
+  {
+    id:'fall-chinook-sept',cat:'river',img:'assets/images/oregon-river.jpg',
+    title:'Fall Chinook Report — Late September 2026',
+    excerpt:'Water levels dropping into shape after last week\'s rain. Chinook are pushing through the Siletz and Alsea in solid numbers.',
+    date:'September 22, 2026',
+    content:`<h3>Current Conditions</h3>
+<p>Water levels dropped nicely after last week's system. The Siletz is running at <strong>340 cfs at the Siletz gauge</strong>, down from 1,200 cfs on Monday. Clarity is good — about 3 feet of visibility with a slight green tint, which is exactly what we want for chinook. The Alsea is running similarly, with the tideline near the deadline producing fish on each incoming tide.</p>
+
+<p>Water temperatures are sitting in the low 50s on the Siletz, mid-50s on the Alsea. These are ideal chinook temps — the fish are active but not stressed.</p>
+
+<h3>What's Working</h3>
+<p>On the Siletz, we've been running <strong>plugs from the Ojalla drift down to Moonshine County Park</strong>. The K-15 Kwikfish in metallic green and the gold/chartreuse Mag Lip have both been producing. We're wrapping them with sardine fillets — that scent trail in the current is making the difference between hookups and follows.</p>
+
+<p>Bobber and jig has been effective in the slower tailouts above Sam Creek. A <strong>3/8 oz pink and white jig under a Cheater float</strong>, fished tight to the bank seams, has been our most consistent producer for bank anglers. Cast upstream 45 degrees, mend the line, and let the jig swing through the seam. Strikes are subtle — watch for the float to hesitate rather than dive.</p>
+
+<p>The Alsea tideline has been fishing well on the incoming tide. Spinners and spoons near the deadline are producing fish, with <strong>Blue Fox Vibrax in size 5 chrome/blue</strong> being the standout. Cast across the current and retrieve just fast enough to feel the blade thump.</p>
+
+<h3>Bank Access</h3>
+<p>The gravel bar below Ojalla Bridge is fishable and producing. Morgan County Park is also accessible with decent bank access to several holes. On the Alsea, the ODFW boat ramp at Hellion Rapids has good bank water on both sides.</p>
+
+<h3>Forecast</h3>
+<p>NOAA has another system coming Wednesday night — expect 1-2 inches of rain through Thursday. This should bring a fresh push of fish into both systems. I'd plan on <strong>Friday through Sunday being prime</strong> as the water drops back into shape. If you're flexible on dates, that's your window.</p>
+
+<p>The Siuslaw is also worth watching. It's been quiet this week, but that next rain push should bring fish into the Florence area. We'll report back after the system moves through.</p>
+
+<h3>Regulations Reminder</h3>
+<p>The Siletz is open for chinook retention above the Highway 229 bridge. Hatchery chinook (clipped adipose fin) may be retained — two per day, with a combined aggregate of five salmon/steelhead per day. Wild chinook must be released. Check ODFW regulations for current emergency closures before heading out.</p>`
+  },
+  {
+    id:'winter-steelhead-guide',cat:'howto',img:'assets/images/hero-river.jpg',
+    title:'Winter Steelhead Fishing on the Siletz: A Complete Guide',
+    excerpt:'Everything you need to know about targeting winter steelhead on Oregon\'s Central Coast. Techniques, timing, and water reading.',
+    date:'September 15, 2026',
+    content:`<h3>Why the Siletz</h3>
+<p>The Siletz River is one of the most productive winter steelhead fisheries on the Oregon coast. Running 67 miles from the Coast Range to Siletz Bay near Lincoln City, it offers everything from technical upper river drifts to accessible lower river bank water. The hatchery program supplements a strong wild run, meaning you can expect both hatchery fish for the table and wild chrome for the adrenaline.</p>
+
+<p>Peak winter steelhead season runs from <strong>late December through March</strong>, with January and February typically being the strongest months. Fish enter the system with each significant rain event, and the Siletz responds faster than many coastal rivers — it rises and drops quickly, which means fishable water returns sooner after a storm.</p>
+
+<h3>Reading the Water</h3>
+<p>Winter steelhead on the Siletz hold in predictable water types. Look for:</p>
+<ul>
+<li><strong>Tailouts:</strong> The smooth, glassy water at the bottom of a pool where it shallows out before the next riffle. Fish rest here before moving upstream. Depth of 3-5 feet is ideal.</li>
+<li><strong>Seams:</strong> The line where fast and slow water meet. Steelhead sit on the slow side of the seam, facing the current, watching the fast water for food.</li>
+<li><strong>Bucket water:</strong> Deeper depressions in the river bottom, especially behind boulders or structure. These are resting spots, and fish stack up here during high water.</li>
+<li><strong>Inside bends:</strong> As the river curves, the inside of the bend has slower water and often a gravel bottom. Classic steelhead water.</li>
+</ul>
+
+<h3>Techniques That Work</h3>
+<h4>Drift Fishing</h4>
+<p>The bread and butter of Siletz steelhead fishing. Use a <strong>9-foot medium-heavy spinning rod</strong> paired with a quality reel loaded with 12-15 lb mainline. Run a sliding sinker setup with a pencil lead (3/8 to 1/2 oz depending on current) above a barrel swivel, then 24-30 inches of 8-10 lb fluorocarbon leader to a size 1 or 2 hook. Bait with a dime-sized cluster of cured roe under a small piece of yarn for visibility.</p>
+
+<p>Cast upstream at a 45-degree angle and let the rig bounce along the bottom at the speed of the current. You should feel the lead tapping bottom every few seconds. If it's dragging, you're too heavy. If you can't feel bottom, you're too light. The bite feels like a soft tick — different from the tap of lead on rock. When in doubt, set the hook.</p>
+
+<h4>Bobber and Jig</h4>
+<p>Increasingly popular and deadly effective. Use a <strong>Cheater-style slip float</strong> set to fish your jig 12-18 inches off the bottom. The jig should be 1/4 to 3/8 oz, tied with marabou in pink/white, black/purple, or cerise. Cast upstream, mend to get a drag-free drift, and watch the float. A strike often shows as the float moving sideways or hesitating rather than plunging under.</p>
+
+<h3>Best Stretches</h3>
+<p>From the drift boat, the <strong>Ojalla to Moonshine stretch</strong> is prime water. Multiple pools, good structure, and consistent fish. For bank anglers, <strong>Morgan County Park</strong> offers the best access to quality water on the upper river. The <strong>Sam Creek area</strong> has several walk-in spots that produce well, especially in January.</p>
+
+<h3>What to Bring</h3>
+<p>It will rain. Bring a quality rain jacket, waders if bank fishing, polarized sunglasses (critical for spotting fish and reading water), and lunch. We provide all fishing gear on guided trips, but dress warm — January mornings on the Siletz start in the mid-30s.</p>`
+  },
+  {
+    id:'whats-running-october',cat:'seasonal',img:'assets/images/forest-trail.jpg',
+    title:'What\'s Running in October: Oregon Central Coast',
+    excerpt:'Fall chinook hitting their stride, blacktail deer season opening, and the first hints of winter steelhead. October is peak season.',
+    date:'September 10, 2026',
+    content:`<h3>October on the Central Coast</h3>
+<p>October is one of the most productive months on Oregon's Central Coast. Multiple species overlap, conditions are often ideal, and the coastal landscape is at its most dramatic — fog burning off the river in the morning, vine maple turning red along the banks, and elk bugling in the Coast Range timber.</p>
+
+<h3>Fishing: What's Running</h3>
+<h4>Fall Chinook Salmon</h4>
+<p>This is <strong>peak chinook season</strong> on the Siletz, Alsea, and Siuslaw. Fish are distributed throughout the lower and mid-river reaches, and each rain event pushes fresh chrome upstream. October chinook on the Central Coast average 15-25 pounds, with occasional fish over 30. The Alsea typically peaks in mid-October; the Siletz runs slightly later, with the strongest push coming late October into November.</p>
+
+<h4>Coho Salmon</h4>
+<p>Coho (silvers) are present on the Alsea and Siuslaw through October. These are wild fish and <strong>must be released</strong> on most Central Coast streams — check ODFW regulations for current rules. That said, hooking a bright 10-pound coho on light tackle in a small coastal stream is one of the best fights in freshwater fishing.</p>
+
+<h4>Summer Steelhead (Late Season)</h4>
+<p>The summer steelhead run is winding down on the Siletz, but fish are still present in the upper river. These late-season fish are often in smaller water, making for technical and rewarding fishing. They'll transition to winter-run fish by November.</p>
+
+<h3>Hunting: What's Open</h3>
+<h4>Blacktail Deer</h4>
+<p>October marks the heart of <strong>Columbian blacktail deer season</strong> in the Coast Range. Archery season runs through late September, and general rifle season opens in early October. Blacktail in the Coast Range timber are challenging quarry — dense vegetation, steep terrain, and an animal that beds in thick cover and moves primarily at dawn and dusk.</p>
+
+<p>Our approach is spot-and-stalk in logged units and clearcut edges where visibility opens up. Early October, bucks are still in summer patterns, using high points with good browse. By late October, the pre-rut begins and movement increases, especially during the last hour of daylight.</p>
+
+<h3>Weather and Conditions</h3>
+<p>October weather on the Oregon coast is variable. Expect daytime highs of 55-60°F, overnight lows in the low 40s, and rain. Some Octobers bring 6+ inches of rain; others are surprisingly dry through mid-month. The rain is what drives the fishing — each system pushes fresh fish upstream and gets the rivers into fishable shape.</p>
+
+<p>Fog is common in the mornings, especially in river valleys. It typically burns off by mid-morning. Layer your clothing and bring rain gear regardless of the forecast.</p>`
+  },
+  {
+    id:'drift-vs-bank',cat:'howto',img:'assets/images/drift-boat.jpg',
+    title:'Drift Boat vs Bank Fishing: Which is Right for You?',
+    excerpt:'Both approaches catch fish on Oregon\'s Central Coast. Here\'s how to decide which one matches your style.',
+    date:'August 28, 2026',
+    content:`<h3>Two Ways to Fish the Same River</h3>
+<p>On the Siletz, Alsea, and Siuslaw rivers, you can catch the same species from a drift boat or from the bank. The fish don't care how you got there. But the experience is different, and understanding those differences helps you pick the trip that matches your goals.</p>
+
+<h3>Drift Boat Fishing</h3>
+<p>A drift boat covers <strong>6 to 12 miles of river</strong> in a day. That's a lot of water, and it means you're fishing spots that bank anglers can't reach. On the Siletz, some of the best steelhead water is between access points — you need a boat to get there.</p>
+
+<p>Advantages of a drift boat trip:</p>
+<ul>
+<li><strong>More water covered:</strong> You fish 15-20 productive spots in a day instead of 3-5 from the bank.</li>
+<li><strong>Access to remote water:</strong> Less pressure, more fish. Some of the best runs on the Siletz see no bank anglers.</li>
+<li><strong>Multiple techniques:</strong> We can pull plugs, side-drift, bobber-fish, and cast spinners — all in the same day, depending on what's working.</li>
+<li><strong>Comfort:</strong> Swivel seats, rod holders, and no wading. Good for less mobile anglers or anyone who wants to focus purely on fishing.</li>
+</ul>
+
+<p>Who it's best for: Anglers who want to maximize their chances, see a lot of river, and don't mind the guide doing the rowing while you focus on fishing.</p>
+
+<h3>Bank and Wade Fishing</h3>
+<p>Bank fishing is more physical and more intimate. You're walking the river, reading water, choosing your spots, and wading into position. It's the most hands-on way to learn a river.</p>
+
+<p>Advantages of bank fishing:</p>
+<ul>
+<li><strong>Learning:</strong> You develop water-reading skills faster because you're choosing where to stand and where to cast. This knowledge transfers to any river.</li>
+<li><strong>Pace:</strong> You can spend an hour on one run if the water looks good. No need to move downstream.</li>
+<li><strong>Immersion:</strong> You're in the river, feeling the current, hearing the water. It's a different relationship with the landscape.</li>
+<li><strong>Cost:</strong> Bank trips are priced lower because there's no boat.</li>
+</ul>
+
+<p>Who it's best for: Anglers who want to learn, who enjoy the physical aspect of fishing, and who don't mind covering less water in exchange for deeper engagement.</p>
+
+<h3>Our Recommendation</h3>
+<p>First-timers to the Central Coast rivers should consider a <strong>drift boat trip first</strong>. You'll see more of the river, learn the general layout, and have more opportunities at fish. On your second trip, try a bank outing — you'll already have context for the water you're wading.</p>
+
+<p>If you're an experienced angler who fishes regularly, the bank trip is often more rewarding. You'll learn techniques and water-reading skills you can apply on your home water.</p>`
+  },
+  {
+    id:'first-timer-guide',cat:'howto',img:'assets/images/family-outdoors.jpg',
+    title:'First Timer\'s Guide to Oregon Coast Fishing',
+    excerpt:'Never fished before? No problem. Here\'s everything you need to know before your first trip on the Central Coast.',
+    date:'August 15, 2026',
+    content:`<h3>You Don't Need Experience</h3>
+<p>About 30% of our clients are first-time anglers. They catch fish. Some of them catch the biggest fish of the day. Oregon's Central Coast rivers are a genuinely great place to learn because the fish are large, the takes are visual, and the techniques are straightforward once you understand the basics.</p>
+
+<h3>What to Expect on Your First Day</h3>
+<p>We meet at the boat launch or access point early — typically <strong>6:30-7:00 AM</strong>. We'll spend the first 15-20 minutes going over equipment, casting technique, and what to expect on the water. You don't need to know how to cast before you arrive. By the end of the first hour, you'll be making functional casts.</p>
+
+<p>A full-day trip runs <strong>7-8 hours on the water</strong>. We'll fish through the morning bite, break for lunch on the river, then fish the afternoon. Water and snacks are welcome; we recommend bringing more food than you think you need — cold weather and river air make you hungry.</p>
+
+<h3>What You Need to Bring</h3>
+<ul>
+<li><strong>Layered clothing:</strong> Start with a moisture-wicking base layer, add a fleece mid-layer, and top with a waterproof shell. It will rain at some point. Dress for 40-55°F.</li>
+<li><strong>Footwear:</strong> Waterproof boots with good traction. For drift boat trips, knee-high rubber boots work well. Bank fishing requires waders — we can provide loaners.</li>
+<li><strong>Polarized sunglasses:</strong> Not optional. They cut glare and let you see fish, structure, and your line in the water.</li>
+<li><strong>Oregon fishing license:</strong> Required for anyone 12 and older. You can purchase one online through ODFW or at sporting goods stores in Lincoln City and Newport. A daily non-resident license is about $20.</li>
+<li><strong>Lunch, snacks, water.</strong></li>
+<li><strong>Camera or phone in a waterproof case.</strong></li>
+</ul>
+
+<h3>What We Provide</h3>
+<p>All fishing gear: rods, reels, tackle, bait, and terminal tackle. We match the equipment to the species and conditions. You don't need to bring or buy any fishing gear.</p>
+
+<h3>Setting Expectations</h3>
+<p>Fishing is fishing — there are no guarantees. On a typical day during peak season, you can expect <strong>multiple hookups</strong>. Some days every cast produces a fish. Other days the river is slow and you work for one or two bites. That's the nature of wild fish in wild water.</p>
+
+<p>What we can guarantee is that you'll learn. By the end of the day, you'll understand how to read water, why certain spots hold fish, and how to present bait or lures effectively. That knowledge is the real takeaway, and it applies to any river you fish in the future.</p>`
+  },
+  {
+    id:'elk-hunting-guide',cat:'hunting',img:'assets/images/elk-forest.jpg',
+    title:'Roosevelt Elk Hunting: What to Know Before Your Hunt',
+    excerpt:'Roosevelt elk in the Coast Range are a different animal than Rocky Mountain elk. Dense timber, close shots, and challenging terrain.',
+    date:'August 5, 2026',
+    content:`<h3>Roosevelt Elk in the Coast Range</h3>
+<p>Roosevelt elk are the largest subspecies of elk in North America, and the Oregon Coast Range holds one of the healthiest populations on the continent. These are <strong>not open-country animals</strong>. Roosevelt elk live in dense coastal timber — Douglas fir, western hemlock, and alder thickets — where visibility is measured in yards, not miles.</p>
+
+<p>Hunting them is fundamentally different from hunting Rocky Mountain elk in the Cascades or eastern Oregon. There are no glassing knobs with 2-mile views. There are no bugling bulls in open meadows. Coast Range elk hunting is close, physical, and requires patience.</p>
+
+<h3>Season and Tags</h3>
+<p>Oregon's general rifle elk season in the Coast Range typically runs through <strong>November</strong>. Tags are controlled-hunt only in most Coast Range units — you apply through the ODFW draw process in the spring. Success rates vary by unit, but some Coast Range units maintain draw odds of 10-20% for first-choice applicants.</p>
+
+<p>In addition to the general season, archery season runs August through September, and muzzleloader seasons may be available in select units.</p>
+
+<h3>What the Hunt Looks Like</h3>
+<p>We hunt primarily on private timber company land with access agreements. This gives us access to <strong>recently logged units</strong> where elk feed on new-growth browse — fireweed, vine maple, salal, and grass. These openings in the timber are where you get visibility.</p>
+
+<p>A typical day starts before dawn. We drive logging roads to the unit we're hunting, glass the clearcut edges at first light, and either spot-and-stalk if we see animals or still-hunt into the timber if we don't. Morning hunts run until 10-11 AM, when elk typically bed down. We're back out by 3 PM for the evening feed.</p>
+
+<p>Shot distances are typically <strong>50 to 150 yards</strong>. Occasionally you'll get a 200-yard shot across a clearcut, but most opportunities are closer. Bring a rifle you shoot well offhand and from sitting positions — there's rarely time for a prone shot in this terrain.</p>
+
+<h3>Physical Demands</h3>
+<p>Coast Range elk hunting is physically demanding. The terrain is steep — 30-60% grades are common. The ground is uneven, with slash piles, stumps, and thick brush. Expect to hike 3-6 miles per day over challenging terrain. You should be comfortable hiking uphill for 30-45 minutes at a moderate pace.</p>
+
+<p>If you harvest an animal, the pack-out is the real work. A quartered bull elk weighs 500+ pounds. We have pack frames and game bags, but multiple trips over steep terrain are standard.</p>
+
+<h3>What to Bring</h3>
+<ul>
+<li>Rifle chambered in .270 Win, .30-06, .308, 7mm Rem Mag, or similar</li>
+<li>Quality binoculars (8x42 or 10x42)</li>
+<li>Waterproof hunting boots with ankle support and good traction</li>
+<li>Rain gear rated for sustained Oregon coast rain</li>
+<li>Layers — mornings start in the 30s, afternoons may reach 50°F</li>
+<li>Pack frame for the pack-out</li>
+<li>Valid Oregon elk tag and hunter safety card</li>
+</ul>`
+  },
+  {
+    id:'best-times-rivers',cat:'seasonal',img:'assets/images/river-canyon.jpg',
+    title:'Best Times to Fish Each River on the Central Coast',
+    excerpt:'Every river has its peak window. Here\'s when each system fishes best and what species to target by month.',
+    date:'July 28, 2026',
+    content:`<h3>Timing Is Everything</h3>
+<p>Oregon's Central Coast rivers each have distinct peak periods. While there are fishable days year-round on one system or another, understanding the timing for each river helps you plan a trip that maximizes your chances.</p>
+
+<h3>Siletz River</h3>
+<p>The Siletz is Rimewild's home river, and it produces fish across more months than any other system we guide.</p>
+<ul>
+<li><strong>December–March:</strong> Peak winter steelhead. January and February are typically the strongest months. The river fishes best at 300-600 cfs at the Siletz gauge — check streamflow.usgs.gov before your trip.</li>
+<li><strong>April–September:</strong> Summer steelhead are present, with the best fishing from June through August. These fish are often in the upper river above Logsden.</li>
+<li><strong>August–November:</strong> Fall chinook salmon. The run builds through September and peaks in October. The Ojalla-to-Moonshine stretch is prime water.</li>
+<li><strong>May–September:</strong> Coastal cutthroat trout in the upper river and tributaries. Light tackle, beautiful water.</li>
+</ul>
+
+<h3>Alsea River</h3>
+<p>The Alsea runs from the Coast Range to Waldport and offers excellent access.</p>
+<ul>
+<li><strong>September–November:</strong> Fall chinook are the Alsea's signature fishery. The tide water near the deadline is especially productive.</li>
+<li><strong>December–March:</strong> Winter steelhead. The Alsea doesn't get the same numbers as the Siletz, but it fishes well and has outstanding bank access at multiple points.</li>
+<li><strong>September–November:</strong> Coho salmon are present but wild-only — check regulations. Great sport on light tackle.</li>
+</ul>
+
+<h3>Siuslaw River</h3>
+<p>The Siuslaw near Florence is the quietest of the three main systems — fewer guides, fewer boats, more wildlife.</p>
+<ul>
+<li><strong>September–November:</strong> Fall chinook. The Siuslaw chinook run is smaller than the Siletz or Alsea, but the fish are the same size and the pressure is lower.</li>
+<li><strong>December–March:</strong> Winter steelhead. The Siuslaw fishes well after major rain events that push fish through the long estuary.</li>
+</ul>
+
+<h3>Yaquina System</h3>
+<p>The Yaquina near Newport offers unique tidal opportunities.</p>
+<ul>
+<li><strong>September–November:</strong> Chinook in the bay and lower river. Tidal fishing techniques differ from upriver work — trolling and anchoring with bait are common.</li>
+<li><strong>Year-round:</strong> Bay species including perch, sole, and crab. Different gear, different game, but consistent action.</li>
+</ul>
+
+<h3>The Bottom Line</h3>
+<p>If you can only visit once, <strong>late October</strong> gives you the widest window of opportunity — fall chinook, late coho, early steelhead, and blacktail deer season all overlap. If steelhead is your goal, <strong>late January through February</strong> on the Siletz is the window.</p>`
+  },
+  {
+    id:'siletz-sept-report',cat:'river',img:'assets/images/fishing-river.jpg',
+    title:'Siletz River Report — Early September 2026',
+    excerpt:'Summer steelhead still present in the upper river. First chinook scouts showing below Ojalla.',
+    date:'September 3, 2026'
+  },
+  {
+    id:'alsea-chinook-report',cat:'river',img:'assets/images/fish-catch.jpg',
+    title:'Alsea Fall Chinook — Season Preview',
+    excerpt:'The Alsea tideline is primed for an excellent chinook season. Water conditions and early fish counts look strong.',
+    date:'August 20, 2026'
+  },
+  {
+    id:'blacktail-prep',cat:'hunting',img:'assets/images/deer-forest.jpg',
+    title:'Blacktail Deer: Pre-Season Scouting Report',
+    excerpt:'Trail camera data and field observations from Coast Range timber units. Where the deer are bedding and feeding ahead of October opener.',
+    date:'September 18, 2026'
+  },
+  {
+    id:'gear-winter-steelhead',cat:'gear',img:'assets/images/fishing-gear.jpg',
+    title:'Gear Guide: Winter Steelhead Essentials',
+    excerpt:'The rods, reels, terminal tackle, and rain gear that actually matter for Oregon coast winter steelhead.',
+    date:'July 15, 2026'
+  },
+  {
+    id:'coastal-cutthroat',cat:'howto',img:'assets/images/fishing-person.jpg',
+    title:'Coastal Cutthroat Trout: The Overlooked Fishery',
+    excerpt:'Aggressive fish, beautiful water, and almost no one else on the river. Coastal cutthroat are the Central Coast\'s best-kept secret.',
+    date:'June 20, 2026'
+  },
+  {
+    id:'siuslaw-report',cat:'river',img:'assets/images/foggy-forest.jpg',
+    title:'Siuslaw River — Late Summer Conditions',
+    excerpt:'Low water and warm temps have pushed fish into the deeper holes. Here\'s where to find them.',
+    date:'August 10, 2026'
+  }
+];
+
+// BUILD CARDS
+function buildCards(filter){
+  const grid=document.getElementById('reportGrid');
+  grid.innerHTML='';
+  const filtered=filter==='all'?articles:articles.filter(a=>a.cat===filter);
+  filtered.forEach(a=>{
+    const card=document.createElement('div');
+    card.className='report-card';
+    card.dataset.cat=a.cat;
+    card.onclick=()=>openArticle(a.id);
+    const catLabels={river:'River Report',howto:'How-To',seasonal:'Seasonal',hunting:'Hunting',gear:'Gear'};
+    card.innerHTML=`
+      <div class="report-card-img-wrap"><div class="report-card-img" style="background-image:url('${a.img}')"></div></div>
+      <div class="report-card-body">
+        <span class="report-card-cat">${catLabels[a.cat]||a.cat}</span>
+        <h3>${a.title}</h3>
+        <p>${a.excerpt}</p>
+        <span class="date">${a.date}</span>
+        <span class="read-more">${a.content?'Read Full Article →':'Coming Soon'}</span>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+// BUILD ARTICLES
+function buildArticles(){
+  const container=document.getElementById('articleContainer');
+  container.innerHTML='';
+  const catLabels={river:'River Report',howto:'How-To',seasonal:'Seasonal',hunting:'Hunting',gear:'Gear'};
+  articles.filter(a=>a.content).forEach(a=>{
+    const el=document.createElement('div');
+    el.className='article-full';
+    el.id='article-'+a.id;
+    el.innerHTML=`
+      <div class="article-full-hero" style="background-image:url('${a.img}')"></div>
+      <div class="article-full-body">
+        <span class="article-cat">${catLabels[a.cat]}</span>
+        <h2>${a.title}</h2>
+        <div class="article-meta"><span>${a.date}</span><span>By Corey — Rimewild Guide</span></div>
+        <div class="article-content">${a.content}</div>
+        <button class="article-close" onclick="closeArticle('${a.id}')">&larr; Back to Reports</button>
+      </div>`;
+    container.appendChild(el);
+  });
+}
+
+// FILTER
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    buildCards(btn.dataset.cat);
+  });
+});
+
+// OPEN/CLOSE ARTICLE
+function openArticle(id){
+  const el=document.getElementById('article-'+id);
+  if(!el)return;
+  document.querySelectorAll('.article-full').forEach(a=>a.classList.remove('open'));
+  el.classList.add('open');
+  document.getElementById('articleSection').style.display='block';
+  el.scrollIntoView({behavior:'smooth',block:'start'});
+}
+function closeArticle(id){
+  const el=document.getElementById('article-'+id);
+  if(el)el.classList.remove('open');
+  const anyOpen=document.querySelector('.article-full.open');
+  if(!anyOpen)document.getElementById('articleSection').style.display='';
+  document.querySelector('.filter-bar').scrollIntoView({behavior:'smooth',block:'start'});
+}
+
+// INIT
+buildCards('all');
+buildArticles();
+
+// REVEAL
+if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){
+  const obs=new IntersectionObserver(entries=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('vis');obs.unobserve(e.target)}})},{threshold:.08,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+}
+</script>
+</body>
+</html>
