@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Rimewild — Guided Fishing & Hunting | Oregon's Central Coast</title>
+  <meta name="description" content="Premium guided river fishing and hunting on Oregon's Central Coast. Steelhead, salmon, elk, and blacktail deer on the Siletz, Alsea, and Siuslaw rivers with guide Corey.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+*,*::before,*::after{box-sizing:border-box}
+:root {
+  --bg-primary: #101412;
+  --bg-secondary: #14221C;
+  --bg-card: #1a2620;
+  --bg-card-hover: #1f2f28;
+  --text-primary: #ECEBE3;
+  --text-secondary: #8D9187;
+  --text-muted: #5e6359;
+  --accent: #B5A35D;
+  --accent-hover: #c9b86e;
+  --accent-muted: rgba(181,163,93,0.15);
+  --moss: #2D3B2D;
+  --river: #3a5548;
+  --success: #4a7a5a;
+  --border: rgba(141,145,135,0.12);
+  --border-accent: rgba(181,163,93,0.3);
+  --font-display: 'Crimson Pro', Georgia, 'Times New Roman', serif;
+  --font-body: 'Work Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --gap-xs: 0.5rem;
+  --gap-sm: 1rem;
+  --gap-md: 2rem;
+  --gap-lg: 4rem;
+  --gap-xl: 6rem;
+  --radius: 4px;
+  --radius-lg: 8px;
+  color-scheme: dark;
+}
+body {
+  margin: 0;
+  font-family: var(--font-body);
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+h1,h2,h3,h4,h5{font-family:var(--font-display);font-weight:600;line-height:1.15;margin:0;}
+p{margin:0 0 1rem}
+a{color:var(--accent);text-decoration:none;transition:color .2s}
+a:hover{color:var(--accent-hover)}
+img{max-width:100%;height:auto;display:block}
+button{font-family:var(--font-body);cursor:pointer;border:none;transition:all .25s ease}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+
+.container{max-width:1200px;margin:0 auto;padding-inline:24px}
+.section{padding-block:var(--gap-xl)}
+.section-dark{background:var(--bg-secondary)}
+
+.label{font-family:var(--font-body);font-size:.7rem;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:var(--gap-sm);display:block}
+.section-title{font-size:clamp(2rem,5vw,3.5rem);text-wrap:balance;margin-bottom:var(--gap-sm)}
+.section-subtitle{font-family:var(--font-display);font-style:italic;font-size:1.15rem;color:var(--text-secondary);max-width:50ch;margin-bottom:var(--gap-lg)}
+
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 2rem;font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;border-radius:var(--radius);transition:all .3s ease}
+.btn-primary{background:var(--accent);color:var(--bg-primary)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-outline{background:transparent;color:var(--text-primary);border:1px solid var(--border)}
+.btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+.btn-ghost{background:transparent;color:var(--accent);padding:.5rem 0}
+.btn-ghost:hover{color:var(--accent-hover)}
+
+/* ===== NAV ===== */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1rem 0;transition:background .4s,backdrop-filter .4s}
+.nav.scrolled{background:rgba(16,20,18,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+.nav-inner{max-width:1200px;margin:0 auto;padding-inline:24px;display:flex;align-items:center;justify-content:space-between}
+.nav-logo img{height:50px;width:auto}
+.nav-links{display:flex;align-items:center;gap:2rem;list-style:none;margin:0;padding:0}
+.nav-links a{font-size:.75rem;font-weight:500;letter-spacing:.1em;text-transform:uppercase;color:var(--text-secondary);transition:color .2s}
+.nav-links a:hover{color:var(--text-primary)}
+.nav-links .btn-primary{color:var(--bg-primary)}
+.nav-toggle{display:none;background:none;color:var(--text-primary);font-size:1.5rem;padding:.25rem}
+@media(max-width:900px){
+  .nav-links{display:none}
+  .nav-links.open{display:flex;flex-direction:column;position:absolute;top:100%;left:0;right:0;background:rgba(16,20,18,.97);backdrop-filter:blur(16px);padding:2rem 24px;gap:1.5rem}
+  .nav-toggle{display:block}
+}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:120px 24px var(--gap-xl);position:relative;overflow:hidden}
+.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(16,20,18,.4) 0%,rgba(16,20,18,.2) 30%,rgba(16,20,18,.7) 70%,var(--bg-primary) 100%);z-index:1}
+.hero-content{position:relative;z-index:2}
+.hero-logo{max-width:320px;margin:0 auto 1.5rem;filter:drop-shadow(0 4px 20px rgba(0,0,0,.5))}
+@media(max-width:600px){.hero-logo{max-width:220px}}
+.hero-tagline{font-family:var(--font-display);font-style:italic;font-size:clamp(1rem,2.5vw,1.5rem);color:var(--text-secondary);letter-spacing:.08em;margin-bottom:.75rem}
+.hero-desc{font-size:.9rem;color:var(--text-muted);letter-spacing:.05em;margin-bottom:2.5rem}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.hero-rivers{margin-top:3rem;font-size:.75rem;letter-spacing:.25em;text-transform:uppercase;color:var(--text-muted)}
+
+/* ===== WHAT'S WILD ===== */
+.wild-grid{display:grid;gap:1px;background:var(--border);border-radius:var(--radius-lg);overflow:hidden}
+.wild-row{display:grid;grid-template-columns:1fr auto auto auto;align-items:center;background:var(--bg-card);padding:1.25rem 1.5rem;transition:background .2s}
+.wild-row:hover{background:var(--bg-card-hover)}
+.wild-row.header{background:var(--bg-secondary);font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:.75rem 1.5rem}
+.wild-name{font-family:var(--font-display);font-size:1.1rem;font-weight:600}
+.wild-status{font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .8rem;border-radius:100px;min-width:100px;text-align:center}
+.wild-status.in-season{background:rgba(74,122,90,.2);color:#6aad7e}
+.wild-status.late-season{background:var(--accent-muted);color:var(--accent)}
+.wild-status.upcoming{background:rgba(141,145,135,.1);color:var(--text-secondary)}
+.wild-status.closed{background:rgba(139,58,58,.15);color:#b06060}
+.wild-window{font-size:.8rem;color:var(--text-secondary);padding-left:1.5rem;min-width:100px}
+.wild-action{padding-left:1.5rem}
+@media(max-width:600px){.wild-row{grid-template-columns:1fr auto;padding:1rem}.wild-window,.wild-row.header .wild-window,.wild-action,.wild-row.header .wild-action{display:none}}
+
+/* ===== SEASON BAR ===== */
+.season-bar-container{overflow-x:auto;margin:var(--gap-md) 0;padding-bottom:.5rem}
+.season-bar-month{text-align:center;font-size:.65rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted);padding-bottom:.5rem}
+.season-bar-cell{height:8px;border-radius:2px;transition:opacity .2s}
+.season-bar-cell.active{background:var(--accent);opacity:.8}
+.season-bar-cell.active:hover{opacity:1}
+.season-bar-cell.inactive{background:var(--border)}
+
+/* ===== ADVENTURE ===== */
+.adventure-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--gap-md)}
+@media(max-width:600px){.adventure-grid{grid-template-columns:1fr}}
+.adventure-tile{position:relative;border-radius:var(--radius-lg);overflow:hidden;aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:flex-end;padding:2rem;cursor:pointer;transition:transform .3s;background-size:cover;background-position:center}
+.adventure-tile:hover{transform:scale(1.01)}
+.adventure-tile::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.7) 0%,rgba(0,0,0,.1) 60%)}
+.adventure-tile>*{position:relative;z-index:1}
+.adventure-tile h3{font-size:clamp(1.5rem,3vw,2rem);margin-bottom:.25rem}
+.adventure-tile p{font-size:.85rem;color:var(--text-secondary);margin:0}
+.type-chip{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);padding:.75rem 1.5rem;font-size:.8rem;font-weight:500;letter-spacing:.05em;color:var(--text-primary);cursor:pointer;transition:all .2s;display:inline-block}
+.type-chip:hover{border-color:var(--accent);color:var(--accent);background:var(--accent-muted)}
+
+/* ===== TRIP FINDER ===== */
+.finder{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:3rem;max-width:700px;margin:0 auto}
+@media(max-width:600px){.finder{padding:1.5rem}}
+.finder-step{display:none}.finder-step.active{display:block}
+.finder-question{font-family:var(--font-display);font-size:1.5rem;margin-bottom:1.5rem}
+.finder-options{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:.75rem}
+.finder-option{background:var(--bg-secondary);border:2px solid var(--border);border-radius:var(--radius);padding:1rem;text-align:center;font-weight:500;font-size:.9rem;color:var(--text-primary);cursor:pointer;transition:all .2s}
+.finder-option:hover,.finder-option.selected{border-color:var(--accent);background:var(--accent-muted);color:var(--accent)}
+.finder-progress{display:flex;gap:.5rem;margin-bottom:2rem}
+.finder-dot{width:2rem;height:3px;border-radius:2px;background:var(--border);transition:background .3s}
+.finder-dot.active{background:var(--accent)}.finder-dot.done{background:var(--success)}
+.finder-result{text-align:center;padding:2rem 0}
+.finder-result h3{font-size:1.8rem;margin-bottom:.5rem}
+.finder-result-details{display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;margin:1.5rem 0;font-size:.85rem;color:var(--text-secondary)}
+.finder-result-detail{display:flex;flex-direction:column;align-items:center;gap:.25rem}
+.finder-result-detail strong{color:var(--text-primary);font-size:1rem}
+
+/* ===== RIVERS ===== */
+.rivers-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:var(--gap-md)}
+.river-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;cursor:pointer}
+.river-card:hover{border-color:var(--border-accent);transform:translateY(-2px)}
+.river-card-visual{height:180px;position:relative;background-size:cover;background-position:center}
+.river-card-visual::after{content:'';position:absolute;bottom:0;left:0;right:0;height:60%;background:linear-gradient(to top,var(--bg-card),transparent)}
+.river-card-body{padding:1.25rem}
+.river-card h3{font-size:1.25rem;margin-bottom:.5rem}
+.river-card-species{font-size:.8rem;color:var(--accent);margin-bottom:.5rem}
+.river-card p{font-size:.85rem;color:var(--text-secondary);margin:0}
+
+/* ===== FEATURED ===== */
+.featured{display:grid;grid-template-columns:1fr 1fr;gap:0;min-height:500px}
+@media(max-width:768px){.featured{grid-template-columns:1fr}}
+.featured-visual{display:flex;align-items:center;justify-content:center;padding:var(--gap-lg);position:relative;overflow:hidden;background-size:cover;background-position:center}
+.featured-visual::after{content:'';position:absolute;inset:0;background:rgba(16,20,18,.6)}
+.featured-visual>*{position:relative;z-index:1}
+.featured-visual-text{text-align:center}
+.featured-visual-text h2{font-size:clamp(2rem,4vw,3rem);margin-bottom:.5rem}
+.featured-visual-text p{font-family:var(--font-display);font-style:italic;color:var(--text-secondary);font-size:1.1rem}
+.featured-info{background:var(--bg-card);padding:var(--gap-lg);display:flex;flex-direction:column;justify-content:center}
+.featured-meta{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin:1.5rem 0}
+.featured-meta-item{font-size:.8rem}
+.featured-meta-item span{display:block;font-size:.65rem;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);margin-bottom:.15rem}
+.featured-price{font-family:var(--font-display);font-size:2rem;font-weight:700;color:var(--accent);margin:1rem 0}
+.featured-price small{font-size:.9rem;font-weight:400;color:var(--text-secondary)}
+
+/* ===== DIFFERENCE ===== */
+.diff-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--gap-md)}
+@media(max-width:768px){.diff-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:480px){.diff-grid{grid-template-columns:1fr}}
+.diff-item{padding:1.5rem 0;border-top:2px solid var(--accent)}
+.diff-item h4{font-family:var(--font-body);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--accent);margin-bottom:.75rem}
+.diff-item p{font-size:.9rem;color:var(--text-secondary);margin:0}
+
+/* ===== GUIDE ===== */
+.guide-section{display:grid;grid-template-columns:1fr 1.2fr;gap:var(--gap-lg);align-items:center}
+@media(max-width:768px){.guide-section{grid-template-columns:1fr}}
+.guide-photo{aspect-ratio:3/4;border-radius:var(--radius-lg);background-size:cover;background-position:center;display:flex;align-items:flex-end;justify-content:center;padding:2rem;position:relative;overflow:hidden}
+.guide-photo::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(16,20,18,.8) 0%,transparent 50%)}
+.guide-photo-text{position:relative;z-index:1;text-align:center}
+.guide-photo-text .label{color:var(--text-secondary);margin-bottom:.25rem}
+.guide-content blockquote{font-family:var(--font-display);font-style:italic;font-size:1.5rem;line-height:1.4;color:var(--text-primary);border-left:2px solid var(--accent);padding-left:1.5rem;margin:0 0 1.5rem}
+.guide-content p{color:var(--text-secondary);font-size:.95rem}
+
+/* ===== STORIES ===== */
+.stories-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--gap-md)}
+.story-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:2rem}
+.story-stars{color:var(--accent);font-size:.9rem;letter-spacing:.1em;margin-bottom:1rem}
+.story-quote{font-family:var(--font-display);font-style:italic;font-size:1.15rem;line-height:1.5;margin-bottom:1.5rem}
+.story-meta{display:flex;justify-content:space-between;align-items:flex-end;font-size:.8rem;color:var(--text-secondary)}
+.story-author{font-weight:500;color:var(--text-primary)}
+.story-trip{font-size:.75rem}
+
+/* ===== GALLERY ===== */
+.gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;gap:4px}
+@media(max-width:768px){.gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:150px}}
+.gallery-item{border-radius:var(--radius);overflow:hidden;position:relative;cursor:pointer;transition:opacity .2s;background-size:cover;background-position:center}
+.gallery-item:hover{opacity:.85}
+.gallery-item.tall{grid-row:span 2}
+.gallery-item.wide{grid-column:span 2}
+.gallery-item-label{position:absolute;bottom:0;left:0;right:0;padding:1rem;background:linear-gradient(to top,rgba(0,0,0,.7),transparent);font-size:.7rem;letter-spacing:.08em;color:var(--text-secondary)}
+
+/* ===== GEAR ===== */
+.gear-scroll{display:flex;gap:var(--gap-sm);overflow-x:auto;padding-bottom:1rem;scroll-snap-type:x mandatory}
+.gear-card{min-width:200px;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;scroll-snap-align:start;flex-shrink:0;transition:border-color .2s;cursor:pointer}
+.gear-card:hover{border-color:var(--accent)}
+.gear-icon{font-size:1.5rem;margin-bottom:.75rem}
+.gear-card h4{font-family:var(--font-body);font-size:.9rem;font-weight:600;margin-bottom:.4rem}
+.gear-card p{font-size:.78rem;color:var(--text-secondary);margin:0}
+.gear-card .gear-detail{display:none;margin-top:.75rem;padding-top:.75rem;border-top:1px solid var(--border);font-size:.78rem;color:var(--text-secondary)}
+.gear-card.expanded .gear-detail{display:block}
+
+/* ===== CALENDAR ===== */
+.cal-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:var(--gap-md)}
+.cal-nav{display:flex;gap:.5rem}
+.cal-nav button{background:var(--bg-card);border:1px solid var(--border);color:var(--text-primary);width:2.5rem;height:2.5rem;border-radius:var(--radius);font-size:1rem;display:flex;align-items:center;justify-content:center}
+.cal-nav button:hover{border-color:var(--accent)}
+.cal-month{font-family:var(--font-display);font-size:1.5rem;font-weight:600}
+.cal-legend{display:flex;gap:1.5rem;margin-bottom:1.5rem;flex-wrap:wrap}
+.cal-legend-item{display:flex;align-items:center;gap:.4rem;font-size:.75rem;color:var(--text-secondary)}
+.cal-legend-dot{width:10px;height:10px;border-radius:50%}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal-day-label{text-align:center;font-size:.65rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--text-muted);padding:.5rem}
+.cal-day{aspect-ratio:1;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:var(--radius);font-size:.85rem;font-weight:500;cursor:pointer;transition:all .15s;border:1px solid transparent;position:relative}
+.cal-day:hover{transform:scale(1.05)}
+.cal-day.empty{cursor:default}.cal-day.empty:hover{transform:none}
+.cal-day.available{background:rgba(74,122,90,.2);color:#6aad7e}
+.cal-day.limited{background:var(--accent-muted);color:var(--accent)}
+.cal-day.booked{background:rgba(141,145,135,.08);color:var(--text-muted)}
+.cal-day.closed{background:rgba(16,20,18,.5);color:var(--text-muted);opacity:.4;cursor:default}
+.cal-day.closed:hover{transform:none}
+.cal-day.selected{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.cal-day-num{line-height:1}
+.cal-day-dot{width:4px;height:4px;border-radius:50%;margin-top:3px}
+.cal-day.available .cal-day-dot{background:#6aad7e}
+.cal-day.limited .cal-day-dot{background:var(--accent)}
+.cal-selected-info{margin-top:var(--gap-md);padding:1.5rem;background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);display:none}
+.cal-selected-info.show{display:block}
+.cal-trips{display:grid;gap:.75rem;margin-top:1rem}
+.cal-trip{display:flex;justify-content:space-between;align-items:center;padding:1rem 1.25rem;background:var(--bg-secondary);border-radius:var(--radius);border:1px solid var(--border);cursor:pointer;transition:all .2s}
+.cal-trip:hover{border-color:var(--accent)}
+.cal-trip-name{font-family:var(--font-display);font-weight:600;font-size:1rem}
+.cal-trip-meta{font-size:.75rem;color:var(--text-secondary);margin-top:.15rem}
+.cal-trip-price{font-family:var(--font-display);font-size:1.25rem;font-weight:700;color:var(--accent)}
+
+/* ===== BLOG ===== */
+.blog-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:var(--gap-md)}
+.blog-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden;transition:all .3s;cursor:pointer}
+.blog-card:hover{border-color:var(--border-accent);transform:translateY(-2px)}
+.blog-card-visual{height:160px;background-size:cover;background-position:center}
+.blog-card-body{padding:1.5rem}
+.blog-card .label{margin-bottom:.5rem}
+.blog-card h3{font-size:1.15rem;margin-bottom:.5rem;line-height:1.3}
+.blog-card p{font-size:.85rem;color:var(--text-secondary);margin:0}
+
+/* ===== BOOKING ===== */
+.booking-overlay{position:fixed;inset:0;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:24px}
+.booking-overlay.show{display:flex}
+.booking-modal{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);width:100%;max-width:560px;max-height:90vh;overflow-y:auto;padding:2.5rem}
+.booking-modal h2{font-size:1.5rem;margin-bottom:.5rem}
+.booking-close{float:right;background:none;color:var(--text-muted);font-size:1.5rem;padding:0}
+.booking-close:hover{color:var(--text-primary)}
+.form-group{margin-bottom:1.25rem}
+.form-label{display:block;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:.4rem}
+.form-input{width:100%;padding:.75rem 1rem;background:var(--bg-secondary);border:1px solid var(--border);border-radius:var(--radius);color:var(--text-primary);font-family:var(--font-body);font-size:.9rem;transition:border-color .2s}
+.form-input:focus{outline:none;border-color:var(--accent)}
+.form-input::placeholder{color:var(--text-muted)}
+select.form-input{appearance:none;background-image:url("data:image/svg+xml,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238D9187' fill='none' stroke-width='1.5'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 1rem center;padding-right:2.5rem}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+@media(max-width:480px){.form-row{grid-template-columns:1fr}}
+.form-success{text-align:center;padding:2rem}
+.form-success h3{font-size:1.5rem;margin-bottom:.5rem;color:var(--accent)}
+
+/* ===== FOOTER ===== */
+.footer{background:var(--bg-secondary);border-top:1px solid var(--border);padding:var(--gap-lg) 0 var(--gap-md)}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--gap-lg);margin-bottom:var(--gap-lg)}
+@media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+.footer-brand{font-family:var(--font-display);font-size:1.5rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;margin-bottom:1rem}
+.footer h5{font-family:var(--font-body);font-size:.7rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--text-muted);margin-bottom:1rem}
+.footer-links{list-style:none;padding:0;margin:0}
+.footer-links li{margin-bottom:.5rem}
+.footer-links a{font-size:.85rem;color:var(--text-secondary)}
+.footer-links a:hover{color:var(--text-primary)}
+.footer-bottom{border-top:1px solid var(--border);padding-top:var(--gap-md);display:flex;justify-content:space-between;flex-wrap:wrap;gap:1rem;font-size:.75rem;color:var(--text-muted)}
+
+/* ===== MOBILE BAR ===== */
+.mobile-bar{display:none;position:fixed;bottom:0;left:0;right:0;padding:.75rem 24px calc(.75rem + env(safe-area-inset-bottom,0px));background:rgba(16,20,18,.95);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-top:1px solid var(--border);z-index:100;gap:.75rem}
+@media(max-width:768px){.mobile-bar{display:flex}body{padding-bottom:5rem}}
+.mobile-bar .btn{flex:1;text-align:center;justify-content:center}
+
+/* ===== ANIMATIONS ===== */
+@media(prefers-reduced-motion:no-preference){
+  .fade-in{opacity:0;transform:translateY(20px);transition:opacity .6s ease,transform .6s ease}
+  .fade-in.visible{opacity:1;transform:translateY(0)}
+}
+@media(prefers-reduced-motion:reduce){.fade-in{opacity:1;transform:none}}
+  </style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a href="#hero" class="nav-logo"><img src="assets/logo.png" alt="Rimewild"></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#whats-wild">What's Running</a></li>
+      <li><a href="#fishing">Fishing</a></li>
+      <li><a href="#hunting">Hunting</a></li>
+      <li><a href="#rivers">Waters</a></li>
+      <li><a href="#calendar">Availability</a></li>
+      <li><a href="#guide">Your Guide</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#report">Reports</a></li>
+      <li><a href="#booking-section" class="btn btn-primary" onclick="openBooking()">Book a Trip</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <video class="hero-video" autoplay muted loop playsinline poster="assets/images/hero-river.jpg">
+    <source src="assets/hero.mp4" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <img src="assets/logo.png" alt="Rimewild" class="hero-logo">
+    <div class="hero-tagline">Wild Water. Wild Country.</div>
+    <div class="hero-desc">Guided River Fishing &amp; Hunting on Oregon's Central Coast</div>
+    <div class="hero-ctas">
+      <a href="#fishing" class="btn btn-primary">Explore Trips</a>
+      <a href="#calendar" class="btn btn-outline">Check Availability</a>
+    </div>
+    <div class="hero-rivers">Siletz &bull; Alsea &bull; Siuslaw &bull; Oregon Coast Range</div>
+  </div>
+</section>
+
+<!-- WHAT'S WILD RIGHT NOW -->
+<section class="section" id="whats-wild">
+  <div class="container">
+    <span class="label">What's Wild Right Now</span>
+    <h2 class="section-title">Current Seasons</h2>
+    <p class="section-subtitle">What's running on Oregon's Central Coast rivers and Coast Range timber right now.</p>
+    <div class="wild-grid" id="wildGrid">
+      <div class="wild-row header">
+        <div>Experience</div>
+        <div>Status</div>
+        <div class="wild-window">Window</div>
+        <div class="wild-action"></div>
+      </div>
+    </div>
+    <div style="margin-top:var(--gap-lg)">
+      <span class="label">Seasonal Calendar</span>
+      <h3 style="font-size:1.3rem;margin-bottom:var(--gap-md)">When to Come</h3>
+      <div class="season-bar-container">
+        <div style="display:grid;grid-template-columns:100px repeat(12,1fr);gap:2px;min-width:700px">
+          <div></div>
+          <div class="season-bar-month">Jan</div><div class="season-bar-month">Feb</div>
+          <div class="season-bar-month">Mar</div><div class="season-bar-month">Apr</div>
+          <div class="season-bar-month">May</div><div class="season-bar-month">Jun</div>
+          <div class="season-bar-month">Jul</div><div class="season-bar-month">Aug</div>
+          <div class="season-bar-month">Sep</div><div class="season-bar-month">Oct</div>
+          <div class="season-bar-month">Nov</div><div class="season-bar-month">Dec</div>
+          <div style="font-size:.78rem;padding:.3rem 0">Winter Steelhead</div>
+          <div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div>
+          <div style="font-size:.78rem;padding:.3rem 0">Summer Steelhead</div>
+          <div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div>
+          <div style="font-size:.78rem;padding:.3rem 0">Fall Chinook</div>
+          <div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div>
+          <div style="font-size:.78rem;padding:.3rem 0">Coastal Cutthroat</div>
+          <div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div>
+          <div style="font-size:.78rem;padding:.3rem 0">Blacktail Deer</div>
+          <div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div>
+          <div style="font-size:.78rem;padding:.3rem 0">Roosevelt Elk</div>
+          <div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell inactive"></div><div class="season-bar-cell active"></div><div class="season-bar-cell inactive"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CHOOSE YOUR ADVENTURE -->
+<section class="section section-dark" id="fishing">
+  <div class="container">
+    <span class="label">Choose Your Adventure</span>
+    <h2 class="section-title">How Do You Want to Get Wild?</h2>
+    <div class="adventure-grid">
+      <div class="adventure-tile" style="background-image:url('assets/images/fishing-river.jpg')" onclick="scrollTo('#trip-finder')">
+        <h3>Fish the Rivers</h3>
+        <p>Salmon, steelhead, cutthroat on the Siletz, Alsea &amp; Siuslaw</p>
+      </div>
+      <div class="adventure-tile" id="hunting" style="background-image:url('assets/images/elk-forest.jpg')" onclick="scrollTo('#trip-finder')">
+        <h3>Hunt the Coast Range</h3>
+        <p>Roosevelt elk &amp; Columbian blacktail in coastal timber</p>
+      </div>
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:var(--gap-sm);margin-top:var(--gap-md)">
+      <div class="type-chip" onclick="scrollTo('#trip-finder')">Drift Boat</div>
+      <div class="type-chip" onclick="scrollTo('#trip-finder')">Bank &amp; Wade</div>
+      <div class="type-chip" onclick="scrollTo('#trip-finder')">Family Trips</div>
+      <div class="type-chip" onclick="scrollTo('#trip-finder')">Private Experiences</div>
+      <div class="type-chip" onclick="scrollTo('#trip-finder')">Learning Trips</div>
+    </div>
+  </div>
+</section>
+
+<!-- FIND YOUR TRIP -->
+<section class="section" id="trip-finder">
+  <div class="container">
+    <div style="text-align:center;margin-bottom:var(--gap-lg)">
+      <span class="label">Find Your Trip</span>
+      <h2 class="section-title">Your Rimewild Match</h2>
+      <p class="section-subtitle" style="margin-inline:auto">Answer four questions and we'll match you with the perfect Rimewild experience.</p>
+    </div>
+    <div class="finder" id="finder">
+      <div class="finder-progress" id="finderProgress"></div>
+      <div id="finderSteps"></div>
+    </div>
+  </div>
+</section>
+
+<!-- RIVERS -->
+<section class="section section-dark" id="rivers">
+  <div class="container">
+    <span class="label">The Waters</span>
+    <h2 class="section-title">Rimewild Country</h2>
+    <p class="section-subtitle">Central Oregon Coast rivers from the headwaters of the Coast Range to the tidal estuaries.</p>
+    <div class="rivers-grid">
+      <div class="river-card" onclick="scrollTo('#calendar')">
+        <div class="river-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div>
+        <div class="river-card-body">
+          <h3>Siletz River</h3>
+          <div class="river-card-species">Steelhead &bull; Chinook &bull; Cutthroat</div>
+          <p>67 miles of Coast Range water. The Siletz is Rimewild's home river &mdash; winter steelhead runs from December through April make it one of the most productive fisheries on the Oregon coast.</p>
+        </div>
+      </div>
+      <div class="river-card" onclick="scrollTo('#calendar')">
+        <div class="river-card-visual" style="background-image:url('assets/images/river-canyon.jpg')"></div>
+        <div class="river-card-body">
+          <h3>Alsea River</h3>
+          <div class="river-card-species">Chinook &bull; Steelhead &bull; Cutthroat</div>
+          <p>Running from the Coast Range to Waldport, the Alsea delivers strong fall chinook runs and excellent bank access. A versatile river for all skill levels.</p>
+        </div>
+      </div>
+      <div class="river-card" onclick="scrollTo('#calendar')">
+        <div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div>
+        <div class="river-card-body">
+          <h3>Siuslaw River</h3>
+          <div class="river-card-species">Chinook &bull; Coho &bull; Steelhead</div>
+          <p>The Siuslaw winds through dense coastal forest near Florence. Quieter than the Siletz, with fewer boats and more wildlife.</p>
+        </div>
+      </div>
+      <div class="river-card" onclick="scrollTo('#calendar')">
+        <div class="river-card-visual" style="background-image:url('assets/images/drift-boat.jpg')"></div>
+        <div class="river-card-body">
+          <h3>Yaquina System</h3>
+          <div class="river-card-species">Chinook &bull; Steelhead &bull; Bay Species</div>
+          <p>The Yaquina Bay and its tributaries near Newport offer unique tidal fishing opportunities alongside traditional river runs.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED TRIP -->
+<section id="featured-trip">
+  <div class="featured">
+    <div class="featured-visual" style="background-image:url('assets/images/misty-mountains.jpg')">
+      <div class="featured-visual-text">
+        <span class="label">Featured Experience</span>
+        <h2>Winter Steelhead</h2>
+        <p>Cold water. Heavy fish. Empty rivers.</p>
+      </div>
+    </div>
+    <div class="featured-info">
+      <p style="color:var(--text-secondary);font-size:.9rem">Full-day guided drift on the Siletz and surrounding coastal rivers. You fish &mdash; casting, working water, reading current. This is interactive steelhead fishing where you learn the river, not just ride the boat.</p>
+      <div class="featured-meta">
+        <div class="featured-meta-item"><span>Duration</span>Full Day</div>
+        <div class="featured-meta-item"><span>Group</span>1&ndash;3 Anglers</div>
+        <div class="featured-meta-item"><span>Skill</span>Beginner&ndash;Advanced</div>
+        <div class="featured-meta-item"><span>Gear</span>All Included</div>
+        <div class="featured-meta-item"><span>Season</span>December&ndash;April</div>
+        <div class="featured-meta-item"><span>River</span>Siletz &bull; Alsea</div>
+      </div>
+      <div class="featured-price">$395 <small>per angler</small></div>
+      <button class="btn btn-primary" onclick="openBooking('Winter Steelhead Drift','2027-01-15')">Book This Experience</button>
+    </div>
+  </div>
+</section>
+
+<!-- RIMEWILD DIFFERENCE -->
+<section class="section">
+  <div class="container">
+    <span class="label">The Rimewild Difference</span>
+    <h2 class="section-title">Why Rimewild</h2>
+    <div class="diff-grid" style="margin-top:var(--gap-md)">
+      <div class="diff-item">
+        <h4>Local Water</h4>
+        <p>Central Coast focus. These aren't rivers Corey drives four hours to reach. This is home water, fished in every condition, every season, every year since childhood.</p>
+      </div>
+      <div class="diff-item">
+        <h4>Small Groups</h4>
+        <p>Personal instruction and attention. You won't be one of six people in a boat. Rimewild keeps it small because that's how you actually learn.</p>
+      </div>
+      <div class="diff-item">
+        <h4>Real Fishing</h4>
+        <p>You cast, you work water, you read current, you set the hook. This isn't a sightseeing float. You walk away knowing more than when you arrived.</p>
+      </div>
+      <div class="diff-item">
+        <h4>Conditions-Driven</h4>
+        <p>We follow the river, the season, and the fish. If the Siletz is blown out, we move to the Alsea. Flexibility is the advantage.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MEET YOUR GUIDE -->
+<section class="section section-dark" id="guide">
+  <div class="container">
+    <div class="guide-section">
+      <div class="guide-photo" style="background-image:url('assets/images/forest-trail.jpg')">
+        <div class="guide-photo-text">
+          <span class="label">Your Guide</span>
+          <div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700">Corey</div>
+        </div>
+      </div>
+      <div class="guide-content">
+        <span class="label">Meet Your Guide</span>
+        <blockquote>Local knowledge isn't downloaded. It's earned one wet winter at a time.</blockquote>
+        <p>Corey was born and raised on Oregon's Central Coast. He's been hunting and fishing these rivers and timber his entire life &mdash; not as a hobby picked up in adulthood, but as the thing that shaped how he sees this landscape.</p>
+        <p>He knows where steelhead hold after heavy rain on the Siletz because he's fished that water in every condition for decades. He knows where blacktail bed in the Coast Range because he's walked that timber since he was old enough to carry a rifle.</p>
+        <p>That kind of knowledge doesn't come from a guide school or a YouTube channel. It comes from a lifetime spent on the water and in the woods.</p>
+        <a href="#booking-section" class="btn btn-outline" onclick="openBooking()" style="margin-top:1rem">Fish With Corey</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STORIES -->
+<section class="section" id="stories">
+  <div class="container">
+    <span class="label">Rimewild Stories</span>
+    <h2 class="section-title">From the River</h2>
+    <div class="stories-grid" style="margin-top:var(--gap-md)">
+      <div class="story-card">
+        <div class="story-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="story-quote">&ldquo;His first steelhead. Watching my son set the hook on a winter fish in the Siletz &mdash; I'll remember that moment forever. Corey was patient, taught him to read the water, and made him feel like a real angler.&rdquo;</div>
+        <div class="story-meta"><div><div class="story-author">Mark &amp; Ethan</div><div class="story-trip">Father &amp; Son &bull; Siletz River &bull; February</div></div></div>
+      </div>
+      <div class="story-card">
+        <div class="story-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="story-quote">&ldquo;I've fished with guides all over the Pacific Northwest. The difference with Rimewild is that Corey actually wants you to learn. By the end of the day I was reading water and picking my own drifts.&rdquo;</div>
+        <div class="story-meta"><div><div class="story-author">Sarah K.</div><div class="story-trip">Solo Angler &bull; Alsea River &bull; March</div></div></div>
+      </div>
+      <div class="story-card">
+        <div class="story-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+        <div class="story-quote">&ldquo;We booked a family trip thinking the kids would lose interest after an hour. They fished for seven hours straight. The coastal cutthroat were cooperative and Corey kept everyone engaged.&rdquo;</div>
+        <div class="story-meta"><div><div class="story-author">The Jimenez Family</div><div class="story-trip">Family Trip &bull; Siletz River &bull; July</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="section section-dark" id="gallery">
+  <div class="container">
+    <span class="label">Gallery</span>
+    <h2 class="section-title">Rimewild Country</h2>
+    <p class="section-subtitle">Fog, fish, timber, and wild water.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item tall" style="background-image:url('assets/images/hero-river.jpg')"><div class="gallery-item-label">Siletz River &bull; Winter Steelhead</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/foggy-forest.jpg')"><div class="gallery-item-label">Fog &bull; Coast Range</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/drift-boat.jpg')"><div class="gallery-item-label">Drift Boat &bull; Alsea River</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/fish-catch.jpg')"><div class="gallery-item-label">Chinook Salmon &bull; Fall Run</div></div>
+      <div class="gallery-item wide" style="background-image:url('assets/images/river-canyon.jpg')"><div class="gallery-item-label">River Canyon &bull; Aerial</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/elk-forest.jpg')"><div class="gallery-item-label">Roosevelt Elk &bull; Coast Range</div></div>
+      <div class="gallery-item tall" style="background-image:url('assets/images/fishing-person.jpg')"><div class="gallery-item-label">Bank Fishing &bull; Upper Siletz</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/fishing-gear.jpg')"><div class="gallery-item-label">Gear &bull; Rigging</div></div>
+      <div class="gallery-item" style="background-image:url('assets/images/deer-forest.jpg')"><div class="gallery-item-label">Blacktail Deer &bull; Timber</div></div>
+      <div class="gallery-item wide" style="background-image:url('assets/images/family-outdoors.jpg')"><div class="gallery-item-label">Family Trip &bull; Alsea River</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- GEAR -->
+<section class="section">
+  <div class="container">
+    <span class="label">Equipment</span>
+    <h2 class="section-title">We Bring the Right Tools</h2>
+    <p class="section-subtitle">Every piece of gear is chosen for Central Oregon Coast conditions.</p>
+    <div class="gear-scroll">
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#9978;</div><h4>Drift Boat</h4><p>Purpose-built for coastal rivers</p><div class="gear-detail">Designed for shallow, technical Coast Range water. Stable platform for casting, rowing through rapids, and anchoring in steelhead runs.</div></div>
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#10038;</div><h4>Rods &amp; Reels</h4><p>Matched to species and technique</p><div class="gear-detail">Quality spinning and casting setups matched to target species and water conditions. Steelhead rods for winter drift, lighter setups for cutthroat.</div></div>
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#9730;</div><h4>Rain Gear</h4><p>Oregon coast rated</p><div class="gear-detail">Quality rain jackets available. We fish in the rain because that's when the fishing is best.</div></div>
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#9881;</div><h4>Terminal Tackle</h4><p>Plugs, jigs, bait, and flies</p><div class="gear-detail">Full selection of proven tackle for each river and season. Custom-tied jigs, quality plugs, fresh bait matched to current conditions.</div></div>
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#9764;</div><h4>Safety</h4><p>Coast Guard compliant</p><div class="gear-detail">Life jackets, first aid, communication equipment. Every trip carries full safety equipment regardless of conditions.</div></div>
+      <div class="gear-card" onclick="this.classList.toggle('expanded')"><div class="gear-icon">&#9872;</div><h4>Nets &amp; Tools</h4><p>Catch, handle, release</p><div class="gear-detail">Rubber-mesh landing nets, hemostats, hook cutters for safe catch-and-release. The fish deserve respect.</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CALENDAR -->
+<section class="section section-dark" id="calendar">
+  <div class="container">
+    <span class="label">Availability</span>
+    <h2 class="section-title">Plan Your Trip</h2>
+    <p class="section-subtitle">Select a date to see available Rimewild experiences.</p>
+    <div class="cal-header">
+      <h3 class="cal-month" id="calMonth"></h3>
+      <div class="cal-nav">
+        <button onclick="changeMonth(-1)" aria-label="Previous month">&#8592;</button>
+        <button onclick="changeMonth(1)" aria-label="Next month">&#8594;</button>
+      </div>
+    </div>
+    <div class="cal-legend">
+      <div class="cal-legend-item"><div class="cal-legend-dot" style="background:#6aad7e"></div>Available</div>
+      <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--accent)"></div>Limited</div>
+      <div class="cal-legend-item"><div class="cal-legend-dot" style="background:var(--text-muted);opacity:.4"></div>Booked</div>
+    </div>
+    <div class="cal-grid" id="calGrid"></div>
+    <div class="cal-selected-info" id="calInfo">
+      <h4 id="calInfoDate" style="font-size:1.1rem;margin-bottom:.25rem"></h4>
+      <p id="calInfoStatus" style="font-size:.85rem;color:var(--text-secondary);margin:0"></p>
+      <div class="cal-trips" id="calTrips"></div>
+      <button class="btn btn-primary" style="margin-top:1rem;width:100%" id="calBookBtn" onclick="bookFromCalendar()">Request This Date</button>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="container">
+    <span class="label">Experiences &amp; Pricing</span>
+    <h2 class="section-title">Rimewild Trips</h2>
+    <p class="section-subtitle">Every experience includes all gear, tackle, and instruction.</p>
+    <div class="rivers-grid" style="margin-top:var(--gap-md)">
+      <div class="river-card" onclick="openBooking('Winter Steelhead Drift')">
+        <div class="river-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div>
+        <div class="river-card-body"><h3>Winter Steelhead Drift</h3><div class="river-card-species">Full Day &bull; 1&ndash;3 Anglers &bull; Dec&ndash;Apr</div><p>Drift boat steelhead fishing at its finest. You cast, work water, and learn to read steelhead runs.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$395 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ angler</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Fall Chinook Salmon')">
+        <div class="river-card-visual" style="background-image:url('assets/images/fish-catch.jpg')"></div>
+        <div class="river-card-body"><h3>Fall Chinook Salmon</h3><div class="river-card-species">Full Day &bull; 1&ndash;3 Anglers &bull; Aug&ndash;Nov</div><p>Big fish, strong runs. Chinook salmon on the Alsea, Siletz, or Siuslaw.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$395 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ angler</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Cutthroat & Trout')">
+        <div class="river-card-visual" style="background-image:url('assets/images/fishing-river.jpg')"></div>
+        <div class="river-card-body"><h3>Cutthroat &amp; Trout</h3><div class="river-card-species">Full Day &bull; 1&ndash;3 Anglers &bull; May&ndash;Sep</div><p>Coastal cutthroat trout in the upper reaches. Light tackle, beautiful water, aggressive fish.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$295 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ angler</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Bank & Wade Fishing')">
+        <div class="river-card-visual" style="background-image:url('assets/images/fishing-person.jpg')"></div>
+        <div class="river-card-body"><h3>Bank &amp; Wade Fishing</h3><div class="river-card-species">Full Day &bull; 1&ndash;2 Anglers &bull; Year-Round</div><p>Walk-in access, bank fishing techniques, reading water from shore. The most hands-on learning experience.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$275 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ angler</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Family & Beginner')">
+        <div class="river-card-visual" style="background-image:url('assets/images/family-outdoors.jpg')"></div>
+        <div class="river-card-body"><h3>Family &amp; Beginner</h3><div class="river-card-species">Full Day &bull; Up to 4 &bull; May&ndash;Sep</div><p>Patient instruction, cooperative fish. Kids welcome. No experience necessary.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$350 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ group</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Half-Day Fishing')">
+        <div class="river-card-visual" style="background-image:url('assets/images/foggy-forest.jpg')"></div>
+        <div class="river-card-body"><h3>Half-Day Fishing</h3><div class="river-card-species">4&ndash;5 Hours &bull; 1&ndash;2 Anglers &bull; Seasonal</div><p>Morning or afternoon session. Focused experience for anglers short on time.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$275 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ angler</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Roosevelt Elk Hunt')">
+        <div class="river-card-visual" style="background-image:url('assets/images/elk-forest.jpg')"></div>
+        <div class="river-card-body"><h3>Roosevelt Elk</h3><div class="river-card-species">Multi-Day &bull; 1&ndash;2 Hunters &bull; Nov</div><p>Coast Range Roosevelt elk in dense coastal timber. By request and application only.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$2,800 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ hunter</small></div></div>
+      </div>
+      <div class="river-card" onclick="openBooking('Blacktail Deer Hunt')">
+        <div class="river-card-visual" style="background-image:url('assets/images/deer-forest.jpg')"></div>
+        <div class="river-card-body"><h3>Blacktail Deer</h3><div class="river-card-species">1&ndash;3 Days &bull; 1&ndash;2 Hunters &bull; Oct&ndash;Nov</div><p>Columbian blacktail in western Oregon timber. Spot-and-stalk in challenging terrain.</p><div style="font-family:var(--font-display);font-size:1.5rem;font-weight:700;color:var(--accent);margin-top:.75rem">$1,800 <small style="font-size:.8rem;color:var(--text-secondary);font-weight:400">/ hunter</small></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLOG PREVIEW -->
+<section class="section section-dark" id="report">
+  <div class="container">
+    <span class="label">The Rimewild Report</span>
+    <h2 class="section-title">From the Field</h2>
+    <p class="section-subtitle">River conditions, what's running, and on-the-ground observations.</p>
+    <div class="blog-grid">
+      <div class="blog-card"><div class="blog-card-visual" style="background-image:url('assets/images/oregon-river.jpg')"></div><div class="blog-card-body"><span class="label">River Report</span><h3>Siletz River Report &mdash; Late September</h3><p>Fall chinook are showing in good numbers. Water dropping into shape after recent rain.</p></div></div>
+      <div class="blog-card"><div class="blog-card-visual" style="background-image:url('assets/images/misty-mountains.jpg')"></div><div class="blog-card-body"><span class="label">How-To</span><h3>Winter Steelhead Fishing on the Siletz: A Complete Guide</h3><p>Everything you need to know about targeting winter steelhead on Oregon's Central Coast.</p></div></div>
+      <div class="blog-card"><div class="blog-card-visual" style="background-image:url('assets/images/forest-trail.jpg')"></div><div class="blog-card-body"><span class="label">Seasonal</span><h3>What's Running in October: Oregon Central Coast</h3><p>Fall chinook hitting their stride, blacktail deer season opening.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:var(--gap-md)"><a href="#report" class="btn btn-outline">View All Reports</a></div>
+  </div>
+</section>
+
+<!-- PLAN YOUR TRIP -->
+<section class="section" id="booking-section">
+  <div class="container">
+    <span class="label">Plan Your Trip</span>
+    <h2 class="section-title">Before You Go</h2>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:var(--gap-md);margin-top:var(--gap-md)">
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg)"><h4 style="font-size:.95rem;margin-bottom:.75rem">What to Bring</h4><ul style="font-size:.85rem;color:var(--text-secondary);padding-left:1.2rem;margin:0"><li>Layered clothing (rain is likely)</li><li>Quality rain jacket and pants</li><li>Warm hat and gloves (winter)</li><li>Polarized sunglasses</li><li>Lunch, snacks, and water</li><li>Camera</li><li>Valid Oregon fishing/hunting license</li></ul></div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg)"><h4 style="font-size:.95rem;margin-bottom:.75rem">Oregon Licenses</h4><p style="font-size:.85rem;color:var(--text-secondary);margin:0">An Oregon fishing or hunting license is required. Daily, annual, and non-resident licenses are available through ODFW. Licenses can be purchased at local sporting goods stores in Lincoln City and Newport.</p></div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg)"><h4 style="font-size:.95rem;margin-bottom:.75rem">Where to Stay</h4><p style="font-size:.85rem;color:var(--text-secondary);margin:0">Lincoln City, Newport, Waldport, and Florence all offer lodging. We're happy to recommend places that work well for early-morning departures to the river.</p></div>
+      <div style="padding:1.5rem;border:1px solid var(--border);border-radius:var(--radius-lg)"><h4 style="font-size:.95rem;margin-bottom:.75rem">FAQ</h4><div style="font-size:.85rem;color:var(--text-secondary)"><p style="margin-bottom:.5rem"><strong style="color:var(--text-primary)">What if the weather is bad?</strong><br>We fish in rain. Trips are only cancelled for dangerous conditions.</p><p style="margin-bottom:.5rem"><strong style="color:var(--text-primary)">Catch-and-release?</strong><br>Wild steelhead are released. Hatchery fish may be retained per ODFW regulations.</p><p style="margin:0"><strong style="color:var(--text-primary)">Cancellation policy?</strong><br>Full refund with 72+ hours notice.</p></div></div>
+    </div>
+    <div style="text-align:center;margin-top:var(--gap-lg)"><button class="btn btn-primary" onclick="openBooking()" style="font-size:.9rem;padding:1rem 3rem">Book a Trip</button></div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div><div class="footer-brand">RIME<span style="color:var(--accent)">WILD</span></div><p style="font-size:.85rem;color:var(--text-secondary);max-width:30ch">Guided river fishing &amp; hunting on Oregon's Central Coast. Wild water. Wild country.</p></div>
+      <div><h5>Fishing</h5><ul class="footer-links"><li><a href="#fishing">Winter Steelhead</a></li><li><a href="#fishing">Fall Chinook</a></li><li><a href="#fishing">Cutthroat &amp; Trout</a></li><li><a href="#fishing">Bank &amp; Wade</a></li><li><a href="#fishing">Family Trips</a></li></ul></div>
+      <div><h5>Explore</h5><ul class="footer-links"><li><a href="#rivers">The Rivers</a></li><li><a href="#whats-wild">What's Running</a></li><li><a href="#calendar">Availability</a></li><li><a href="#guide">Meet Corey</a></li><li><a href="#gallery">Gallery</a></li><li><a href="#report">Reports</a></li></ul></div>
+      <div><h5>Plan</h5><ul class="footer-links"><li><a href="#booking-section">Book a Trip</a></li><li><a href="#booking-section">What to Bring</a></li><li><a href="#booking-section">Licenses</a></li><li><a href="#booking-section">Lodging</a></li><li><a href="#booking-section">FAQ</a></li></ul></div>
+    </div>
+    <div class="footer-bottom"><span>&copy; 2026 Rimewild. Oregon's Central Coast.</span><span>Siletz &bull; Alsea &bull; Siuslaw &bull; Coast Range</span></div>
+  </div>
+</footer>
+
+<!-- MOBILE BAR -->
+<div class="mobile-bar">
+  <a href="tel:" class="btn btn-outline" style="font-size:.75rem">Call / Text</a>
+  <button class="btn btn-primary" onclick="openBooking()" style="font-size:.75rem">Check Availability</button>
+</div>
+
+<!-- BOOKING MODAL -->
+<div class="booking-overlay" id="bookingOverlay" onclick="if(event.target===this)closeBooking()">
+  <div class="booking-modal">
+    <button class="booking-close" onclick="closeBooking()" aria-label="Close">&times;</button>
+    <div id="bookingForm">
+      <h2>Book Your Rimewild Experience</h2>
+      <p style="color:var(--text-secondary);font-size:.9rem;margin-bottom:1.5rem">Fill out the form below and we'll confirm your trip within 24 hours.</p>
+      <form onsubmit="submitBooking(event)">
+        <div class="form-group"><label class="form-label" for="bTrip">Experience</label><select class="form-input" id="bTrip" required><option value="">Select a trip...</option><option value="Winter Steelhead Drift">Winter Steelhead Drift &mdash; $395/angler</option><option value="Fall Chinook Salmon">Fall Chinook Salmon &mdash; $395/angler</option><option value="Summer Steelhead">Summer Steelhead &mdash; $375/angler</option><option value="Cutthroat & Trout">Cutthroat &amp; Trout &mdash; $295/angler</option><option value="Bank & Wade Fishing">Bank &amp; Wade Fishing &mdash; $275/angler</option><option value="Family & Beginner">Family &amp; Beginner &mdash; $350/group</option><option value="Half-Day Fishing">Half-Day Fishing &mdash; $275/angler</option><option value="Roosevelt Elk Hunt">Roosevelt Elk Hunt &mdash; $2,800/hunter</option><option value="Blacktail Deer Hunt">Blacktail Deer Hunt &mdash; $1,800/hunter</option><option value="Private/Custom">Private / Custom Experience</option></select></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bDate">Preferred Date</label><input type="date" class="form-input" id="bDate" required></div><div class="form-group"><label class="form-label" for="bGuests">Number of Guests</label><select class="form-input" id="bGuests" required><option value="1">1 person</option><option value="2">2 people</option><option value="3">3 people</option><option value="4">4 people</option><option value="5+">5+ (group)</option></select></div></div>
+        <div class="form-row"><div class="form-group"><label class="form-label" for="bName">Full Name</label><input type="text" class="form-input" id="bName" placeholder="Your name" required></div><div class="form-group"><label class="form-label" for="bEmail">Email</label><input type="email" class="form-input" id="bEmail" placeholder="you@example.com" required></div></div>
+        <div class="form-group"><label class="form-label" for="bPhone">Phone</label><input type="tel" class="form-input" id="bPhone" placeholder="(555) 555-5555"></div>
+        <div class="form-group"><label class="form-label" for="bExp">Experience Level</label><select class="form-input" id="bExp"><option value="first-timer">First Timer</option><option value="some">Some Experience</option><option value="experienced">Experienced</option></select></div>
+        <div class="form-group"><label class="form-label" for="bNotes">Anything We Should Know?</label><textarea class="form-input" id="bNotes" rows="3" placeholder="Special requests, questions..."></textarea></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center;margin-top:.5rem">Request This Trip</button>
+      </form>
+    </div>
+    <div id="bookingSuccess" hidden>
+      <div class="form-success"><h3>Request Received</h3><p style="color:var(--text-secondary)">We'll confirm your Rimewild experience within 24 hours.</p><button class="btn btn-outline" onclick="closeBooking()" style="margin-top:1rem">Close</button></div>
+    </div>
+  </div>
+</div>
+
+<script>
+// NAV
+const nav=document.getElementById('nav');
+window.addEventListener('scroll',()=>{nav.classList.toggle('scrolled',window.scrollY>50)},{passive:true});
+document.getElementById('navToggle').addEventListener('click',()=>{document.getElementById('navLinks').classList.toggle('open')});
+function scrollTo(s){const e=document.querySelector(s);if(e)e.scrollIntoView({behavior:'smooth'})}
+
+// WHAT'S WILD
+const seasons=[
+  {name:'Fall Chinook Salmon',months:[8,9,10,11],window:'Aug–Nov'},
+  {name:'Winter Steelhead',months:[1,2,3,4,11,12],window:'Nov–Apr'},
+  {name:'Summer Steelhead',months:[4,5,6,7,8,9,10],window:'Apr–Oct'},
+  {name:'Coastal Cutthroat',months:[5,6,7,8,9],window:'May–Sep'},
+  {name:'Coho Salmon',months:[9,10,11],window:'Sep–Nov'},
+  {name:'Blacktail Deer',months:[9,10,11],window:'Sep–Nov'},
+  {name:'Roosevelt Elk',months:[11],window:'Nov (Rifle)'}
+];
+function buildWildGrid(){
+  const m=new Date().getMonth()+1,grid=document.getElementById('wildGrid');
+  seasons.forEach(s=>{
+    const inS=s.months.includes(m),isLate=inS&&s.months.indexOf(m)>=s.months.length-1;
+    const nxt=m===12?1:m+1,upcoming=!inS&&s.months.includes(nxt);
+    let st,sc;
+    if(inS&&!isLate){st='In Season';sc='in-season'}else if(isLate){st='Late Season';sc='late-season'}else if(upcoming){st='Upcoming';sc='upcoming'}else{st='Closed';sc='closed'}
+    const r=document.createElement('div');r.className='wild-row';
+    r.innerHTML=`<div class="wild-name">${s.name}</div><div class="wild-status ${sc}">${st}</div><div class="wild-window">${s.window}</div><div class="wild-action"><a href="#calendar" class="btn-ghost" style="font-size:.75rem">Explore &rarr;</a></div>`;
+    grid.appendChild(r);
+  });
+}
+buildWildGrid();
+
+// TRIP FINDER
+const fQ=[{q:'What do you want to do?',o:['Fish','Hunt']},{q:'Who is coming?',o:['Solo','Couple','Family','Group']},{q:'Experience level?',o:['First Timer','Some Experience','Experienced']},{q:'When are you visiting?',o:['Dec–Feb','Mar–May','Jun–Aug','Sep–Nov']}];
+let fStep=0;const fAns=[];
+function buildFinder(){
+  document.getElementById('finderProgress').innerHTML=fQ.map((_,i)=>`<div class="finder-dot ${i<fStep?'done':''} ${i===fStep?'active':''}"></div>`).join('');
+  const c=document.getElementById('finderSteps');
+  if(fStep>=fQ.length){c.innerHTML=getFinderResult();return}
+  const q=fQ[fStep];
+  c.innerHTML=`<div class="finder-step active"><div class="finder-question">${q.q}</div><div class="finder-options">${q.o.map(o=>`<div class="finder-option" onclick="selFO('${o}')">${o}</div>`).join('')}</div></div>`;
+}
+function selFO(v){fAns[fStep]=v;fStep++;buildFinder()}
+function getFinderResult(){
+  const[act,grp,exp,when]=fAns;let trip,river,price,dur,season,desc;
+  if(act==='Hunt'){trip='Roosevelt Elk Hunt';river='Coast Range';price='$2,800';dur='Multi-Day';season='November';desc='Deep timber, Roosevelt elk. A true Pacific Northwest hunting experience.';if(when!=='Sep–Nov'){trip='Blacktail Deer Hunt';price='$1,800';dur='1–3 Days';season='Oct–Nov';desc='Columbian blacktail in coastal timber. Spot-and-stalk hunting.'}}
+  else if(grp==='Family'){trip='Family & Beginner Trip';river='Alsea River';price='$350';dur='Full Day';season='May–Sep';desc='Patient instruction, cooperative fish. A day the whole family will remember.'}
+  else if(exp==='First Timer'){trip='Bank & Wade Introduction';river='Siletz River';price='$275';dur='Full Day';season='Year-Round';desc='Learn to read water, cast, and fish from the bank.'}
+  else if(when==='Dec–Feb'||when==='Mar–May'){trip='Winter Steelhead Drift';river='Siletz River';price='$395';dur='Full Day';season='Dec–Apr';desc='Cold water, heavy fish, empty rivers.'}
+  else if(when==='Sep–Nov'){trip='Fall Chinook Salmon';river='Alsea River';price='$395';dur='Full Day';season='Aug–Nov';desc='Big fish, strong runs. Chinook salmon at their peak.'}
+  else{trip='Coastal Cutthroat & Trout';river='Siuslaw River';price='$295';dur='Full Day';season='May–Sep';desc='Light tackle, beautiful water, aggressive coastal cutthroat.'}
+  return`<div class="finder-result"><span class="label">Your Rimewild Match</span><h3>${trip}</h3><p style="color:var(--text-secondary);font-size:.9rem;max-width:45ch;margin:.5rem auto 0">${desc}</p><div class="finder-result-details"><div class="finder-result-detail"><span>Duration</span><strong>${dur}</strong></div><div class="finder-result-detail"><span>River</span><strong>${river}</strong></div><div class="finder-result-detail"><span>Season</span><strong>${season}</strong></div><div class="finder-result-detail"><span>From</span><strong>${price}</strong></div></div><button class="btn btn-primary" onclick="openBooking('${trip}')" style="margin-top:1rem">Book This Experience</button><br><button class="btn btn-ghost" onclick="resetFinder()" style="margin-top:.5rem">Try Again</button></div>`;
+}
+function resetFinder(){fStep=0;fAns.length=0;buildFinder()}
+buildFinder();
+
+// CALENDAR
+let calY,calM,selDay=null,selTrip=null;
+const tripData={'Winter Steelhead Drift':{months:[1,2,3,4,11,12],price:'$395',a:'1–3',t:'fishing'},'Fall Chinook Salmon':{months:[8,9,10,11],price:'$395',a:'1–3',t:'fishing'},'Summer Steelhead':{months:[4,5,6,7,8,9,10],price:'$375',a:'1–3',t:'fishing'},'Cutthroat & Trout':{months:[5,6,7,8,9],price:'$295',a:'1–3',t:'fishing'},'Bank & Wade Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'fishing'},'Family & Beginner':{months:[5,6,7,8,9],price:'$350',a:'Up to 4',t:'fishing'},'Half-Day Fishing':{months:[1,2,3,4,5,6,7,8,9,10,11,12],price:'$275',a:'1–2',t:'fishing'},'Roosevelt Elk Hunt':{months:[11],price:'$2,800',a:'1–2',t:'hunting'},'Blacktail Deer Hunt':{months:[10,11],price:'$1,800',a:'1–2',t:'hunting'}};
+function initCal(){const n=new Date();calY=n.getFullYear();calM=n.getMonth();renderCal()}
+function changeMonth(d){calM+=d;if(calM>11){calM=0;calY++}if(calM<0){calM=11;calY--}selDay=null;document.getElementById('calInfo').classList.remove('show');renderCal()}
+function getAvail(y,m,d){const dow=new Date(y,m,d).getDay();if(dow===0)return'closed';const h=((y*31+m*7+d*13)%10);if(new Date(y,m,d)<new Date(new Date().setHours(0,0,0,0)))return'closed';if(h<4)return'available';if(h<7)return'limited';return'booked'}
+function renderCal(){
+  const mn=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  document.getElementById('calMonth').textContent=mn[calM]+' '+calY;
+  const g=document.getElementById('calGrid');g.innerHTML='';
+  ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'].forEach(d=>{const e=document.createElement('div');e.className='cal-day-label';e.textContent=d;g.appendChild(e)});
+  const fd=new Date(calY,calM,1).getDay(),dm=new Date(calY,calM+1,0).getDate();
+  for(let i=0;i<fd;i++){const e=document.createElement('div');e.className='cal-day empty';g.appendChild(e)}
+  for(let d=1;d<=dm;d++){const a=getAvail(calY,calM,d),e=document.createElement('div');e.className=`cal-day ${a}${selDay===d?' selected':''}`;if(a!=='closed')e.onclick=()=>selectDay(d);e.innerHTML=`<span class="cal-day-num">${d}</span>${a!=='closed'&&a!=='booked'?'<div class="cal-day-dot"></div>':''}`;g.appendChild(e)}
+}
+function selectDay(d){
+  selDay=d;renderCal();const a=getAvail(calY,calM,d),mn=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  const info=document.getElementById('calInfo');info.classList.add('show');
+  document.getElementById('calInfoDate').textContent=mn[calM]+' '+d+', '+calY;
+  document.getElementById('calInfoStatus').textContent=a==='available'?'Open — multiple trips available':a==='limited'?'Limited — 1 spot remaining':'Fully booked';
+  const t=document.getElementById('calTrips');t.innerHTML='';const m=calM+1;
+  document.getElementById('calBookBtn').textContent=a==='booked'?'Join Waitlist':'Request This Date';
+  Object.entries(tripData).forEach(([n,data])=>{if(data.months.includes(m)){const e=document.createElement('div');e.className='cal-trip';e.onclick=()=>{selTrip=n;document.querySelectorAll('.cal-trip').forEach(t=>t.style.borderColor='');e.style.borderColor='var(--accent)'};e.innerHTML=`<div><div class="cal-trip-name">${n}</div><div class="cal-trip-meta">${data.a} ${data.t==='hunting'?'hunters':'anglers'}</div></div><div class="cal-trip-price">${data.price}</div>`;t.appendChild(e)}});
+  info.scrollIntoView({behavior:'smooth',block:'nearest'});
+}
+function bookFromCalendar(){const ds=`${calY}-${String(calM+1).padStart(2,'0')}-${String(selDay).padStart(2,'0')}`;openBooking(selTrip||'',ds)}
+initCal();
+
+// BOOKING
+function openBooking(t,d){
+  const o=document.getElementById('bookingOverlay');o.classList.add('show');
+  document.getElementById('bookingForm').hidden=false;document.getElementById('bookingSuccess').hidden=true;
+  if(t){const s=document.getElementById('bTrip');for(let i=0;i<s.options.length;i++){if(s.options[i].value===t){s.selectedIndex=i;break}}}
+  if(d)document.getElementById('bDate').value=d;
+}
+function closeBooking(){document.getElementById('bookingOverlay').classList.remove('show')}
+function submitBooking(e){e.preventDefault();document.getElementById('bookingForm').hidden=true;document.getElementById('bookingSuccess').hidden=false}
+
+// FADE IN
+if(!window.matchMedia('(prefers-reduced-motion:reduce)').matches){const f=document.querySelectorAll('.fade-in');const o=new IntersectionObserver(e=>{e.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');o.unobserve(e.target)}})},{threshold:.1});f.forEach(el=>o.observe(el))}
+
+// Mobile nav close
+document.querySelectorAll('.nav-links a').forEach(a=>{a.addEventListener('click',()=>document.getElementById('navLinks').classList.remove('open'))});
+</script>
+</body>
+</html>
